@@ -52,10 +52,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmloginadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmloginadmin.Designer.cs">
+      <DependentUpon>frmloginadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmloginstudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmloginstudent.Designer.cs">
+      <DependentUpon>frmloginstudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmloginadmin.resx">
+      <DependentUpon>frmloginadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmloginstudent.resx">
+      <DependentUpon>frmloginstudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +97,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ngoai-ngu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hoc-ngoai-ngu-8288-1574994155.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bode.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaaa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11-Reasons-Learning-a-Foreign-Language-Is-The-Perfect-Hobby.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

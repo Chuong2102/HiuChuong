@@ -117,20 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="hoc-ngoai-ngu-8288-1574994155" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hoc-ngoai-ngu-8288-1574994155.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bode" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bode.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ngoai-ngu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ngoai-ngu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="aaaa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\aaaa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="11-Reasons-Learning-a-Foreign-Language-Is-The-Perfect-Hobby" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\11-Reasons-Learning-a-Foreign-Language-Is-The-Perfect-Hobby.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
