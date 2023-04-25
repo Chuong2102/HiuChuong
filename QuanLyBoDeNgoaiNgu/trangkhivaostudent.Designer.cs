@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(trangkhivaostudent));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnTiengAnh = new System.Windows.Forms.Button();
+            this.btnTiengNhat = new System.Windows.Forms.Button();
+            this.btnTiengTrung = new System.Windows.Forms.Button();
+            this.btnTiengHan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -44,53 +44,53 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnTiengAnh
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(37, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(215, 136);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Tiếng Anh";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnTiengAnh.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnTiengAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiengAnh.Location = new System.Drawing.Point(37, 33);
+            this.btnTiengAnh.Name = "btnTiengAnh";
+            this.btnTiengAnh.Size = new System.Drawing.Size(215, 136);
+            this.btnTiengAnh.TabIndex = 0;
+            this.btnTiengAnh.Text = "Tiếng Anh";
+            this.btnTiengAnh.UseVisualStyleBackColor = false;
+            this.btnTiengAnh.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnTiengNhat
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(333, 33);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(215, 136);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Tiếng Nhật";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnTiengNhat.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnTiengNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiengNhat.Location = new System.Drawing.Point(333, 33);
+            this.btnTiengNhat.Name = "btnTiengNhat";
+            this.btnTiengNhat.Size = new System.Drawing.Size(215, 136);
+            this.btnTiengNhat.TabIndex = 0;
+            this.btnTiengNhat.Text = "Tiếng Nhật";
+            this.btnTiengNhat.UseVisualStyleBackColor = false;
+            this.btnTiengNhat.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnTiengTrung
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(333, 221);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(215, 136);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Tiếng Trung";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnTiengTrung.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnTiengTrung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiengTrung.Location = new System.Drawing.Point(333, 221);
+            this.btnTiengTrung.Name = "btnTiengTrung";
+            this.btnTiengTrung.Size = new System.Drawing.Size(215, 136);
+            this.btnTiengTrung.TabIndex = 0;
+            this.btnTiengTrung.Text = "Tiếng Trung";
+            this.btnTiengTrung.UseVisualStyleBackColor = false;
+            this.btnTiengTrung.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnTiengHan
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(37, 221);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(215, 136);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Tiếng Hàn";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnTiengHan.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnTiengHan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiengHan.Location = new System.Drawing.Point(37, 221);
+            this.btnTiengHan.Name = "btnTiengHan";
+            this.btnTiengHan.Size = new System.Drawing.Size(215, 136);
+            this.btnTiengHan.TabIndex = 0;
+            this.btnTiengHan.Text = "Tiếng Hàn";
+            this.btnTiengHan.UseVisualStyleBackColor = false;
+            this.btnTiengHan.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -179,10 +179,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTiengHan);
+            this.Controls.Add(this.btnTiengTrung);
+            this.Controls.Add(this.btnTiengNhat);
+            this.Controls.Add(this.btnTiengAnh);
             this.Name = "trangkhivaostudent";
             this.Text = "trangkhivaostudent";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -194,10 +194,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnTiengAnh;
+        private System.Windows.Forms.Button btnTiengNhat;
+        private System.Windows.Forms.Button btnTiengTrung;
+        private System.Windows.Forms.Button btnTiengHan;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

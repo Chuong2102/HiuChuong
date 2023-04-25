@@ -72,6 +72,30 @@
     <Compile Include="trangkhivaostudent.Designer.cs">
       <DependentUpon>trangkhivaostudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="trangTiengAnh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trangTiengAnh.Designer.cs">
+      <DependentUpon>trangTiengAnh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="trangTiengHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trangTiengHan.Designer.cs">
+      <DependentUpon>trangTiengHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="trangTiengNhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trangTiengNhat.Designer.cs">
+      <DependentUpon>trangTiengNhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="trangTiengTrung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trangTiengTrung.Designer.cs">
+      <DependentUpon>trangTiengTrung.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +117,18 @@
     </Compile>
     <EmbeddedResource Include="trangkhivaostudent.resx">
       <DependentUpon>trangkhivaostudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trangTiengAnh.resx">
+      <DependentUpon>trangTiengAnh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trangTiengHan.resx">
+      <DependentUpon>trangTiengHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trangTiengNhat.resx">
+      <DependentUpon>trangTiengNhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="trangTiengTrung.resx">
+      <DependentUpon>trangTiengTrung.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
