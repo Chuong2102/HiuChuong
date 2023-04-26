@@ -70,6 +70,12 @@
     <Compile Include="frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmin_DangKyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin_DangKyTaiKhoan.Designer.cs">
+      <DependentUpon>frmAdmin_DangKyTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmloginadmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmin_DangKyTaiKhoan.resx">
+      <DependentUpon>frmAdmin_DangKyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmloginadmin.resx">
       <DependentUpon>frmloginadmin.cs</DependentUpon>
