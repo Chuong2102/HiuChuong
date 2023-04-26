@@ -58,6 +58,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\Answer.cs" />
+    <Compile Include="Entities\Composition.cs" />
+    <Compile Include="Entities\Exam.cs" />
+    <Compile Include="Entities\Level.cs" />
+    <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,9 +175,6 @@
     <Compile Include="trangTiengTrung.Designer.cs">
       <DependentUpon>trangTiengTrung.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EditSuatThi.resx">
-      <DependentUpon>EditSuatThi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
