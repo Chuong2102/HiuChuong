@@ -127,17 +127,35 @@
     <Compile Include="QuanLyCauHoi.Designer.cs">
       <DependentUpon>QuanLyCauHoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyDapAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyDapAn.Designer.cs">
+      <DependentUpon>QuanLyDapAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySuatThi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLySuatThi.Designer.cs">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemBoDapAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemBoDapAn.Designer.cs">
+      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThemCauHoi.Designer.cs">
       <DependentUpon>ThemCauHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemDapAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemDapAn.Designer.cs">
+      <DependentUpon>ThemDapAn.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemSuatThi.cs">
       <SubType>Form</SubType>
@@ -175,9 +193,6 @@
     <Compile Include="trangTiengTrung.Designer.cs">
       <DependentUpon>trangTiengTrung.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EditSuatThi.resx">
-      <DependentUpon>EditSuatThi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,11 +236,20 @@
     <EmbeddedResource Include="QuanLyCauHoi.resx">
       <DependentUpon>QuanLyCauHoi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyDapAn.resx">
+      <DependentUpon>QuanLyDapAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySuatThi.resx">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThemBoDapAn.resx">
+      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThemCauHoi.resx">
       <DependentUpon>ThemCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemDapAn.resx">
+      <DependentUpon>ThemDapAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemSuatThi.resx">
       <DependentUpon>ThemSuatThi.cs</DependentUpon>

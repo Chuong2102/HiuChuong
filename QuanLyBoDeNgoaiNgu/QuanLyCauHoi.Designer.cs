@@ -39,6 +39,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -49,7 +50,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.button1.Location = new System.Drawing.Point(2, 411);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(235, 40);
+            this.button1.Size = new System.Drawing.Size(155, 40);
             this.button1.TabIndex = 1;
             this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = false;
@@ -57,9 +58,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.Location = new System.Drawing.Point(449, 411);
+            this.button2.Location = new System.Drawing.Point(495, 411);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(215, 40);
+            this.button2.Size = new System.Drawing.Size(169, 40);
             this.button2.TabIndex = 1;
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = false;
@@ -85,9 +86,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button3.Location = new System.Drawing.Point(235, 411);
+            this.button3.Location = new System.Drawing.Point(163, 411);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(217, 40);
+            this.button3.Size = new System.Drawing.Size(164, 40);
             this.button3.TabIndex = 1;
             this.button3.Text = "UPDATE";
             this.button3.UseVisualStyleBackColor = false;
@@ -148,6 +149,16 @@
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.button4.Location = new System.Drawing.Point(333, 411);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(156, 40);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "DELETE";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // QuanLyCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -162,6 +173,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "QuanLyCauHoi";
@@ -185,5 +197,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button4;
     }
 }

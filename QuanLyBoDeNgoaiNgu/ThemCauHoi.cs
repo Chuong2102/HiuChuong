@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyBoDeNgoaiNgu.Entities;
+using QuanLyBoDeNgoaiNgu.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,34 @@ namespace QuanLyBoDeNgoaiNgu
 {
     public partial class ThemCauHoi : Form
     {
+        QuanLyBoDeNgoaiNguModel1 model;
         public ThemCauHoi()
         {
+            model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Question question = new Question();
+            Answer answer = new Answer();
+            
+            answer.Text = textBox2.Text;
+            
+            model.Questions.Add(question);
+            model.Answers.Add(answer);
+            
+            model.SaveChanges();
         }
     }
 }
