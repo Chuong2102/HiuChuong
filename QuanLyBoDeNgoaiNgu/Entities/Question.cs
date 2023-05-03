@@ -11,6 +11,7 @@ namespace QuanLyBoDeNgoaiNgu.Entities
     {
         [Key]
         public int QuestionID { get; set; }
+        public string Text { get; set; }
         public Level Level { get; set; }
         public int CorrectAnswerID { get; set; }
         public ICollection<Answer> Answers { get; set; }
