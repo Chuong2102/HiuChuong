@@ -14,11 +14,20 @@ namespace QuanLyBoDeNgoaiNgu
 {
     public partial class ThemCauHoi : Form
     {
+        List<Level> levels;
         QuanLyBoDeNgoaiNguModel1 model;
         public ThemCauHoi()
         {
             model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
+            //
+            levels = model.Levels.ToList();
+
+            // lay database
+            foreach(Level level in levels)
+            {
+                cmbLevel.Items.Add(level.LevelName);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -38,9 +47,16 @@ namespace QuanLyBoDeNgoaiNgu
             
             answer.Text = textBox2.Text;
             
-            model.Questions.Add(question);
             model.Answers.Add(answer);
-            
+
+            var levelId = model.Levels.FirstOrDefault(
+                c => c.LevelName == cmbLevel.SelectedItem.ToString()).LevelID;
+
+            question.Level = new Level();
+            question.Level.LevelID = levelId;
+
+            model.Questions.Add(question);
+
             model.SaveChanges();
         }
     }
