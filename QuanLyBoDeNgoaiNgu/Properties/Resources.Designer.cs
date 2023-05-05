@@ -63,9 +63,29 @@ namespace QuanLyBoDeNgoaiNgu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1012370_200 {
+            get {
+                object obj = ResourceManager.GetObject("1012370-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _11_Reasons_Learning_a_Foreign_Language_Is_The_Perfect_Hobby {
             get {
                 object obj = ResourceManager.GetObject("11-Reasons-Learning-a-Foreign-Language-Is-The-Perfect-Hobby", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _340 {
+            get {
+                object obj = ResourceManager.GetObject("340", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -17,10 +17,12 @@ namespace QuanLyBoDeNgoaiNgu
             InitializeComponent();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             ThemBo themBo = new ThemBo();
             themBo.Show();
         }
+
     }
 }

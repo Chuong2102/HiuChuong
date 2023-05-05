@@ -10,18 +10,21 @@ using System.Windows.Forms;
 
 namespace QuanLyBoDeNgoaiNgu
 {
-    public partial class ThemDapAn : Form
+    public partial class frmThiSinhVien : Form
     {
-        public ThemDapAn()
+        public frmThiSinhVien()
         {
             InitializeComponent();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void frmThiSinhVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

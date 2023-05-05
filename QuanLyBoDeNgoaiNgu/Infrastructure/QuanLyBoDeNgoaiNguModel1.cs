@@ -21,6 +21,7 @@ namespace QuanLyBoDeNgoaiNgu.Infrastructure
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
 
+        public DbSet<GroupQuestion> GroupQuestions { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // Configure Student & StudentAddress entity

@@ -102,6 +102,12 @@
     <Compile Include="frmQuanLy.Designer.cs">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThiSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThiSinhVien.Designer.cs">
+      <DependentUpon>frmThiSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\QuanLyBoDeNgoaiNguModel1.cs" />
     <Compile Include="Migrations\202304241443477_Q0.cs" />
     <Compile Include="Migrations\202304241443477_Q0.designer.cs">
@@ -119,6 +125,14 @@
     <Compile Include="Migrations\202304241454220_Q3.designer.cs">
       <DependentUpon>202304241454220_Q3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305031412204_Q4.cs" />
+    <Compile Include="Migrations\202305031412204_Q4.designer.cs">
+      <DependentUpon>202305031412204_Q4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305050209177_Q5.cs" />
+    <Compile Include="Migrations\202305050209177_Q5.designer.cs">
+      <DependentUpon>202305050209177_Q5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,17 +142,47 @@
     <Compile Include="QuanLyCauHoi.Designer.cs">
       <DependentUpon>QuanLyCauHoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyDapAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyDapAn.Designer.cs">
+      <DependentUpon>QuanLyDapAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySuatThi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLySuatThi.Designer.cs">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="BocDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BocDe.Designer.cs">
+      <DependentUpon>BocDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemBo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemBo.Designer.cs">
+      <DependentUpon>ThemBo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemBoDapAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemBoDapAn.Designer.cs">
+      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThemCauHoi.Designer.cs">
       <DependentUpon>ThemCauHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemDapAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemDapAn.Designer.cs">
+      <DependentUpon>ThemDapAn.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemSuatThi.cs">
       <SubType>Form</SubType>
@@ -176,6 +220,11 @@
     <Compile Include="trangTiengTrung.Designer.cs">
       <DependentUpon>trangTiengTrung.cs</DependentUpon>
     </Compile>
+
+    <EmbeddedResource Include="BocDe.resx">
+      <DependentUpon>BocDe.cs</DependentUpon>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +243,9 @@
     <EmbeddedResource Include="frmQuanLy.resx">
       <DependentUpon>frmQuanLy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThiSinhVien.resx">
+      <DependentUpon>frmThiSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304241443477_Q0.resx">
       <DependentUpon>202304241443477_Q0.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304241454220_Q3.resx">
       <DependentUpon>202304241454220_Q3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305031412204_Q4.resx">
+      <DependentUpon>202305031412204_Q4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305050209177_Q5.resx">
+      <DependentUpon>202305050209177_Q5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -219,11 +277,23 @@
     <EmbeddedResource Include="QuanLyCauHoi.resx">
       <DependentUpon>QuanLyCauHoi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyDapAn.resx">
+      <DependentUpon>QuanLyDapAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySuatThi.resx">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThemBo.resx">
+      <DependentUpon>ThemBo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemBoDapAn.resx">
+      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThemCauHoi.resx">
       <DependentUpon>ThemCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemDapAn.resx">
+      <DependentUpon>ThemDapAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemSuatThi.resx">
       <DependentUpon>ThemSuatThi.cs</DependentUpon>
@@ -272,7 +342,12 @@
   <ItemGroup>
     <None Include="Resources\11-Reasons-Learning-a-Foreign-Language-Is-The-Perfect-Hobby.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\340.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1012370-200.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

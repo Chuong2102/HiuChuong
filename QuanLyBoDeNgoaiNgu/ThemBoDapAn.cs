@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace QuanLyBoDeNgoaiNgu
 {
-    public partial class ThemDapAn : Form
+    public partial class ThemBoDapAn : Form
     {
-        public ThemDapAn()
+        public ThemBoDapAn()
         {
             InitializeComponent();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTiengAnh_Click(object sender, EventArgs e)
         {
-
+            ThemBo themBo = new ThemBo();
+            themBo.Show();
         }
-
     }
 }

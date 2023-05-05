@@ -11,7 +11,7 @@ namespace QuanLyBoDeNgoaiNgu.Entities
     {
         [Key]
         public int LevelID { get; set; }
-        public int LevelName { get; set; }
+        public string LevelName { get; set; }
         public int LevelMaxScore { get; set; }  
         public User User { get; set; }
 

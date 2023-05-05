@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLyBoDeNgoaiNgu
 {
-    public partial class ThemDapAn : Form
+    public partial class QuanLyDapAn : Form
     {
-        public ThemDapAn()
+        public QuanLyDapAn()
         {
             InitializeComponent();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }
-
     }
 }
