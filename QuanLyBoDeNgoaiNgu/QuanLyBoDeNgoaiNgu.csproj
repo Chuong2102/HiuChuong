@@ -228,9 +228,6 @@
     <EmbeddedResource Include="QuanLySuatThi.resx">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemBoDapAn.resx">
-      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ThemCauHoi.resx">
       <DependentUpon>ThemCauHoi.cs</DependentUpon>
     </EmbeddedResource>
