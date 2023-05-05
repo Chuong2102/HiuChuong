@@ -160,17 +160,6 @@
     <Compile Include="BocDe.Designer.cs">
       <DependentUpon>BocDe.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemBoDapAn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThemBoDapAn.Designer.cs">
-      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThemBoDapAn1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThemBoDapAn.resx</DependentUpon>
-    </Compile>
     <Compile Include="ThemCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,12 +268,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySuatThi.resx">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThemBoDapAn.resx">
-      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ThemBoDapAn1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemCauHoi.resx">
       <DependentUpon>ThemCauHoi.cs</DependentUpon>
