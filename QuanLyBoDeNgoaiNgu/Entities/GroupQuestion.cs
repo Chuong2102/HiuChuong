@@ -12,7 +12,11 @@ namespace QuanLyBoDeNgoaiNgu.Entities
         [Key]
         public int GroupQuestionID { get; set; }
         public string GroupQuestionName { get; set; }
+
         public Question Question { get; set; }
+
+
+        
 
     }
 }

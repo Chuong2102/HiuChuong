@@ -220,9 +220,11 @@
     <Compile Include="trangTiengTrung.Designer.cs">
       <DependentUpon>trangTiengTrung.cs</DependentUpon>
     </Compile>
+
     <EmbeddedResource Include="BocDe.resx">
       <DependentUpon>BocDe.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.btnTiengHan = new System.Windows.Forms.Button();
             this.btnTiengTrung = new System.Windows.Forms.Button();
             this.btnTiengNhat = new System.Windows.Forms.Button();
@@ -59,15 +59,15 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ADMIN";
             // 
-            // label2
+            // lbName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1032, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Nguyễn Thị Hiếu";
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(1032, 126);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(154, 24);
+            this.lbName.TabIndex = 4;
+            this.lbName.Text = "Nguyễn Thị Hiếu";
             // 
             // btnTiengHan
             // 
@@ -122,7 +122,7 @@
             this.Controls.Add(this.btnTiengTrung);
             this.Controls.Add(this.btnTiengNhat);
             this.Controls.Add(this.btnTiengAnh);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmAdmin";
@@ -137,7 +137,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Button btnTiengHan;
         private System.Windows.Forms.Button btnTiengTrung;
         private System.Windows.Forms.Button btnTiengNhat;
