@@ -17,7 +17,7 @@ namespace QuanLyBoDeNgoaiNgu
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new ThemSuatThi());
+            Application.Run(new frmloginstudent());
 
             
 
