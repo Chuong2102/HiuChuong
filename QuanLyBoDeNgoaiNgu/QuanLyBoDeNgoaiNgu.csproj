@@ -62,6 +62,7 @@
     <Compile Include="Entities\Answer.cs" />
     <Compile Include="Entities\Composition.cs" />
     <Compile Include="Entities\Exam.cs" />
+    <Compile Include="Entities\GroupQuestion.cs" />
     <Compile Include="Entities\Level.cs" />
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\User.cs" />
@@ -127,6 +128,10 @@
     <Compile Include="Migrations\202305031412204_Q4.cs" />
     <Compile Include="Migrations\202305031412204_Q4.designer.cs">
       <DependentUpon>202305031412204_Q4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305050209177_Q5.cs" />
+    <Compile Include="Migrations\202305050209177_Q5.designer.cs">
+      <DependentUpon>202305050209177_Q5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -247,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305031412204_Q4.resx">
       <DependentUpon>202305031412204_Q4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305050209177_Q5.resx">
+      <DependentUpon>202305050209177_Q5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
