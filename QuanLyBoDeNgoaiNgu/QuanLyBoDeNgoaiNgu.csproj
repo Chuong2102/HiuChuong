@@ -134,9 +134,6 @@
     <Compile Include="QuanLySuatThi.Designer.cs">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemBo.Designer.cs">
-      <DependentUpon>ThemBo.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThemCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
