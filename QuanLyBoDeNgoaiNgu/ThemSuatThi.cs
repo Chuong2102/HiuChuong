@@ -43,6 +43,8 @@ namespace QuanLyBoDeNgoaiNgu
 
             var levelId = model.Levels.FirstOrDefault(
                 c => c.LevelName == cmbBacST.SelectedItem.ToString()).LevelID;
+           
+            model.Compositions.Add(composition);
 
             model.SaveChanges();
         }

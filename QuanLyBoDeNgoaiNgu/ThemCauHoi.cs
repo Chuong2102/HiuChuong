@@ -24,9 +24,12 @@ namespace QuanLyBoDeNgoaiNgu
             levels = model.Levels.ToList();
 
             // lay database
-            foreach(Level level in levels)
+            foreach (Level level in levels)
             {
-                cmbLevel.Items.Add(level.LevelName);
+                if (level.LevelName != null)
+                {
+                    cmbLevel.Items.Add(level.LevelName);
+                }
             }
         }
 
