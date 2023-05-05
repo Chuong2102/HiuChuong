@@ -26,8 +26,25 @@ namespace QuanLyBoDeNgoaiNgu
             // lay database
             foreach (Level level in levels)
             {
-                cmbBacST.Items.Add(level.LevelName);
+                if (level.LevelName != null)
+                {
+                    cmbBacST.Items.Add(level.LevelName);
+                }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           Composition composition = new Composition();
+
+            composition.CompositionDate = ddtNgayThi.Value;
+            composition.StartTime = ddtStartime.Value;
+            composition.EndTime = ddtEndtime.Value;
+
+            var levelId = model.Levels.FirstOrDefault(
+                c => c.LevelName == cmbBacST.SelectedItem.ToString()).LevelID;
+
+            model.SaveChanges();
         }
     }
 }

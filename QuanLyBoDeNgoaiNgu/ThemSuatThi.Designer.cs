@@ -34,9 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.ddtNgayThi = new System.Windows.Forms.DateTimePicker();
+            this.ddtStartime = new System.Windows.Forms.DateTimePicker();
+            this.ddtEndtime = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // button1
@@ -48,18 +48,12 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cmbBacST
             // 
             this.cmbBacST.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cmbBacST.FormattingEnabled = true;
-            this.cmbBacST.Items.AddRange(new object[] {
-            "A1",
-            "A2",
-            "B1",
-            "B2",
-            "C1",
-            "C2"});
             this.cmbBacST.Location = new System.Drawing.Point(565, 196);
             this.cmbBacST.Name = "cmbBacST";
             this.cmbBacST.Size = new System.Drawing.Size(107, 24);
@@ -105,33 +99,33 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Thời gian kết thúc";
             // 
-            // dateTimePicker1
+            // ddtNgayThi
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(201, 110);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(339, 30);
-            this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 5, 5, 9, 33, 59, 0);
+            this.ddtNgayThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddtNgayThi.Location = new System.Drawing.Point(201, 110);
+            this.ddtNgayThi.Name = "ddtNgayThi";
+            this.ddtNgayThi.Size = new System.Drawing.Size(339, 30);
+            this.ddtNgayThi.TabIndex = 11;
+            this.ddtNgayThi.Value = new System.DateTime(2023, 5, 5, 9, 33, 59, 0);
             // 
-            // dateTimePicker2
+            // ddtStartime
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(241, 196);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(252, 30);
-            this.dateTimePicker2.TabIndex = 12;
+            this.ddtStartime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddtStartime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.ddtStartime.Location = new System.Drawing.Point(241, 196);
+            this.ddtStartime.Name = "ddtStartime";
+            this.ddtStartime.Size = new System.Drawing.Size(252, 30);
+            this.ddtStartime.TabIndex = 12;
             // 
-            // dateTimePicker3
+            // ddtEndtime
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker3.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.dateTimePicker3.Location = new System.Drawing.Point(241, 286);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(252, 30);
-            this.dateTimePicker3.TabIndex = 20;
+            this.ddtEndtime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddtEndtime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.ddtEndtime.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.ddtEndtime.Location = new System.Drawing.Point(241, 286);
+            this.ddtEndtime.Name = "ddtEndtime";
+            this.ddtEndtime.Size = new System.Drawing.Size(252, 30);
+            this.ddtEndtime.TabIndex = 20;
             // 
             // ThemSuatThi
             // 
@@ -139,9 +133,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.ddtEndtime);
+            this.Controls.Add(this.ddtStartime);
+            this.Controls.Add(this.ddtNgayThi);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cmbBacST);
             this.Controls.Add(this.label3);
@@ -163,8 +157,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker ddtNgayThi;
+        private System.Windows.Forms.DateTimePicker ddtStartime;
+        private System.Windows.Forms.DateTimePicker ddtEndtime;
     }
 }
