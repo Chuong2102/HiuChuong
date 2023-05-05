@@ -134,9 +134,6 @@
     <Compile Include="QuanLySuatThi.Designer.cs">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemBoDapAn.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ThemBo.Designer.cs">
       <DependentUpon>ThemBo.cs</DependentUpon>
     </Compile>
@@ -227,9 +224,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySuatThi.resx">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThemBoDapAn.resx">
-      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemCauHoi.resx">
       <DependentUpon>ThemCauHoi.cs</DependentUpon>
