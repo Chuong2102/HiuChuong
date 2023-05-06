@@ -109,6 +109,12 @@
       <DependentUpon>frmThiSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\QuanLyBoDeNgoaiNguModel1.cs" />
+    <Compile Include="KetQuaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KetQuaThi.Designer.cs">
+      <DependentUpon>KetQuaThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202304241443477_Q0.cs" />
     <Compile Include="Migrations\202304241443477_Q0.designer.cs">
       <DependentUpon>202304241443477_Q0.cs</DependentUpon>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThiSinhVien.resx">
       <DependentUpon>frmThiSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KetQuaThi.resx">
+      <DependentUpon>KetQuaThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304241443477_Q0.resx">
       <DependentUpon>202304241443477_Q0.cs</DependentUpon>
