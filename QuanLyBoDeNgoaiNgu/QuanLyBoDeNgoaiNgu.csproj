@@ -142,6 +142,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyBoDeNgoaiNguDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBoDeNgoaiNguDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +340,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuanLyBoDeNgoaiNguDataSet.xsc">
+      <DependentUpon>QuanLyBoDeNgoaiNguDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoDeNgoaiNguDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBoDeNgoaiNguDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBoDeNgoaiNguDataSet.xss">
+      <DependentUpon>QuanLyBoDeNgoaiNguDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\ngoai-ngu.jpg" />
   </ItemGroup>
   <ItemGroup>

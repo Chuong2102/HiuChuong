@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyCauHoi));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,9 +41,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.MaCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DapAnDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quanLyBoDeNgoaiNguDataSet = new QuanLyBoDeNgoaiNgu.QuanLyBoDeNgoaiNguDataSet();
+            this.quanLyBoDeNgoaiNguDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.questionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.questionsTableAdapter = new QuanLyBoDeNgoaiNgu.QuanLyBoDeNgoaiNguDataSetTableAdapters.QuestionsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyBoDeNgoaiNguDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyBoDeNgoaiNguDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -97,6 +109,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaCauHoi,
+            this.CauHoi,
+            this.DapAnDung,
+            this.Bac});
             this.dataGridView1.Location = new System.Drawing.Point(2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -160,6 +177,53 @@
             this.button4.Text = "DELETE";
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // MaCauHoi
+            // 
+            this.MaCauHoi.HeaderText = "Mã Câu Hỏi";
+            this.MaCauHoi.MinimumWidth = 6;
+            this.MaCauHoi.Name = "MaCauHoi";
+            this.MaCauHoi.Width = 125;
+            // 
+            // CauHoi
+            // 
+            this.CauHoi.HeaderText = "Câu Hỏi";
+            this.CauHoi.MinimumWidth = 6;
+            this.CauHoi.Name = "CauHoi";
+            this.CauHoi.Width = 125;
+            // 
+            // DapAnDung
+            // 
+            this.DapAnDung.HeaderText = "Đáp Án Đúng";
+            this.DapAnDung.MinimumWidth = 6;
+            this.DapAnDung.Name = "DapAnDung";
+            this.DapAnDung.Width = 125;
+            // 
+            // Bac
+            // 
+            this.Bac.HeaderText = "Bậc";
+            this.Bac.MinimumWidth = 6;
+            this.Bac.Name = "Bac";
+            this.Bac.Width = 125;
+            // 
+            // quanLyBoDeNgoaiNguDataSet
+            // 
+            this.quanLyBoDeNgoaiNguDataSet.DataSetName = "QuanLyBoDeNgoaiNguDataSet";
+            this.quanLyBoDeNgoaiNguDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // quanLyBoDeNgoaiNguDataSetBindingSource
+            // 
+            this.quanLyBoDeNgoaiNguDataSetBindingSource.DataSource = this.quanLyBoDeNgoaiNguDataSet;
+            this.quanLyBoDeNgoaiNguDataSetBindingSource.Position = 0;
+            // 
+            // questionsBindingSource
+            // 
+            this.questionsBindingSource.DataMember = "Questions";
+            this.questionsBindingSource.DataSource = this.quanLyBoDeNgoaiNguDataSetBindingSource;
+            // 
+            // questionsTableAdapter
+            // 
+            this.questionsTableAdapter.ClearBeforeFill = true;
+            // 
             // QuanLyCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -179,9 +243,13 @@
             this.Controls.Add(this.button1);
             this.Name = "QuanLyCauHoi";
             this.Text = "QuanLyCauHoi";
+            this.Load += new System.EventHandler(this.QuanLyCauHoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyBoDeNgoaiNguDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyBoDeNgoaiNguDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +267,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CauHoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DapAnDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bac;
+        private System.Windows.Forms.BindingSource quanLyBoDeNgoaiNguDataSetBindingSource;
+        private QuanLyBoDeNgoaiNguDataSet quanLyBoDeNgoaiNguDataSet;
+        private System.Windows.Forms.BindingSource questionsBindingSource;
+        private QuanLyBoDeNgoaiNguDataSetTableAdapters.QuestionsTableAdapter questionsTableAdapter;
     }
 }
