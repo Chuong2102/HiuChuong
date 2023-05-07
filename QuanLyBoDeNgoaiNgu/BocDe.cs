@@ -26,5 +26,11 @@ namespace QuanLyBoDeNgoaiNgu
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmThiSinhVien formThi = new frmThiSinhVien();
+            formThi.Show();
+        }
     }
 }

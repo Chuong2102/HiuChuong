@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace QuanLyBoDeNgoaiNgu.Entities
 {
-    public class GroupQuestion
+    public class Subject
     {
         [Key]
-        public int GroupQuestionID { get; set; }
-        public string GroupQuestionName { get; set; }
+        public int SubjectID { get; set; }
+        public string Name { get; set; }
 
-        public Question Question { get; set; }
-
-
-        
 
     }
 }

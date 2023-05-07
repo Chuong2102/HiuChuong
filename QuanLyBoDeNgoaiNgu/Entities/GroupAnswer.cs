@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace QuanLyBoDeNgoaiNgu.Entities
 {
-    public class Level
+    public class GroupAnswer
     {
         [Key]
-        public int LevelID { get; set; }
-        public string LevelName { get; set; }
-        public int LevelMaxScore { get; set; }
-        public Subject Subject { get; set; }
+        public int GroupAnswerID { get; set; }
+        public string GroupAnswerName { get; set; }
+        public ICollection<Answer> Answers { get; set; }
 
     }
 }

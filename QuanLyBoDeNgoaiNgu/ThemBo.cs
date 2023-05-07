@@ -23,6 +23,5 @@ namespace QuanLyBoDeNgoaiNgu
             ThemBo themBo = new ThemBo();
             themBo.Show();
         }
-
     }
 }
