@@ -16,7 +16,7 @@ namespace QuanLyBoDeNgoaiNgu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyCauHoi());
+            Application.Run(new SendEmail());
         }
     }
 }

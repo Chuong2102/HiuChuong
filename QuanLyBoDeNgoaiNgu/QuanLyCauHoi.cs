@@ -6,14 +6,28 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyBoDeNgoaiNgu
 {
+    
     public partial class QuanLyCauHoi : Form
     {
+        public class Questionsinformation
+        {
+            int QuestionID;
+            string Text;
+            int CorrectAnswerID;
+            string AnswersText;
+            int LevelID;
+            string LevelName;
+
+
+        }
+
         QuanLyBoDeNgoaiNguModel1 model = new QuanLyBoDeNgoaiNguModel1();
         public QuanLyCauHoi()
         {
@@ -31,7 +45,18 @@ namespace QuanLyBoDeNgoaiNgu
         {
             // TODO: This line of code loads data into the 'quanLyBoDeNgoaiNguDataSet.Questions' table. You can move, or remove it, as needed.
             this.questionsTableAdapter.Fill(this.quanLyBoDeNgoaiNguDataSet.Questions);
-            dataGridView1.DataSource = model.Questions.ToString();
+            LoadData(model.Questions.ToList());
+        }
+        void LoadData(List<Question> questions)
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = questions;
+
+            dataGridView1.DataSource = 
+                model.Database.SqlQuery<Questionsinformation>("EXEC dbo.proc_Questions").ToList();
+
+
+
 
         }
     }

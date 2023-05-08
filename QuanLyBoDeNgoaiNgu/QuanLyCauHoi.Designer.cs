@@ -41,10 +41,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.MaCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DapAnDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quanLyBoDeNgoaiNguDataSet = new QuanLyBoDeNgoaiNgu.QuanLyBoDeNgoaiNguDataSet();
             this.quanLyBoDeNgoaiNguDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.questionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -109,11 +105,6 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaCauHoi,
-            this.CauHoi,
-            this.DapAnDung,
-            this.Bac});
             this.dataGridView1.Location = new System.Drawing.Point(2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -177,34 +168,6 @@
             this.button4.Text = "DELETE";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // MaCauHoi
-            // 
-            this.MaCauHoi.HeaderText = "Mã Câu Hỏi";
-            this.MaCauHoi.MinimumWidth = 6;
-            this.MaCauHoi.Name = "MaCauHoi";
-            this.MaCauHoi.Width = 125;
-            // 
-            // CauHoi
-            // 
-            this.CauHoi.HeaderText = "Câu Hỏi";
-            this.CauHoi.MinimumWidth = 6;
-            this.CauHoi.Name = "CauHoi";
-            this.CauHoi.Width = 125;
-            // 
-            // DapAnDung
-            // 
-            this.DapAnDung.HeaderText = "Đáp Án Đúng";
-            this.DapAnDung.MinimumWidth = 6;
-            this.DapAnDung.Name = "DapAnDung";
-            this.DapAnDung.Width = 125;
-            // 
-            // Bac
-            // 
-            this.Bac.HeaderText = "Bậc";
-            this.Bac.MinimumWidth = 6;
-            this.Bac.Name = "Bac";
-            this.Bac.Width = 125;
-            // 
             // quanLyBoDeNgoaiNguDataSet
             // 
             this.quanLyBoDeNgoaiNguDataSet.DataSetName = "QuanLyBoDeNgoaiNguDataSet";
@@ -267,10 +230,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaCauHoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CauHoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DapAnDung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bac;
         private System.Windows.Forms.BindingSource quanLyBoDeNgoaiNguDataSetBindingSource;
         private QuanLyBoDeNgoaiNguDataSet quanLyBoDeNgoaiNguDataSet;
         private System.Windows.Forms.BindingSource questionsBindingSource;
