@@ -35,6 +35,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -61,11 +70,14 @@
   <ItemGroup>
     <Compile Include="Entities\Account.cs" />
     <Compile Include="Entities\Answer.cs" />
+    <Compile Include="Entities\Certificate.cs" />
     <Compile Include="Entities\Composition.cs" />
     <Compile Include="Entities\Exam.cs" />
-    <Compile Include="Entities\GroupQuestion.cs" />
+    <Compile Include="Entities\GroupAnswer.cs" />
     <Compile Include="Entities\Level.cs" />
     <Compile Include="Entities\Question.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\Subject.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -139,6 +151,14 @@
     <Compile Include="Migrations\202305050209177_Q5.cs" />
     <Compile Include="Migrations\202305050209177_Q5.designer.cs">
       <DependentUpon>202305050209177_Q5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305060257518_Q6.cs" />
+    <Compile Include="Migrations\202305060257518_Q6.designer.cs">
+      <DependentUpon>202305060257518_Q6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305060319429_Q7.cs" />
+    <Compile Include="Migrations\202305060319429_Q7.designer.cs">
+      <DependentUpon>202305060319429_Q7.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -283,6 +303,12 @@
     <EmbeddedResource Include="Migrations\202305050209177_Q5.resx">
       <DependentUpon>202305050209177_Q5.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305060257518_Q6.resx">
+      <DependentUpon>202305060257518_Q6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305060319429_Q7.resx">
+      <DependentUpon>202305060319429_Q7.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -336,6 +362,7 @@
       <DependentUpon>trangTiengTrung.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

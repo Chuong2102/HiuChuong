@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace QuanLyBoDeNgoaiNgu.Entities
 {
-    public class Exam
+    public class Certificate
     {
         [Key]
-        public int EntityID { get; set; }
-        TimeSpan Time { get; set; }
-        public int Score { get; set; }
+        public int CertificateID { get; set; }
         public Level Level { get; set; }
-        public Composition Composition { get; set; }
         public Subject Subject { get; set; }
+        public User User { get; set; }
 
     }
 }

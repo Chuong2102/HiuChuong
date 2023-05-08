@@ -31,8 +31,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbDapAn = new System.Windows.Forms.TextBox();
+            this.tbTenbo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -66,21 +67,21 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Đáp án :";
             // 
-            // textBox1
+            // tbDapAn
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 190);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 42);
-            this.textBox1.TabIndex = 4;
+            this.tbDapAn.Location = new System.Drawing.Point(104, 190);
+            this.tbDapAn.Multiline = true;
+            this.tbDapAn.Name = "tbDapAn";
+            this.tbDapAn.Size = new System.Drawing.Size(268, 42);
+            this.tbDapAn.TabIndex = 4;
             // 
-            // textBox2
+            // tbTenbo
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 106);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 42);
-            this.textBox2.TabIndex = 4;
+            this.tbTenbo.Location = new System.Drawing.Point(105, 106);
+            this.tbTenbo.Multiline = true;
+            this.tbTenbo.Name = "tbTenbo";
+            this.tbTenbo.Size = new System.Drawing.Size(268, 42);
+            this.tbTenbo.TabIndex = 4;
             // 
             // label2
             // 
@@ -101,9 +102,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbTenbo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbDapAn);
             this.Name = "ThemBo";
             this.Text = "ThemBo";
             this.ResumeLayout(false);
@@ -116,8 +117,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbDapAn;
+        private System.Windows.Forms.TextBox tbTenbo;
         private System.Windows.Forms.Label label2;
     }
 }

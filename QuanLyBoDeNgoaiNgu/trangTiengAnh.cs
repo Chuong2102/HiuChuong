@@ -19,6 +19,7 @@ namespace QuanLyBoDeNgoaiNgu
         {
             InitializeComponent();
 
+
             var comp = model.Compositions.FirstOrDefault(
                 c => c.CompositionDate == DateTime.Now);
             if (comp != null)
@@ -26,11 +27,25 @@ namespace QuanLyBoDeNgoaiNgu
                 button5.Enabled = true;
             }
             else { button5.Enabled = false; }
+
+            btnA1.Click += (sender, e) => ShowBocDeForm();
+            btnA2.Click += (sender, e) => ShowBocDeForm();
+            btnB1.Click += (sender, e) => ShowBocDeForm();
+            btnB2.Click += (sender, e) => ShowBocDeForm();
+            btnC1.Click += (sender, e) => ShowBocDeForm();
+            btnC2.Click += (sender, e) => ShowBocDeForm();
+
         }
 
         private void trangTiengAnh_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void ShowBocDeForm()
+        {
+            BocDe de = new BocDe();
+            de.Show();
         }
     }
 }

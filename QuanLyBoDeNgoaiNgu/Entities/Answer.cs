@@ -13,6 +13,7 @@ namespace QuanLyBoDeNgoaiNgu.Entities
         public int AnswerID { get; set; }
         public string Text { get; set; }
         public ICollection<Question> Questions { get; set; }
+        public ICollection<GroupAnswer> GroupAnswers { get; set; }
 
     }
 }
