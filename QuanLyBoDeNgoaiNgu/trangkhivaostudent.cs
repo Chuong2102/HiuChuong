@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBoDeNgoaiNgu.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace QuanLyBoDeNgoaiNgu
 {
     public partial class trangkhivaostudent : Form
     {
+        QuanLyBoDeNgoaiNguModel1 model = new QuanLyBoDeNgoaiNguModel1 ();
         public trangkhivaostudent()
         {
             InitializeComponent();
