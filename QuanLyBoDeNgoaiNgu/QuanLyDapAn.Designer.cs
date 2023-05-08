@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyDapAn));
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDapAn = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,7 +39,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cmbBo = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDapAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -55,15 +55,15 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "ADMIN";
             // 
-            // dataGridView1
+            // dgvDapAn
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 408);
-            this.dataGridView1.TabIndex = 45;
+            this.dgvDapAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDapAn.Location = new System.Drawing.Point(3, 1);
+            this.dgvDapAn.Name = "dgvDapAn";
+            this.dgvDapAn.RowHeadersWidth = 51;
+            this.dgvDapAn.RowTemplate.Height = 24;
+            this.dgvDapAn.Size = new System.Drawing.Size(661, 408);
+            this.dgvDapAn.TabIndex = 45;
             // 
             // label3
             // 
@@ -74,22 +74,6 @@
             this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 44;
             this.label3.Text = "Cài đặt";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "A1",
-            "A2",
-            "B1",
-            "B2",
-            "C1",
-            "C2"});
-            this.comboBox1.Location = new System.Drawing.Point(666, 174);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 24);
-            this.comboBox1.TabIndex = 42;
-            this.comboBox1.Text = "Bậc";
             // 
             // textBox1
             // 
@@ -161,6 +145,15 @@
             this.button4.Text = "Bộ Đáp Án";
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // cmbBo
+            // 
+            this.cmbBo.FormattingEnabled = true;
+            this.cmbBo.Location = new System.Drawing.Point(666, 174);
+            this.cmbBo.Name = "cmbBo";
+            this.cmbBo.Size = new System.Drawing.Size(132, 24);
+            this.cmbBo.TabIndex = 42;
+            this.cmbBo.Text = "Bộ";
+            // 
             // QuanLyDapAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -170,17 +163,17 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDapAn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbBo);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Name = "QuanLyDapAn";
             this.Text = "QuanLyDapAn";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDapAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -192,14 +185,14 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDapAn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox cmbBo;
     }
 }

@@ -22,5 +22,7 @@ namespace QuanLyBoDeNgoaiNgu
             ThemCauHoi themCauHoi = new ThemCauHoi();
             themCauHoi.Show();
         }
+
+
     }
 }
