@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -121,6 +122,12 @@
       <DependentUpon>frmThiSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\QuanLyBoDeNgoaiNguModel1.cs" />
+    <Compile Include="KetQuaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KetQuaThi.Designer.cs">
+      <DependentUpon>KetQuaThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202304241443477_Q0.cs" />
     <Compile Include="Migrations\202304241443477_Q0.designer.cs">
       <DependentUpon>202304241443477_Q0.cs</DependentUpon>
@@ -156,6 +163,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyBoDeNgoaiNguDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBoDeNgoaiNguDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,12 @@
     </Compile>
     <Compile Include="BocDe.Designer.cs">
       <DependentUpon>BocDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendEmail.Designer.cs">
+      <DependentUpon>SendEmail.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemBo.cs">
       <SubType>Form</SubType>
@@ -264,6 +282,9 @@
     <EmbeddedResource Include="frmThiSinhVien.resx">
       <DependentUpon>frmThiSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KetQuaThi.resx">
+      <DependentUpon>KetQuaThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304241443477_Q0.resx">
       <DependentUpon>202304241443477_Q0.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySuatThi.resx">
       <DependentUpon>QuanLySuatThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendEmail.resx">
+      <DependentUpon>SendEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemBo.resx">
       <DependentUpon>ThemBo.cs</DependentUpon>
@@ -353,6 +377,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuanLyBoDeNgoaiNguDataSet.xsc">
+      <DependentUpon>QuanLyBoDeNgoaiNguDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyBoDeNgoaiNguDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyBoDeNgoaiNguDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyBoDeNgoaiNguDataSet.xss">
+      <DependentUpon>QuanLyBoDeNgoaiNguDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\ngoai-ngu.jpg" />
   </ItemGroup>
   <ItemGroup>

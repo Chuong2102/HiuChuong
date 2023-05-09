@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
+
 
 namespace QuanLyBoDeNgoaiNgu
 {
@@ -47,6 +50,9 @@ namespace QuanLyBoDeNgoaiNgu
             model.Compositions.Add(composition);
 
             model.SaveChanges();
+
+           
+           
         }
     }
 }
