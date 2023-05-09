@@ -40,7 +40,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMSV = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -167,15 +167,15 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Đoàn Thị Chương";
             // 
-            // label1
+            // lblMSV
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(664, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "20T1080063";
+            this.lblMSV.AutoSize = true;
+            this.lblMSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMSV.Location = new System.Drawing.Point(664, 91);
+            this.lblMSV.Name = "lblMSV";
+            this.lblMSV.Size = new System.Drawing.Size(100, 20);
+            this.lblMSV.TabIndex = 9;
+            this.lblMSV.Text = "20T1080007";
             // 
             // pictureBox1
             // 
@@ -198,7 +198,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMSV);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnB1);
             this.Controls.Add(this.btnC2);
@@ -229,7 +229,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMSV;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
