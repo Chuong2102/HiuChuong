@@ -51,10 +51,10 @@ namespace QuanLyBoDeNgoaiNgu
         }
         void LoadData(List<Question> questions)
         {
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.DataSource = questions;
+            dgvCauHoi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCauHoi.DataSource = questions;
 
-            dataGridView1.DataSource = 
+            dgvCauHoi.DataSource = 
                 model.Database.SqlQuery<Questionsinformation>("EXEC dbo.proc_Questions").ToList();
 
 

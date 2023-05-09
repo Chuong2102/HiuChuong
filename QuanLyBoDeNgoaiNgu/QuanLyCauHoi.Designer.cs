@@ -41,16 +41,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.quanLyBoDeNgoaiNguDataSet = new QuanLyBoDeNgoaiNgu.QuanLyBoDeNgoaiNguDataSet();
-            this.quanLyBoDeNgoaiNguDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.questionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.questionsTableAdapter = new QuanLyBoDeNgoaiNgu.QuanLyBoDeNgoaiNguDataSetTableAdapters.QuestionsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCauHoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyBoDeNgoaiNguDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyBoDeNgoaiNguDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -167,26 +161,7 @@
             this.button4.TabIndex = 1;
             this.button4.Text = "DELETE";
             this.button4.UseVisualStyleBackColor = false;
-            // 
-            // quanLyBoDeNgoaiNguDataSet
-            // 
-            this.quanLyBoDeNgoaiNguDataSet.DataSetName = "QuanLyBoDeNgoaiNguDataSet";
-            this.quanLyBoDeNgoaiNguDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // quanLyBoDeNgoaiNguDataSetBindingSource
-            // 
-            this.quanLyBoDeNgoaiNguDataSetBindingSource.DataSource = this.quanLyBoDeNgoaiNguDataSet;
-            this.quanLyBoDeNgoaiNguDataSetBindingSource.Position = 0;
-            // 
-            // questionsBindingSource
-            // 
-            this.questionsBindingSource.DataMember = "Questions";
-            this.questionsBindingSource.DataSource = this.quanLyBoDeNgoaiNguDataSetBindingSource;
-            // 
-            // questionsTableAdapter
-            // 
-            this.questionsTableAdapter.ClearBeforeFill = true;
-            // 
+            //
             // QuanLyCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,12 +182,9 @@
             this.Name = "QuanLyCauHoi";
             this.Text = "QuanLyCauHoi";
             this.Load += new System.EventHandler(this.QuanLyCauHoi_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCauHoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyBoDeNgoaiNguDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyBoDeNgoaiNguDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,9 +202,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.BindingSource quanLyBoDeNgoaiNguDataSetBindingSource;
-        private QuanLyBoDeNgoaiNguDataSet quanLyBoDeNgoaiNguDataSet;
-        private System.Windows.Forms.BindingSource questionsBindingSource;
-        private QuanLyBoDeNgoaiNguDataSetTableAdapters.QuestionsTableAdapter questionsTableAdapter;
     }
 }

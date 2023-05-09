@@ -24,9 +24,9 @@ namespace QuanLyBoDeNgoaiNgu
                 c => c.CompositionDate == DateTime.Now);
             if (comp != null)
             {
-                button5.Enabled = true;
+                btnA1.Enabled = true;
             }
-            else { button5.Enabled = false; }
+            else { btnA1.Enabled = false; }
 
             btnA1.Click += (sender, e) => ShowBocDeForm();
             btnA2.Click += (sender, e) => ShowBocDeForm();
