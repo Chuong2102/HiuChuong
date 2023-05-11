@@ -16,6 +16,7 @@ namespace QuanLyBoDeNgoaiNgu.Entities
         public Level Level { get; set; }
         public Composition Composition { get; set; }
         public Subject Subject { get; set; }
+        public ICollection<Question> Questions { get; set; }
 
     }
 }

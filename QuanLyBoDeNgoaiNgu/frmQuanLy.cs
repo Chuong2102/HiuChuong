@@ -15,7 +15,10 @@ namespace QuanLyBoDeNgoaiNgu
     public partial class frmQuanLy : Form
     {
         QuanLyBoDeNgoaiNguModel1 model;
+
         User userModel;
+        Subject subjectModel;
+
         public frmQuanLy()
         {
             InitializeComponent();
@@ -24,15 +27,26 @@ namespace QuanLyBoDeNgoaiNgu
         public frmQuanLy(User user)
         {
             InitializeComponent();
+
             userModel = user;
+        }
+        public frmQuanLy(User user, Subject subject)
+        {
+            InitializeComponent();
 
-
+            userModel = user;
+            subjectModel = subject;
         }
 
         private void mnsQlCauHoi_Click(object sender, EventArgs e)
         {
-            QuanLyCauHoi frmQlCauHoi = new QuanLyCauHoi();
+            QuanLyCauHoi frmQlCauHoi = new QuanLyCauHoi(userModel, subjectModel);
             frmQlCauHoi.Show();
+        }
+
+        private void tsmQuanLySuatThi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

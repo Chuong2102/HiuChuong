@@ -1,4 +1,5 @@
-﻿using QuanLyBoDeNgoaiNgu.Infrastructure;
+﻿using QuanLyBoDeNgoaiNgu.Entities;
+using QuanLyBoDeNgoaiNgu.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,10 @@ namespace QuanLyBoDeNgoaiNgu
     public partial class trangTiengAnh : Form
     {
         QuanLyBoDeNgoaiNguModel1 model;
+
+        User userModel;
+        Subject subject;
+
         public trangTiengAnh()
         {
             // Tạo model
@@ -24,6 +29,7 @@ namespace QuanLyBoDeNgoaiNgu
 
             // Lấy user có mã sv = labelMSV.Text
             var user = model.Users.FirstOrDefault(u => u.StudentID == lblMSV.Text);
+            userModel = user;
             // Lấy suất thi có ngày thi là hom ni
             var comp = model.Compositions.FirstOrDefault(
                 c => c.CompositionDate == DateTime.Today);

@@ -17,18 +17,21 @@ namespace QuanLyBoDeNgoaiNgu
     public partial class QuanLyCauHoi : Form
     {
         QuanLyBoDeNgoaiNguModel1 model = new QuanLyBoDeNgoaiNguModel1();
+        
         User userModel;
+        Subject subjectModel;
 
         public QuanLyCauHoi()
         {
             InitializeComponent();
         }
 
-        public QuanLyCauHoi(User user)
+        public QuanLyCauHoi(User user, Subject sub)
         {
             InitializeComponent();
 
             userModel = user;
+            subjectModel = sub;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,7 +45,7 @@ namespace QuanLyBoDeNgoaiNgu
         private void QuanLyCauHoi_Load(object sender, EventArgs e)
         {
             // Load DatagridView
-            LoadData(model.Questions.ToList());
+            LoadData(model.Questions.Where(q => q.Subject.SubjectID == subjectModel.SubjectID).ToList());
 
             // Load combobox Bậc
             var listLevel = model.Levels.ToList();
@@ -65,6 +68,11 @@ namespace QuanLyBoDeNgoaiNgu
 
             dgvCauHoi.DataSource = questions;
 
+        }
+
+        public void LoadDataGridView()
+        {
+            Data.LoadData(dgvCauHoi, model.Questions.Where(q => q.Subject.SubjectID == subjectModel.SubjectID).ToList());
         }
 
         private void dgvCauHoi_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -108,6 +116,13 @@ namespace QuanLyBoDeNgoaiNgu
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnChuDe_Click(object sender, EventArgs e)
+        {
+            QuanLyBoCauHoi frmQlBoChuDeCauHoi = new QuanLyBoCauHoi(subjectModel, this);
+
+            frmQlBoChuDeCauHoi.Show();
         }
     }
 }

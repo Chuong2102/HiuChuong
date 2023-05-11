@@ -16,16 +16,28 @@ namespace QuanLyBoDeNgoaiNgu
     {
         QuanLyBoDeNgoaiNguModel1 model;
         User userModel;
-        Level levelModel;
+        Subject subjectModel;
 
         public frmAdmin()
         {
             InitializeComponent();
         }
 
-        private void Btn_Click(object sender, EventArgs e)
+        private void Btn_ClickAnh(object sender, EventArgs e)
         {
-            frmQuanLy frmQuanLy = new frmQuanLy(userModel);
+            // Lấy level tiếng anh
+            subjectModel = model.Subjects.FirstOrDefault(l => l.Name == "English");
+            //
+            frmQuanLy frmQuanLy = new frmQuanLy(userModel, subjectModel);
+            frmQuanLy.Show();
+        }
+
+        private void Btn_ClickNhat(object sender, EventArgs e)
+        {
+            // Lấy level Tiếng Nhật
+            subjectModel = model.Subjects.FirstOrDefault(l => l.Name == "Japanese");
+
+            frmQuanLy frmQuanLy = new frmQuanLy(userModel, subjectModel);
             frmQuanLy.Show();
         }
 
@@ -34,9 +46,9 @@ namespace QuanLyBoDeNgoaiNgu
             model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
 
-            btnTiengAnh.Click += Btn_Click;
+            btnTiengAnh.Click += Btn_ClickAnh;
             //btnTiengHan.Click += Btn_Click;
-            btnTiengNhat.Click += Btn_Click;
+            btnTiengNhat.Click += Btn_ClickNhat;
 
             // Lấy user dựa trên account 
             var userModel = model.Users.FirstOrDefault(u => u.UserID == account.AccountID);

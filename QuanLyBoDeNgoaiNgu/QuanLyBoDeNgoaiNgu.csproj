@@ -180,6 +180,22 @@
     <Compile Include="Migrations\202305101537133_Q10.designer.cs">
       <DependentUpon>202305101537133_Q10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305110335046_Q11.cs" />
+    <Compile Include="Migrations\202305110335046_Q11.designer.cs">
+      <DependentUpon>202305110335046_Q11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305110814215_Q12.cs" />
+    <Compile Include="Migrations\202305110814215_Q12.designer.cs">
+      <DependentUpon>202305110814215_Q12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305110824023_Q121.cs" />
+    <Compile Include="Migrations\202305110824023_Q121.designer.cs">
+      <DependentUpon>202305110824023_Q121.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305111500356_Q122.cs" />
+    <Compile Include="Migrations\202305111500356_Q122.designer.cs">
+      <DependentUpon>202305111500356_Q122.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -341,6 +357,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305101537133_Q10.resx">
       <DependentUpon>202305101537133_Q10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305110335046_Q11.resx">
+      <DependentUpon>202305110335046_Q11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305110814215_Q12.resx">
+      <DependentUpon>202305110814215_Q12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305110824023_Q121.resx">
+      <DependentUpon>202305110824023_Q121.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305111500356_Q122.resx">
+      <DependentUpon>202305111500356_Q122.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

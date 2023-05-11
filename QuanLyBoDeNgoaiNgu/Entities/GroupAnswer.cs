@@ -12,6 +12,7 @@ namespace QuanLyBoDeNgoaiNgu.Entities
         [Key]
         public int GroupAnswerID { get; set; }
         public string GroupAnswerName { get; set; }
+        public Subject Subject { get; set; }
         public ICollection<Answer> Answers { get; set; }
 
     }

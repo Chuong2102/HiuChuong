@@ -15,6 +15,9 @@ namespace QuanLyBoDeNgoaiNgu
     public partial class QuanLyBoCauHoi : Form
     {
         QuanLyBoDeNgoaiNguModel1 model;
+        Subject subjectModel;
+
+        QuanLyCauHoi frmQlch;
 
         public QuanLyBoCauHoi()
         {
@@ -22,9 +25,26 @@ namespace QuanLyBoDeNgoaiNgu
             InitializeComponent();
         }
 
+        public QuanLyBoCauHoi(Subject subject, QuanLyCauHoi frmQlch)
+        {
+            model = new QuanLyBoDeNgoaiNguModel1();
+            subjectModel = subject;
+
+            InitializeComponent();
+            this.frmQlch = frmQlch;
+
+            this.FormClosed += QuanLyBoCauHoi_FormClosed;
+        }
+
+        private void QuanLyBoCauHoi_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmQlch.LoadDataGridView();
+        }
+
         void LoadDataGridView()
         {
-            Data.LoadData(dgvBoDapAn, model.GroupQuestions.ToList());
+            var list = model.GroupQuestions.Where(q => q.Subject.SubjectID == subjectModel.SubjectID).ToList();
+            Data.LoadData(dgvBoDapAn, list);
         }
 
         private void btnTiengAnh_Click(object sender, EventArgs e)
@@ -49,7 +69,7 @@ namespace QuanLyBoDeNgoaiNgu
         private void ThemBoDapAn_Load(object sender, EventArgs e)
         {
             // Load data
-            Data.LoadData(dgvBoDapAn, model.GroupQuestions.ToList());
+            LoadDataGridView();
         }
 
         private void btnCauHoi_Click(object sender, EventArgs e)
