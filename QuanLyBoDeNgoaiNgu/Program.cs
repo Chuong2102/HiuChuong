@@ -19,8 +19,6 @@ namespace QuanLyBoDeNgoaiNgu
 
 
             Application.Run(new trangTiengAnh());
-
-
         }
     }
 }

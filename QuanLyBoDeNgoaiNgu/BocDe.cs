@@ -7,13 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyBoDeNgoaiNgu.Infrastructure;
+using QuanLyBoDeNgoaiNgu.Entities;
 
 namespace QuanLyBoDeNgoaiNgu
 {
     public partial class BocDe : Form
     {
+        QuanLyBoDeNgoaiNguModel1 model;
+
+        User userModel;
+        Subject subject;
+
         public BocDe()
         {
+            model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
         }
 
@@ -30,6 +38,13 @@ namespace QuanLyBoDeNgoaiNgu
         private void button1_Click(object sender, EventArgs e)
         {
             frmThiSinhVien formThi = new frmThiSinhVien();
+
+            // Bốc đề
+            Exam baiThi = new Exam();
+            // 
+
+
+
             formThi.Show();
         }
     }

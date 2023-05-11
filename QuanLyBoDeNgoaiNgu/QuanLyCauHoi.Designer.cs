@@ -33,13 +33,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.dgvCauHoi = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbBac = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.tbCauHoi = new System.Windows.Forms.TextBox();
             this.rdbA = new System.Windows.Forms.RadioButton();
             this.rdbB = new System.Windows.Forms.RadioButton();
@@ -96,15 +96,15 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "Cài đặt";
             // 
-            // button3
+            // btnCapNhat
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button3.Location = new System.Drawing.Point(293, 407);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(275, 40);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "UPDATE";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCapNhat.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnCapNhat.Location = new System.Drawing.Point(293, 407);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(275, 40);
+            this.btnCapNhat.TabIndex = 1;
+            this.btnCapNhat.Text = "UPDATE";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
             // 
             // dgvCauHoi
             // 
@@ -156,15 +156,15 @@
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
             // 
-            // button4
+            // btnXoa
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button4.Location = new System.Drawing.Point(621, 407);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(263, 40);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "DELETE";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnXoa.Location = new System.Drawing.Point(621, 407);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(263, 40);
+            this.btnXoa.TabIndex = 1;
+            this.btnXoa.Text = "DELETE";
+            this.btnXoa.UseVisualStyleBackColor = false;
             // 
             // tbCauHoi
             // 
@@ -265,6 +265,7 @@
             this.btnChuDe.TabIndex = 48;
             this.btnChuDe.Text = "Quản lý chủ đề";
             this.btnChuDe.UseVisualStyleBackColor = false;
+            this.btnChuDe.Click += new System.EventHandler(this.btnChuDe_Click);
             // 
             // QuanLyCauHoi
             // 
@@ -290,8 +291,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.cmbBac);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnCapNhat);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "QuanLyCauHoi";
@@ -311,12 +312,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.DataGridView dgvCauHoi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cmbBac;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.TextBox tbCauHoi;
         private System.Windows.Forms.RadioButton rdbA;
         private System.Windows.Forms.RadioButton rdbB;

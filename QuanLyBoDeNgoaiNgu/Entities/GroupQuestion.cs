@@ -12,6 +12,7 @@ namespace QuanLyBoDeNgoaiNgu.Entities
         [Key]
         public int GroupQuestionID { get; set; }
         public string Name { get; set; }
+        public Subject Subject { get; set; }
         public ICollection<Question> Questions { get; set;}
     }
 }

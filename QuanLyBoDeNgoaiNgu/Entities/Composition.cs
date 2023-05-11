@@ -14,5 +14,7 @@ namespace QuanLyBoDeNgoaiNgu.Entities
         public DateTime StartTime { get ; set; }
         public DateTime EndTime { get; set; }
         public DateTime CompositionDate { get; set; }
+        Subject Subject { get; set; }
+        Level Level { get; set; }
     }
 }
