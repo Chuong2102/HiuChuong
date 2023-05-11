@@ -17,14 +17,33 @@ namespace QuanLyBoDeNgoaiNgu
         QuanLyBoDeNgoaiNguModel1 model;
         public trangTiengAnh()
         {
+            // Tạo model
+            model = new QuanLyBoDeNgoaiNguModel1();
+            // Tạo form
             InitializeComponent();
 
-
+            // Lấy user có mã sv = labelMSV.Text
+            var user = model.Users.FirstOrDefault(u => u.StudentID == lblMSV.Text);
+            // Lấy suất thi có ngày thi là hom ni
             var comp = model.Compositions.FirstOrDefault(
-                c => c.CompositionDate == DateTime.Now);
+                c => c.CompositionDate == DateTime.Today);
+            // Nếu suất thi có tồn tại
             if (comp != null)
             {
-                btnA1.Enabled = true;
+
+                // Thì
+                // Suất thi cho môn tiếng anh
+                var exam = model.Exams.FirstOrDefault(e => e.Subject.Name == "English");
+                // Đối chiếu ở chứng chỉ xem thằng Sinh viên này đang ở level mô
+                var certificates = model.Certificates.FirstOrDefault(c => c.User.UserID == c.User.UserID);
+                if (certificates != null && certificates.Level.LevelName == "A1")
+                {
+                    // Hiện
+                    btnA1.Enabled = true;
+                }
+                // Ẩn
+                else { btnA1.Enabled = false; }
+
             }
             else { btnA1.Enabled = false; }
 
