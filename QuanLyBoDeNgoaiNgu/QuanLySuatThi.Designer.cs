@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLySuatThi));
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvQLSuatThi = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLSuatThi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -55,15 +55,15 @@
             this.label1.TabIndex = 50;
             this.label1.Text = "ADMIN";
             // 
-            // dataGridView1
+            // dgvQLSuatThi
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 408);
-            this.dataGridView1.TabIndex = 48;
+            this.dgvQLSuatThi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQLSuatThi.Location = new System.Drawing.Point(2, 1);
+            this.dgvQLSuatThi.Name = "dgvQLSuatThi";
+            this.dgvQLSuatThi.RowHeadersWidth = 51;
+            this.dgvQLSuatThi.RowTemplate.Height = 24;
+            this.dgvQLSuatThi.Size = new System.Drawing.Size(661, 408);
+            this.dgvQLSuatThi.TabIndex = 48;
             // 
             // label3
             // 
@@ -92,6 +92,7 @@
             this.button3.TabIndex = 38;
             this.button3.Text = "EDIT";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -112,6 +113,7 @@
             this.button1.TabIndex = 40;
             this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -128,6 +130,17 @@
             this.comboBox1.Size = new System.Drawing.Size(132, 24);
             this.comboBox1.TabIndex = 51;
             this.comboBox1.Text = "Bậc";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.button4.Location = new System.Drawing.Point(356, 410);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(151, 40);
+            this.button4.TabIndex = 38;
+            this.button4.Text = "DELETE";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -149,16 +162,6 @@
             this.pictureBox2.TabIndex = 46;
             this.pictureBox2.TabStop = false;
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button4.Location = new System.Drawing.Point(356, 410);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 40);
-            this.button4.TabIndex = 38;
-            this.button4.Text = "DELETE";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // QuanLySuatThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -168,7 +171,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvQLSuatThi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBox1);
@@ -178,7 +181,8 @@
             this.Controls.Add(this.button1);
             this.Name = "QuanLySuatThi";
             this.Text = "QuanLySuatThi";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.QuanLySuatThi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQLSuatThi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -190,7 +194,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvQLSuatThi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox1;

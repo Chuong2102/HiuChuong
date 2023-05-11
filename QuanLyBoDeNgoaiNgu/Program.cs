@@ -18,7 +18,7 @@ namespace QuanLyBoDeNgoaiNgu
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new trangTiengAnh());
+            Application.Run(new QuanLySuatThi());
 
 
         }

@@ -123,6 +123,16 @@ namespace QuanLyBoDeNgoaiNgu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1156403258_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1156403258-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ngoai_ngu {
             get {
                 object obj = ResourceManager.GetObject("ngoai-ngu", resourceCulture);
