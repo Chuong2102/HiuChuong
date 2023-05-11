@@ -21,36 +21,26 @@ namespace QuanLyBoDeNgoaiNgu
             InitializeComponent();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void ThemBo_Load(object sender, EventArgs e)
         {
-            try
-            {
-                GroupAnswer groupAnswer = new GroupAnswer();
-                groupAnswer.Answers = new List<Answer>();
-
-                // Them ten bo
-                groupAnswer.GroupAnswerName = tbTenbo.Text;
-                // Them cau hoi
-                groupAnswer.Answers.Add(new Answer
-                {
-                    Text = tbDapAn.Text
-                });
-                // Thêm
-                model.GroupQuestions.Add(groupAnswer);
-                // Lưu
-                model.SaveChanges();
-
-                MessageBox.Show("Thêm thành công!");
-            }
-            catch(Exception ex) 
-            {
-                MessageBox.Show("Thêm bộ đáp án không thành công, lỗi: "+ ex.Message);
-            }
+            Data.LoadData(dgvChuDe, model.GroupQuestions.ToList());
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
+            model.GroupQuestions.Add(new GroupQuestion
+            {
+                Name = tbChuDe.Text
+            });
+
+            model.SaveChanges();
+
+            Data.LoadData(dgvChuDe, model.GroupQuestions.ToList());
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            
             this.Close();
         }
     }

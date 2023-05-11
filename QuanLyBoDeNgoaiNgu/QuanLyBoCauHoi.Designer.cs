@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBoDeNgoaiNgu
 {
-    partial class ThemBoDapAn
+    partial class QuanLyBoCauHoi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemBoDapAn));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyBoCauHoi));
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -155,11 +155,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(604, 183);
+            this.label4.Location = new System.Drawing.Point(573, 185);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.Size = new System.Drawing.Size(92, 20);
             this.label4.TabIndex = 21;
-            this.label4.Text = "Tên bộ";
+            this.label4.Text = "Tên chủ đề";
             // 
             // btnSave
             // 
@@ -185,7 +185,7 @@
             this.btnCauHoi.UseVisualStyleBackColor = false;
             this.btnCauHoi.Click += new System.EventHandler(this.btnCauHoi_Click);
             // 
-            // ThemBoDapAn
+            // QuanLyBoCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -204,7 +204,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnAdd);
-            this.Name = "ThemBoDapAn";
+            this.Name = "QuanLyBoCauHoi";
             this.Text = "Quản lý bộ đáp án";
             this.Load += new System.EventHandler(this.ThemBoDapAn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

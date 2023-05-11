@@ -20,7 +20,12 @@ namespace QuanLyBoDeNgoaiNgu
         {
             model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
-            //
+            
+        }
+
+        private void ThemCauHoi_Load(object sender, EventArgs e)
+        {
+            // Lấy level
             levels = model.Levels.ToList();
 
             // lay database
@@ -33,34 +38,18 @@ namespace QuanLyBoDeNgoaiNgu
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
             Question question = new Question();
-            Answer answer = new Answer();
-            
-            answer.Text = textBox2.Text;
-            
-            model.Answers.Add(answer);
+            question.Answers = new List<Answer>();
 
-            var levelId = model.Levels.FirstOrDefault(
-                c => c.LevelName == cmbLevel.SelectedItem.ToString()).LevelID;
+            question.Text = tbCauHoi.Text;
+            question.Answers.Add(new Answer { Text = tbA.Text});
+        }
 
-            question.Level = new Level();
-            question.Level.LevelID = levelId;
-
-            model.Questions.Add(question);
-
-            model.SaveChanges();
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

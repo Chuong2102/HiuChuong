@@ -12,20 +12,32 @@ using System.Windows.Forms;
 
 namespace QuanLyBoDeNgoaiNgu
 {
-    public partial class ThemBoDapAn : Form
+    public partial class QuanLyBoCauHoi : Form
     {
         QuanLyBoDeNgoaiNguModel1 model;
 
-        public ThemBoDapAn()
+        public QuanLyBoCauHoi()
         {
             model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
         }
 
+        void LoadDataGridView()
+        {
+            Data.LoadData(dgvBoDapAn, model.GroupQuestions.ToList());
+        }
+
         private void btnTiengAnh_Click(object sender, EventArgs e)
         {
-            ThemDapAn dapAn = new ThemDapAn();
-            dapAn.Show();
+            var grID = (int) dgvBoDapAn.CurrentRow.Cells[0].Value;
+
+            var group = model.GroupQuestions.FirstOrDefault(g => g.GroupQuestionID == grID);
+            // Xoa
+            model.GroupQuestions.Remove(group);
+            model.SaveChanges();
+
+            // Load lai
+            LoadDataGridView();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -36,21 +48,8 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void ThemBoDapAn_Load(object sender, EventArgs e)
         {
-            LoadData(model.GroupQuestions.ToList());
-        }
-
-        // Hàm load data lên datagridview
-        void LoadData(List<GroupAnswer> data)
-        {
-            dgvBoDapAn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvBoDapAn.DataSource = data;
-
-            // Ẩn 2 trường ID và Answers
-            //dgvBoDapAn.Columns["GroupAnswerID"].Visible = false;
-            dgvBoDapAn.Columns["Answers"].Visible = false;
-            dgvBoDapAn.Columns["GroupAnswerName"].HeaderText = "Tên bộ";
-
-            
+            // Load data
+            Data.LoadData(dgvBoDapAn, model.GroupQuestions.ToList());
         }
 
         private void btnCauHoi_Click(object sender, EventArgs e)
@@ -68,17 +67,17 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int valueID = (int)dgvBoDapAn.SelectedCells[0].Value;
+            var cc = dgvBoDapAn.SelectedRows;
 
-            var grAns = model.GroupQuestions.FirstOrDefault(
-                g => g.GroupAnswerID == valueID);
+            var groupID = dgvBoDapAn.CurrentRow.Cells[0].Value;
 
-            grAns.GroupAnswerName = tbxTenBo.Text;
+            var group = model.GroupQuestions.FirstOrDefault(g => g.GroupQuestionID == (int)groupID);
+
+            group.Name = tbxTenBo.Text;
 
             model.SaveChanges();
 
-            // Load lai
-            LoadData(model.GroupQuestions.ToList());
+            Data.LoadData(dgvBoDapAn, model.GroupQuestions.ToList());
         }
     }
 }
