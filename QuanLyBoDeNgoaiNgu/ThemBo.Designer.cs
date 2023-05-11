@@ -28,70 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbDapAn = new System.Windows.Forms.TextBox();
-            this.tbTenbo = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemBo));
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.tbChuDe = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvChuDe = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChuDe)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnHuy
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.Location = new System.Drawing.Point(271, 260);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 39);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "CANCEL";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnHuy.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnHuy.Location = new System.Drawing.Point(679, 399);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(110, 39);
+            this.btnHuy.TabIndex = 6;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button1.Location = new System.Drawing.Point(105, 260);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 39);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnThem.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnThem.Location = new System.Drawing.Point(697, 238);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(91, 39);
+            this.btnThem.TabIndex = 7;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // label1
+            // tbChuDe
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(99, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 29);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Đáp án :";
-            // 
-            // tbDapAn
-            // 
-            this.tbDapAn.Location = new System.Drawing.Point(104, 190);
-            this.tbDapAn.Multiline = true;
-            this.tbDapAn.Name = "tbDapAn";
-            this.tbDapAn.Size = new System.Drawing.Size(268, 42);
-            this.tbDapAn.TabIndex = 4;
-            // 
-            // tbTenbo
-            // 
-            this.tbTenbo.Location = new System.Drawing.Point(105, 106);
-            this.tbTenbo.Multiline = true;
-            this.tbTenbo.Name = "tbTenbo";
-            this.tbTenbo.Size = new System.Drawing.Size(268, 42);
-            this.tbTenbo.TabIndex = 4;
+            this.tbChuDe.Location = new System.Drawing.Point(520, 195);
+            this.tbChuDe.Multiline = true;
+            this.tbChuDe.Name = "tbChuDe";
+            this.tbChuDe.Size = new System.Drawing.Size(268, 37);
+            this.tbChuDe.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(100, 74);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(515, 157);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 29);
+            this.label2.Size = new System.Drawing.Size(178, 26);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Tên Bộ:";
+            this.label2.Text = "Chủ đề cần thêm";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(726, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "ADMIN";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(730, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(58, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dgvChuDe
+            // 
+            this.dgvChuDe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChuDe.Enabled = false;
+            this.dgvChuDe.Location = new System.Drawing.Point(24, 44);
+            this.dgvChuDe.Name = "dgvChuDe";
+            this.dgvChuDe.RowHeadersWidth = 51;
+            this.dgvChuDe.RowTemplate.Height = 24;
+            this.dgvChuDe.Size = new System.Drawing.Size(464, 394);
+            this.dgvChuDe.TabIndex = 40;
             // 
             // ThemBo
             // 
@@ -99,14 +117,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbTenbo);
+            this.Controls.Add(this.dgvChuDe);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbDapAn);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbChuDe);
             this.Name = "ThemBo";
             this.Text = "ThemBo";
+            this.Load += new System.EventHandler(this.ThemBo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChuDe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,11 +136,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbDapAn;
-        private System.Windows.Forms.TextBox tbTenbo;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.TextBox tbChuDe;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dgvChuDe;
     }
 }

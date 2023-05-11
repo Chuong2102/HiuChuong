@@ -74,6 +74,7 @@
     <Compile Include="Entities\Composition.cs" />
     <Compile Include="Entities\Exam.cs" />
     <Compile Include="Entities\GroupAnswer.cs" />
+    <Compile Include="Entities\GroupQuestion.cs" />
     <Compile Include="Entities\Level.cs" />
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\Role.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="frmThiSinhVien.Designer.cs">
       <DependentUpon>frmThiSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Data.cs" />
     <Compile Include="Infrastructure\QuanLyBoDeNgoaiNguModel1.cs" />
     <Compile Include="KetQuaThi.cs">
       <SubType>Form</SubType>
@@ -160,14 +162,21 @@
     <Compile Include="Migrations\202305060319429_Q7.designer.cs">
       <DependentUpon>202305060319429_Q7.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305091644413_Q8.cs" />
+    <Compile Include="Migrations\202305091644413_Q8.designer.cs">
+      <DependentUpon>202305091644413_Q8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305101350134_Q9.cs" />
+    <Compile Include="Migrations\202305101350134_Q9.designer.cs">
+      <DependentUpon>202305101350134_Q9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305101537133_Q10.cs" />
+    <Compile Include="Migrations\202305101537133_Q10.designer.cs">
+      <DependentUpon>202305101537133_Q10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyBoDeNgoaiNguDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyBoDeNgoaiNguDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="QuanLyCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,11 +213,11 @@
     <Compile Include="ThemBo.Designer.cs">
       <DependentUpon>ThemBo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemBoDapAn.cs">
+    <Compile Include="QuanLyBoCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemBoDapAn.Designer.cs">
-      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
+    <Compile Include="QuanLyBoCauHoi.Designer.cs">
+      <DependentUpon>QuanLyBoCauHoi.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemCauHoi.cs">
       <SubType>Form</SubType>
@@ -309,6 +318,15 @@
     <EmbeddedResource Include="Migrations\202305060319429_Q7.resx">
       <DependentUpon>202305060319429_Q7.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305091644413_Q8.resx">
+      <DependentUpon>202305091644413_Q8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305101350134_Q9.resx">
+      <DependentUpon>202305101350134_Q9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305101537133_Q10.resx">
+      <DependentUpon>202305101537133_Q10.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -334,8 +352,8 @@
     <EmbeddedResource Include="ThemBo.resx">
       <DependentUpon>ThemBo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemBoDapAn.resx">
-      <DependentUpon>ThemBoDapAn.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyBoCauHoi.resx">
+      <DependentUpon>QuanLyBoCauHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemCauHoi.resx">
       <DependentUpon>ThemCauHoi.cs</DependentUpon>
@@ -377,17 +395,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="QuanLyBoDeNgoaiNguDataSet.xsc">
-      <DependentUpon>QuanLyBoDeNgoaiNguDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyBoDeNgoaiNguDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyBoDeNgoaiNguDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLyBoDeNgoaiNguDataSet.xss">
-      <DependentUpon>QuanLyBoDeNgoaiNguDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\ngoai-ngu.jpg" />
   </ItemGroup>
   <ItemGroup>

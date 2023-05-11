@@ -23,7 +23,7 @@ namespace QuanLyBoDeNgoaiNgu.Infrastructure
         public DbSet<Role> Roles { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Certificate> Certificates { get; set; }
-        public DbSet<GroupAnswer> GroupQuestions { get; set; }
+        public DbSet<GroupQuestion> GroupQuestions { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // Configure Student & StudentAddress entity
@@ -31,9 +31,7 @@ namespace QuanLyBoDeNgoaiNgu.Infrastructure
                         .HasOptional(s => s.Account) // Mark Address property optional in Student entity
                         .WithRequired(ad => ad.User); // mark Student property as required in StudentAddress entity. Cannot save StudentAddress without Student
 
-            modelBuilder.Entity<Account>().
-                HasOptional(a => a.Role).
-                WithRequired(r => r.Account);
+           
         }
     }
 

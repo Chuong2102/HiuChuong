@@ -30,6 +30,7 @@ namespace QuanLyBoDeNgoaiNgu
             // Nếu suất thi có tồn tại
             if (comp != null)
             {
+
                 // Thì
                 // Suất thi cho môn tiếng anh
                 var exam = model.Exams.FirstOrDefault(e => e.Subject.Name == "English");
@@ -42,6 +43,7 @@ namespace QuanLyBoDeNgoaiNgu
                 }
                 // Ẩn
                 else { btnA1.Enabled = false; }
+
             }
             else { btnA1.Enabled = false; }
 

@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace QuanLyBoDeNgoaiNgu.Entities
 {
-    public class Role
+    public class GroupQuestion
     {
         [Key]
-        public int RoleID { get; set; }
-        public string RoleName { get; set; }
+        public int GroupQuestionID { get; set; }
+        public string Name { get; set; }
+        public ICollection<Question> Questions { get; set;}
     }
 }

@@ -29,28 +29,34 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var account = model.Accounts.Single(c => c.Username == textBox1.Text && c.Password == textBox2.Text);
-
-            if (account != null)
+            try
             {
-                // Show dialog
-                MessageBox.Show("Dang nhap thanh cong");
+                var account = model.Accounts.Single(c => c.Username == textBox1.Text && c.Password == textBox2.Text && c.Role.RoleName == "Admin");
 
-                // Ẩn form hiện tại
-                this.Hide();
-                // Tạo mới form Admin
-                frmAdmin loginadmin = new frmAdmin();
-                // Query từ database
-                loginadmin.lbName.Text = model.Users.Single(a => a.UserID == account.AccountID).FullName;
-                // Close()
-                loginadmin.Closed += (s, args) => this.Close();
-                // Hiện form mới
-                loginadmin.Show();
+                if (account != null)
+                {
+                    // Show dialog
+                    MessageBox.Show("Dang nhap thanh cong");
+
+                    // Ẩn form hiện tại
+                    this.Hide();
+                    // Tạo mới form Admin
+                    frmAdmin loginadmin = new frmAdmin(account);
+                    // Close()
+                    loginadmin.Closed += (s, args) => this.Close();
+                    // Hiện form mới
+                    loginadmin.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Dang nhap ko thanh cong");
+                }
             }
-            else
+            catch (Exception ex) 
             {
                 MessageBox.Show("Dang nhap ko thanh cong");
-            }
+            } 
+            
             
         }
     }
