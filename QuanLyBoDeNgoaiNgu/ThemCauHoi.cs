@@ -107,9 +107,6 @@ namespace QuanLyBoDeNgoaiNgu
                 LevelID = le.LevelID
             };
 
-            
-
-            model.Questions.Add(question);
 
 
             model.SaveChanges();
