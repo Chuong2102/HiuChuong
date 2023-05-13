@@ -196,6 +196,14 @@
     <Compile Include="Migrations\202305111500356_Q122.designer.cs">
       <DependentUpon>202305111500356_Q122.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305111508288_Q1221.cs" />
+    <Compile Include="Migrations\202305111508288_Q1221.designer.cs">
+      <DependentUpon>202305111508288_Q1221.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305131507426_Q13.cs" />
+    <Compile Include="Migrations\202305131507426_Q13.designer.cs">
+      <DependentUpon>202305131507426_Q13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -369,6 +377,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305111500356_Q122.resx">
       <DependentUpon>202305111500356_Q122.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305111508288_Q1221.resx">
+      <DependentUpon>202305111508288_Q1221.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305131507426_Q13.resx">
+      <DependentUpon>202305131507426_Q13.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

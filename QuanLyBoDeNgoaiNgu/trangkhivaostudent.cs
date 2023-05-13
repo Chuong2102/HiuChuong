@@ -1,4 +1,5 @@
-﻿using QuanLyBoDeNgoaiNgu.Infrastructure;
+﻿using QuanLyBoDeNgoaiNgu.Entities;
+using QuanLyBoDeNgoaiNgu.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,24 @@ namespace QuanLyBoDeNgoaiNgu
 {
     public partial class trangkhivaostudent : Form
     {
-        QuanLyBoDeNgoaiNguModel1 model = new QuanLyBoDeNgoaiNguModel1 ();
+        QuanLyBoDeNgoaiNguModel1 model = new QuanLyBoDeNgoaiNguModel1();
+        User userModel;
+        Subject subjectModel;
+
         public trangkhivaostudent()
         {
             InitializeComponent();
+        }
+
+        public trangkhivaostudent(User user)
+        {
+            InitializeComponent();
+
+            userModel = user;
+            //
+            lbHoTen.Text = userModel.FullName;
+            lbMaSV.Text = userModel.StudentID;
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -26,7 +41,10 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            trangTiengAnh trangTiengAnh = new trangTiengAnh();
+            // Lay mon la tieng anh
+            subjectModel = model.Subjects.FirstOrDefault(s => s.Name == "English");
+
+            trangTiengAnh trangTiengAnh = new trangTiengAnh(userModel, subjectModel);
             trangTiengAnh.Show();
         }
 

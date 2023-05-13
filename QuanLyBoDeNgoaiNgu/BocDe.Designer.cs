@@ -64,7 +64,6 @@
             this.label2.Size = new System.Drawing.Size(241, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "- Bài sẽ tự nộp khi hết thời gian";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -75,7 +74,6 @@
             this.label3.Size = new System.Drawing.Size(465, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "- Thí sinh có 90 phút để hoàn thành bài thi. CHÚC THI TỐT!!!";
-            this.label3.Click += new System.EventHandler(this.label2_Click);
             // 
             // BocDe
             // 

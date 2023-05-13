@@ -17,7 +17,16 @@ namespace QuanLyBoDeNgoaiNgu
         QuanLyBoDeNgoaiNguModel1 model;
 
         User userModel;
-        Subject subject;
+        Subject subjectModel;
+        Composition compositionModel;
+        Level levelModel;
+
+        Exam baiThi;
+
+        //
+        List<int> userChooseAnswerID = new List<int>();
+        //
+        List<Question> questions = new List<Question>();
 
         public BocDe()
         {
@@ -25,27 +34,48 @@ namespace QuanLyBoDeNgoaiNgu
             InitializeComponent();
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        public BocDe(User user, Subject subject, Composition composition, Level level)
         {
+            model = new QuanLyBoDeNgoaiNguModel1();
+            InitializeComponent();
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            this.userModel = user;
+            this.subjectModel = subject;
+            this.compositionModel = composition;
+            this.levelModel = level;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmThiSinhVien formThi = new frmThiSinhVien();
+            
 
             // Bốc đề
-            Exam baiThi = new Exam();
-            // 
+            baiThi = new Exam();
+            //
+            ThucHienBocDe();
+            //
+            baiThi.Questions = questions;
 
-
-
+            frmThiSinhVien formThi = new frmThiSinhVien(baiThi);
             formThi.Show();
+        }
+
+        /* Tiến hành bốc đề
+         */
+        void ThucHienBocDe()
+        {
+            questions = model.Questions.Where(
+                q => q.Subject.SubjectID == subjectModel.SubjectID 
+                && levelModel.LevelID == q.Level.LevelID).ToList();
+
+            // Random
+            var random = new Random();
+            //
+            while(questions.Count > 0)
+            {
+                int index = random.Next(questions.Count);
+                questions.RemoveAt(index);
+            }
         }
     }
 }

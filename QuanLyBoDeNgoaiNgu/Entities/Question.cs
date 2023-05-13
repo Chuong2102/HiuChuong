@@ -17,5 +17,6 @@ namespace QuanLyBoDeNgoaiNgu.Entities
         public ICollection<Answer> Answers { get; set; }
         public ICollection<Exam> Exams { get; set; }
         public Subject Subject { get; set; }
+        public GroupQuestion GroupQuestion { get; set; }
     }
 }

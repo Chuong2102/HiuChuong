@@ -18,30 +18,40 @@ namespace QuanLyBoDeNgoaiNgu
         QuanLyBoDeNgoaiNguModel1 model;
 
         User userModel;
-        Subject subject;
+        Subject subjectModel;
+        Level levelModel;
 
-        public trangTiengAnh()
+
+        public trangTiengAnh(User user, Subject subject)
         {
             // Tạo model
             model = new QuanLyBoDeNgoaiNguModel1();
+
+            //
+            userModel = user;
+            subjectModel = subject;
+            
             // Tạo form
             InitializeComponent();
 
-            // Lấy user có mã sv = labelMSV.Text
-            var user = model.Users.FirstOrDefault(u => u.StudentID == lblMSV.Text);
-            userModel = user;
+            // 
+
+            /*
             // Lấy suất thi có ngày thi là hom ni
             var comp = model.Compositions.FirstOrDefault(
                 c => c.CompositionDate == DateTime.Today);
+
+            if(subjectModel.Name == "English")
             // Nếu suất thi có tồn tại
-            if (comp != null)
-            {
+                if (comp != null)
+                {
 
                 // Thì
-                // Suất thi cho môn tiếng anh
-                var exam = model.Exams.FirstOrDefault(e => e.Subject.Name == "English");
+                
                 // Đối chiếu ở chứng chỉ xem thằng Sinh viên này đang ở level mô
                 var certificates = model.Certificates.FirstOrDefault(c => c.User.UserID == c.User.UserID);
+
+                //
                 if (certificates != null && certificates.Level.LevelName == "A1")
                 {
                     // Hiện
@@ -50,15 +60,17 @@ namespace QuanLyBoDeNgoaiNgu
                 // Ẩn
                 else { btnA1.Enabled = false; }
 
-            }
-            else { btnA1.Enabled = false; }
+                }
+                else { btnA1.Enabled = false; }
 
-            btnA1.Click += (sender, e) => ShowBocDeForm();
-            btnA2.Click += (sender, e) => ShowBocDeForm();
-            btnB1.Click += (sender, e) => ShowBocDeForm();
-            btnB2.Click += (sender, e) => ShowBocDeForm();
-            btnC1.Click += (sender, e) => ShowBocDeForm();
-            btnC2.Click += (sender, e) => ShowBocDeForm();
+            */
+
+            btnA1.Click += (sender, e) => ShowBocDeForm(sender);
+            btnA2.Click += (sender, e) => ShowBocDeForm(sender);
+            btnB1.Click += (sender, e) => ShowBocDeForm(sender);
+            btnB2.Click += (sender, e) => ShowBocDeForm(sender);
+            btnC1.Click += (sender, e) => ShowBocDeForm(sender);
+            btnC2.Click += (sender, e) => ShowBocDeForm(sender);
 
         }
 
@@ -67,10 +79,14 @@ namespace QuanLyBoDeNgoaiNgu
 
         }
 
-        public void ShowBocDeForm()
+        public void ShowBocDeForm(object e)
         {
-            BocDe de = new BocDe();
+            /*
+            levelModel = model.Levels.FirstOrDefault(l => l.LevelName == );
+
+            BocDe de = new BocDe(userModel, subjectModel, levelModel);
             de.Show();
+            */
         }
     }
 }
