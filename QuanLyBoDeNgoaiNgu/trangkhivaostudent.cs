@@ -41,6 +41,9 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Lay mon la tieng anh
+            subjectModel = model.Subjects.FirstOrDefault(s => s.Name == "English");
+
             trangTiengAnh trangTiengAnh = new trangTiengAnh(userModel, subjectModel);
             trangTiengAnh.Show();
         }

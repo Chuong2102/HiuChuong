@@ -19,6 +19,8 @@ namespace QuanLyBoDeNgoaiNgu
 
         User userModel;
         Subject subjectModel;
+        Level levelModel;
+
 
         public trangTiengAnh(User user, Subject subject)
         {
@@ -34,7 +36,7 @@ namespace QuanLyBoDeNgoaiNgu
 
             // 
 
-            
+            /*
             // Lấy suất thi có ngày thi là hom ni
             var comp = model.Compositions.FirstOrDefault(
                 c => c.CompositionDate == DateTime.Today);
@@ -61,12 +63,14 @@ namespace QuanLyBoDeNgoaiNgu
                 }
                 else { btnA1.Enabled = false; }
 
-            btnA1.Click += (sender, e) => ShowBocDeForm();
-            btnA2.Click += (sender, e) => ShowBocDeForm();
-            btnB1.Click += (sender, e) => ShowBocDeForm();
-            btnB2.Click += (sender, e) => ShowBocDeForm();
-            btnC1.Click += (sender, e) => ShowBocDeForm();
-            btnC2.Click += (sender, e) => ShowBocDeForm();
+            */
+
+            btnA1.Click += (sender, e) => ShowBocDeForm(sender);
+            btnA2.Click += (sender, e) => ShowBocDeForm(sender);
+            btnB1.Click += (sender, e) => ShowBocDeForm(sender);
+            btnB2.Click += (sender, e) => ShowBocDeForm(sender);
+            btnC1.Click += (sender, e) => ShowBocDeForm(sender);
+            btnC2.Click += (sender, e) => ShowBocDeForm(sender);
 
         }
 
@@ -75,10 +79,14 @@ namespace QuanLyBoDeNgoaiNgu
 
         }
 
-        public void ShowBocDeForm()
+        public void ShowBocDeForm(object e)
         {
-            BocDe de = new BocDe();
+            /*
+            levelModel = model.Levels.FirstOrDefault(l => l.LevelName == );
+
+            BocDe de = new BocDe(userModel, subjectModel, levelModel);
             de.Show();
+            */
         }
     }
 }
