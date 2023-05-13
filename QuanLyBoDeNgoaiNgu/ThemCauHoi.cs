@@ -57,26 +57,45 @@ namespace QuanLyBoDeNgoaiNgu
             Question question = new Question();
             question.Answers = new List<Answer>();
 
-            Answer a = new Answer();
-            Answer b = new Answer();
-            Answer c = new Answer();
-            Answer d = new Answer();
+            Answer a;
+            Answer b;
+            Answer c;
+            Answer d;
 
-            a.Text = tbA.Text;
-            b.Text = tbB.Text;
-            c.Text = tbC.Text;
-            d.Text = tbD.Text;
+            a = model.Answers.FirstOrDefault(aa => aa.Text == tbA.Text);
+            if(a == null)
+            {
+                a = new Answer();
+                a.Text = tbA.Text;
+            }
+                
+
+            b = model.Answers.FirstOrDefault(bb => bb.Text == tbB.Text);
+            if(b == null)
+            {
+                b = new Answer();
+                b.Text = tbB.Text;
+            }
+            
+            c = model.Answers.FirstOrDefault(cc => cc.Text == tbC.Text);
+            if (c == null)
+            {
+                c = new Answer();
+                c.Text = tbC.Text;
+            }
+            
+            d = model.Answers.FirstOrDefault(dd => dd.Text == tbD.Text);
+            if (d == null)
+            {
+                d = new Answer();
+                d.Text = tbD.Text;
+            }
 
             question.Text = tbCauHoi.Text;
 
-            question.Answers.Add(a);
-            question.Answers.Add(b);
-            question.Answers.Add(c);
-            question.Answers.Add(d);
-
             
 
-            model.Answers.AddRange(question.Answers);
+            
 
             if (rdbA.Checked )
             {
@@ -107,7 +126,20 @@ namespace QuanLyBoDeNgoaiNgu
                 LevelID = le.LevelID
             };
 
+            var gr = model.GroupQuestions.FirstOrDefault(g => g.Name == cmbChuDe.SelectedItem.ToString());
+            question.GroupQuestion = new GroupQuestion
+            {
+                GroupQuestionID = gr.GroupQuestionID
+            };
 
+            question.Answers.Add(a);
+            question.Answers.Add(b);
+            question.Answers.Add(c);
+            question.Answers.Add(d);
+
+            model.Answers.AddRange(question.Answers);
+
+            model.Questions.Add(question);
 
             model.SaveChanges();
 
