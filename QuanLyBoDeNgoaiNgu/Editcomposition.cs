@@ -24,17 +24,7 @@ namespace QuanLyBoDeNgoaiNgu
             List<Level> levels;
             model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
-            //
-            levels = model.Levels.ToList();
-
-            // lay database
-            foreach (Level level in levels)
-            {
-                if (level.LevelName != null)
-                {
-                    cmbBacST.Items.Add(level.LevelName);
-                }
-            }
+            
         }
 
         public Editcomposition(Composition comp, QuanLySuatThi quanLySuatThi)
@@ -46,18 +36,10 @@ namespace QuanLyBoDeNgoaiNgu
             //
             levels = model.Levels.ToList();
 
-            // lay database
-            foreach (Level level in levels)
-            {
-                if (level.LevelName != null)
-                {
-                    cmbBacST.Items.Add(level.LevelName);
-                }
-            }
-
             // lưu vào biến toàn cục
             this.quanLySuatThi = quanLySuatThi;
             this.comp = comp;
+
         }
 
         private void ddtEndtime_ValueChanged(object sender, EventArgs e)
@@ -76,10 +58,8 @@ namespace QuanLyBoDeNgoaiNgu
 
             var levelId = model.Levels.FirstOrDefault(
                 c => c.LevelName == cmbBacST.SelectedItem.ToString()).LevelID;
+            composition.Level.LevelID = levelId;
 
-
-
-            model.Compositions.AddOrUpdate();
 
             model.SaveChanges();
 
@@ -99,6 +79,27 @@ namespace QuanLyBoDeNgoaiNgu
             ddtNgayThi.Value = comp.CompositionDate;
             ddtStartime.Value = comp.StartTime;
             ddtEndtime.Value = comp.EndTime;
+
+            cmbBacST.SelectedItem = comp.Level.LevelID;
+
+            // Xóa hết
+            cmbBacST.Items.Clear();
+            //
+            List<Level> levels;
+            levels = model.Levels.ToList();
+
+            // lay database
+            int i = 0;
+            foreach (Level level in levels)
+            {
+                if (level.LevelName != null)
+                {
+                    cmbBacST.Items.Add(level.LevelName);
+                    if(comp.Level.LevelID == level.LevelID)
+                        cmbBacST.SelectedIndex = i;
+                }
+                i++;
+            }
         }
     }
 }
