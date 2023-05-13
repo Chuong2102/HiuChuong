@@ -26,7 +26,9 @@ namespace QuanLyBoDeNgoaiNgu
         private void button1_Click(object sender, EventArgs e)
         {
             Account account;
-            account = model.Accounts.Single(a => a.Username == textBox1.Text && a.Password == textBox2.Text);
+            account = model.Accounts.FirstOrDefault(a => a.Username == textBox1.Text && a.Password == textBox2.Text && a.Role.RoleName == "User");
+
+            var user = model.Users.FirstOrDefault(u => u.UserID == account.AccountID);
 
             if (account != null)
             {
@@ -34,13 +36,8 @@ namespace QuanLyBoDeNgoaiNgu
 
                 this.Hide();
 
-                trangkhivaostudent trangkhivaostudent = new trangkhivaostudent();
+                trangkhivaostudent trangkhivaostudent = new trangkhivaostudent(user);
                 trangkhivaostudent.Closed += (s, args) => this.Close();
-                // Lấy tên từ database ra
-                User user;
-                user = model.Users.Single(u => u.UserID == account.AccountID);
-                trangkhivaostudent.label1.Text = user.StudentID;
-                trangkhivaostudent.label2.Text = user.FullName;
                 
                 trangkhivaostudent.Show();
                 

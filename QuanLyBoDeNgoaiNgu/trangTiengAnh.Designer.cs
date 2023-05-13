@@ -39,7 +39,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbHoTen = new System.Windows.Forms.Label();
             this.lblMSV = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -157,15 +157,14 @@
             this.textBox1.Size = new System.Drawing.Size(165, 34);
             this.textBox1.TabIndex = 11;
             // 
-            // label2
+            // lbHoTen
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(629, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 24);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Đoàn Thị Chương";
+            this.lbHoTen.AutoSize = true;
+            this.lbHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoTen.Location = new System.Drawing.Point(629, 111);
+            this.lbHoTen.Name = "lbHoTen";
+            this.lbHoTen.Size = new System.Drawing.Size(0, 24);
+            this.lbHoTen.TabIndex = 10;
             // 
             // lblMSV
             // 
@@ -173,9 +172,8 @@
             this.lblMSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMSV.Location = new System.Drawing.Point(664, 91);
             this.lblMSV.Name = "lblMSV";
-            this.lblMSV.Size = new System.Drawing.Size(100, 20);
+            this.lblMSV.Size = new System.Drawing.Size(0, 20);
             this.lblMSV.TabIndex = 9;
-            this.lblMSV.Text = "20T1080007";
             // 
             // pictureBox1
             // 
@@ -197,7 +195,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbHoTen);
             this.Controls.Add(this.lblMSV);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnB1);
@@ -228,7 +226,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.Label lblMSV;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

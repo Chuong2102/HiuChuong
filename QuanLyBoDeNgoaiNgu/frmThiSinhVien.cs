@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyBoDeNgoaiNgu.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,16 @@ namespace QuanLyBoDeNgoaiNgu
 {
     public partial class frmThiSinhVien : Form
     {
+        Exam examModel;
         public frmThiSinhVien()
         {
+            InitializeComponent();
+        }
+
+        public frmThiSinhVien(Exam exam)
+        {
+            this.examModel = exam;
+
             InitializeComponent();
         }
 

@@ -33,8 +33,8 @@
             this.btnTiengNhat = new System.Windows.Forms.Button();
             this.btnTiengTrung = new System.Windows.Forms.Button();
             this.btnTiengHan = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbMaSV = new System.Windows.Forms.Label();
+            this.lbHoTen = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -92,25 +92,23 @@
             this.btnTiengHan.UseVisualStyleBackColor = false;
             this.btnTiengHan.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label1
+            // lbMaSV
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(663, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "20T1080063";
+            this.lbMaSV.AutoSize = true;
+            this.lbMaSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaSV.Location = new System.Drawing.Point(663, 90);
+            this.lbMaSV.Name = "lbMaSV";
+            this.lbMaSV.Size = new System.Drawing.Size(0, 20);
+            this.lbMaSV.TabIndex = 2;
             // 
-            // label2
+            // lbHoTen
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(628, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Đoàn Thị Chương";
+            this.lbHoTen.AutoSize = true;
+            this.lbHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoTen.Location = new System.Drawing.Point(628, 110);
+            this.lbHoTen.Name = "lbHoTen";
+            this.lbHoTen.Size = new System.Drawing.Size(0, 24);
+            this.lbHoTen.TabIndex = 3;
             // 
             // textBox1
             // 
@@ -176,8 +174,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbHoTen);
+            this.Controls.Add(this.lbMaSV);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnTiengHan);
             this.Controls.Add(this.btnTiengTrung);
@@ -199,8 +197,8 @@
         private System.Windows.Forms.Button btnTiengTrung;
         private System.Windows.Forms.Button btnTiengHan;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lbMaSV;
+        public System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
