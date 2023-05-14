@@ -25,6 +25,10 @@ namespace QuanLyBoDeNgoaiNgu
 
         int index = 0;
 
+        int minute = 0;
+        int second = 0;
+        TimeSpan time;
+
         public frmThiSinhVien()
         {
             InitializeComponent();
@@ -51,6 +55,43 @@ namespace QuanLyBoDeNgoaiNgu
             rdbB.CheckedChanged += CheckedChanged;
             rdbC.CheckedChanged += CheckedChanged;
             rdbD.CheckedChanged += CheckedChanged;
+
+            // Time
+            time = exam.Composition.EndTime.Subtract(exam.Composition.StartTime);
+            GetTime();
+
+            timer.Start();
+        }
+
+        void GetTime()
+        {
+            // Lấy số phút
+            minute = time.Minutes+ time.Hours*60;
+            // Lấy số giây
+            second = time.Seconds;
+
+            lbTime.Text = minute.ToString() + " phút : " + second.ToString() + "giây";
+        }
+        void CountDownTime()
+        {
+            if(second == 0)
+                if(minute > 0)
+                {
+                    // Đếm tiếp
+                    second = 59;
+                    minute--;
+                }
+                else
+                {
+                    // Nộp
+                    NopBai();
+                }
+            else
+            {
+                second--;
+            }
+
+            lbTime.Text = minute.ToString() + " phút : " + second.ToString() + "giây";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -116,8 +157,23 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void btnNopBai_Click(object sender, EventArgs e)
         {
-            KetQuaThi ketQuaThi = new KetQuaThi(userChoose, listCorrectAns);
+            NopBai();
+        }
+
+        void NopBai()
+        {
+            this.Hide();
+
+            KetQuaThi ketQuaThi = new KetQuaThi(userChoose, listCorrectAns, examModel);
+            ketQuaThi.Closed += (s, args) => this.Close();
+
             ketQuaThi.Show();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            time = DateTime.Now.TimeOfDay.Subtract(time);
+            CountDownTime();
         }
     }
 }

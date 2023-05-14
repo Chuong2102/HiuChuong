@@ -49,6 +49,7 @@
             // btnB1
             // 
             this.btnB1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnB1.Enabled = false;
             this.btnB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB1.Location = new System.Drawing.Point(36, 237);
             this.btnB1.Name = "btnB1";
@@ -60,6 +61,7 @@
             // btnA1
             // 
             this.btnA1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnA1.Enabled = false;
             this.btnA1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA1.Location = new System.Drawing.Point(36, 49);
             this.btnA1.Name = "btnA1";
@@ -71,6 +73,7 @@
             // btnA2
             // 
             this.btnA2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnA2.Enabled = false;
             this.btnA2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA2.Location = new System.Drawing.Point(220, 49);
             this.btnA2.Name = "btnA2";
@@ -82,6 +85,7 @@
             // btnB2
             // 
             this.btnB2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnB2.Enabled = false;
             this.btnB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnB2.Location = new System.Drawing.Point(220, 237);
             this.btnB2.Name = "btnB2";
@@ -93,6 +97,7 @@
             // btnC1
             // 
             this.btnC1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnC1.Enabled = false;
             this.btnC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC1.Location = new System.Drawing.Point(408, 49);
             this.btnC1.Name = "btnC1";
@@ -104,6 +109,7 @@
             // btnC2
             // 
             this.btnC2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnC2.Enabled = false;
             this.btnC2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnC2.Location = new System.Drawing.Point(408, 237);
             this.btnC2.Name = "btnC2";

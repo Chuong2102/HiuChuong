@@ -43,6 +43,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.lbDiem = new System.Windows.Forms.Label();
             this.lbKetQua = new System.Windows.Forms.Label();
+            this.btnDone = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -194,11 +195,22 @@
             this.lbKetQua.TabIndex = 0;
             this.lbKetQua.Text = "Mã Sinh Viên :";
             // 
+            // btnDone
+            // 
+            this.btnDone.Location = new System.Drawing.Point(645, 377);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.Size = new System.Drawing.Size(143, 61);
+            this.btnDone.TabIndex = 1;
+            this.btnDone.Text = "Xong";
+            this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
+            // 
             // KetQuaThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDone);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -238,5 +250,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lbDiem;
         private System.Windows.Forms.Label lbKetQua;
+        private System.Windows.Forms.Button btnDone;
     }
 }

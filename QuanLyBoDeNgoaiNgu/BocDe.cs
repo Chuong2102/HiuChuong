@@ -34,7 +34,7 @@ namespace QuanLyBoDeNgoaiNgu
             InitializeComponent();
         }
 
-        public BocDe(User user, Subject subject, Level level)
+        public BocDe(User user, Subject subject, Level level, Composition composition)
         {
             model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
@@ -42,6 +42,7 @@ namespace QuanLyBoDeNgoaiNgu
             this.userModel = user;
             this.subjectModel = subject;
             this.levelModel = level;
+            compositionModel = composition;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,9 +51,24 @@ namespace QuanLyBoDeNgoaiNgu
             baiThi = new Exam();
             //
             ThucHienBocDe();
-            //
+            // Cau hoi
             baiThi.Questions = questions;
+            //
+            baiThi.Composition = compositionModel;
+            baiThi.Subject = subjectModel;
+            baiThi.Level = levelModel;
+            baiThi.user = userModel;
+            // Lưu thoii
+            model.Compositions.Attach(compositionModel);
+            model.Subjects.Attach(subjectModel);
+            model.Levels.Attach(levelModel);
+            model.Users.Attach(userModel);
 
+            //
+            model.Exams.Add(baiThi);
+            //model.SaveChanges();
+            //
+            // Thi nao`
             frmThiSinhVien formThi = new frmThiSinhVien(baiThi);
             formThi.Show();
         }
@@ -67,7 +83,7 @@ namespace QuanLyBoDeNgoaiNgu
 
             // Random
             var random = new Random();
-            //
+            // Bốc 2 câu
             while(questions.Count > 2)
             {
                 int index = random.Next(questions.Count);

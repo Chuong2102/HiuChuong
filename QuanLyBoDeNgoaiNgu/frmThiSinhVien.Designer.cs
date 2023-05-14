@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThiSinhVien));
             this.label1 = new System.Windows.Forms.Label();
             this.lbMsv = new System.Windows.Forms.Label();
@@ -42,6 +43,8 @@
             this.pBack = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbCauHoi = new System.Windows.Forms.TextBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pFollow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -194,12 +197,28 @@
             this.tbCauHoi.Size = new System.Drawing.Size(672, 334);
             this.tbCauHoi.TabIndex = 58;
             // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(895, 35);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(76, 25);
+            this.lbTime.TabIndex = 59;
+            this.lbTime.Text = "20\'20s";
+            // 
             // frmThiSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1193, 570);
+            this.Controls.Add(this.lbTime);
             this.Controls.Add(this.tbCauHoi);
             this.Controls.Add(this.pFollow);
             this.Controls.Add(this.pBack);
@@ -239,5 +258,7 @@
         private System.Windows.Forms.PictureBox pBack;
         private System.Windows.Forms.PictureBox pFollow;
         private System.Windows.Forms.TextBox tbCauHoi;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label lbTime;
     }
 }

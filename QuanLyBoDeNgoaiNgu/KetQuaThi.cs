@@ -1,4 +1,5 @@
-﻿using QuanLyBoDeNgoaiNgu.Infrastructure;
+﻿using QuanLyBoDeNgoaiNgu.Entities;
+using QuanLyBoDeNgoaiNgu.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace QuanLyBoDeNgoaiNgu
 
         List<int> chooseAnswer;
         List<int> correctAnswer;
+        Exam examModel;
 
         const int SCORE = 5;
         int totalScore = 0;
@@ -26,12 +28,13 @@ namespace QuanLyBoDeNgoaiNgu
             InitializeComponent();
         }
 
-        public KetQuaThi(int[] chooseAns, List<int> listCorrectAns)
+        public KetQuaThi(int[] chooseAns, List<int> listCorrectAns, Exam exam)
         {
             InitializeComponent();
 
             this.chooseAnswer = chooseAns.ToList();
             this.correctAnswer = listCorrectAns;
+            this.examModel = exam;
 
             KiemTraDapAn();
         }
@@ -46,6 +49,16 @@ namespace QuanLyBoDeNgoaiNgu
                 }
             }
             lbDiem.Text = totalScore.ToString();
+        }
+
+        void Luu()
+        {
+            
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
