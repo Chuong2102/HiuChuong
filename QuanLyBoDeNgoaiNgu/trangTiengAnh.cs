@@ -81,12 +81,12 @@ namespace QuanLyBoDeNgoaiNgu
 
         public void ShowBocDeForm(object e)
         {
-            /*
-            levelModel = model.Levels.FirstOrDefault(l => l.LevelName == );
+            var btn = e as Button;
+            levelModel = model.Levels.FirstOrDefault(l => l.LevelName == btn.Text);
 
             BocDe de = new BocDe(userModel, subjectModel, levelModel);
             de.Show();
-            */
+            
         }
     }
 }
