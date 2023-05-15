@@ -20,7 +20,7 @@ namespace QuanLyBoDeNgoaiNgu
 
 
 
-            Application.Run(new frmloginadmin());
+            Application.Run(new frmloginstudent());
 
 
 
