@@ -20,7 +20,7 @@ namespace QuanLyBoDeNgoaiNgu
 
 
 
-            Application.Run(new ThemCauHoi());
+            Application.Run(new frmAdmin());
 
 
 
