@@ -34,28 +34,41 @@ namespace QuanLyBoDeNgoaiNgu
             InitializeComponent();
         }
 
-        public BocDe(User user, Subject subject, Composition composition, Level level)
+        public BocDe(User user, Subject subject, Level level, Composition composition)
         {
             model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
 
             this.userModel = user;
             this.subjectModel = subject;
-            this.compositionModel = composition;
             this.levelModel = level;
+            compositionModel = composition;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-
             // Bốc đề
             baiThi = new Exam();
             //
             ThucHienBocDe();
-            //
+            // Cau hoi
             baiThi.Questions = questions;
+            //
+            baiThi.Composition = compositionModel;
+            baiThi.Subject = subjectModel;
+            baiThi.Level = levelModel;
+            baiThi.user = userModel;
+            // Lưu thoii
+            model.Compositions.Attach(compositionModel);
+            model.Subjects.Attach(subjectModel);
+            model.Levels.Attach(levelModel);
+            model.Users.Attach(userModel);
 
+            //
+            model.Exams.Add(baiThi);
+            //model.SaveChanges();
+            //
+            // Thi nao`
             frmThiSinhVien formThi = new frmThiSinhVien(baiThi);
             formThi.Show();
         }
@@ -70,8 +83,8 @@ namespace QuanLyBoDeNgoaiNgu
 
             // Random
             var random = new Random();
-            //
-            while(questions.Count > 0)
+            // Bốc 2 câu
+            while(questions.Count > 2)
             {
                 int index = random.Next(questions.Count);
                 questions.RemoveAt(index);
