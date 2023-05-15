@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyBoDeNgoaiNgu.Entities;
+using QuanLyBoDeNgoaiNgu.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +14,51 @@ namespace QuanLyBoDeNgoaiNgu
 {
     public partial class KetQuaThi : Form
     {
+        QuanLyBoDeNgoaiNguModel1 model;
+
+        List<int> chooseAnswer;
+        List<int> correctAnswer;
+        Exam examModel;
+
+        const int SCORE = 5;
+        int totalScore = 0;
+
         public KetQuaThi()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        public KetQuaThi(int[] chooseAns, List<int> listCorrectAns, Exam exam)
         {
+            InitializeComponent();
 
+            this.chooseAnswer = chooseAns.ToList();
+            this.correctAnswer = listCorrectAns;
+            this.examModel = exam;
+
+            KiemTraDapAn();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        void KiemTraDapAn()
         {
+            for(int i = 0;  i < this.chooseAnswer.Count; i++)
+            {
+                if (chooseAnswer[i] == correctAnswer[i])
+                {
+                    totalScore += SCORE;
+                }
+            }
+            lbDiem.Text = totalScore.ToString();
+        }
 
+        void Luu()
+        {
+            
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

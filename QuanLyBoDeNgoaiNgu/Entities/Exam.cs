@@ -10,12 +10,13 @@ namespace QuanLyBoDeNgoaiNgu.Entities
     public class Exam
     {
         [Key]
-        public int EntityID { get; set; }
+        public int ExamID { get; set; }
         TimeSpan Time { get; set; }
         public int Score { get; set; }
         public Level Level { get; set; }
         public Composition Composition { get; set; }
         public Subject Subject { get; set; }
+        public User user { get; set; }
         public ICollection<Question> Questions { get; set; }
 
     }

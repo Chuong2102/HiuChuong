@@ -20,7 +20,7 @@ namespace QuanLyBoDeNgoaiNgu
         User userModel;
         Subject subjectModel;
         Level levelModel;
-
+        Composition compositionModel;
 
         public trangTiengAnh(User user, Subject subject)
         {
@@ -36,7 +36,7 @@ namespace QuanLyBoDeNgoaiNgu
 
             // 
 
-            /*
+            
             // Lấy suất thi có ngày thi là hom ni
             var comp = model.Compositions.FirstOrDefault(
                 c => c.CompositionDate == DateTime.Today);
@@ -45,25 +45,41 @@ namespace QuanLyBoDeNgoaiNgu
             // Nếu suất thi có tồn tại
                 if (comp != null)
                 {
+                    compositionModel = comp;
+                    // Thì
 
-                // Thì
-                
-                // Đối chiếu ở chứng chỉ xem thằng Sinh viên này đang ở level mô
-                var certificates = model.Certificates.FirstOrDefault(c => c.User.UserID == c.User.UserID);
+                    // Đối chiếu ở chứng chỉ xem thằng Sinh viên này đang ở level mô
+                    var certificates = model.Certificates.FirstOrDefault(c => c.User.UserID == c.User.UserID);
 
-                //
-                if (certificates != null && certificates.Level.LevelName == "A1")
-                {
-                    // Hiện
-                    btnA1.Enabled = true;
+                    //
+                    if (certificates != null)
+                    {
+                        if(certificates.Level.LevelName == "A2")
+                            // Hiện
+                            btnA2.Enabled = true;
+                        if (certificates.Level.LevelName == "B1")
+                            // Hiện
+                            btnB1.Enabled = true;
+                        if (certificates.Level.LevelName == "B2")
+                            // Hiện
+                            btnB2.Enabled = true;
+                        if (certificates.Level.LevelName == "C1")
+                            // Hiện
+                            btnC1.Enabled = true;
+                        if (certificates.Level.LevelName == "C2")
+                            // Hiện
+                            btnC2.Enabled = true;
+                    }
+                    // Ẩn
+                    else
+                    {
+                        btnA1.Enabled = true;
+                    }
+
                 }
-                // Ẩn
                 else { btnA1.Enabled = false; }
 
-                }
-                else { btnA1.Enabled = false; }
-
-            */
+            
 
             btnA1.Click += (sender, e) => ShowBocDeForm(sender);
             btnA2.Click += (sender, e) => ShowBocDeForm(sender);
@@ -81,12 +97,27 @@ namespace QuanLyBoDeNgoaiNgu
 
         public void ShowBocDeForm(object e)
         {
-            /*
-            levelModel = model.Levels.FirstOrDefault(l => l.LevelName == );
+            var checkStart = TimeSpan.Compare(DateTime.Now.TimeOfDay, compositionModel.StartTime.TimeOfDay);
+            var checkEnd = TimeSpan.Compare(DateTime.Now.TimeOfDay, compositionModel.EndTime.TimeOfDay);
 
-            BocDe de = new BocDe(userModel, subjectModel, levelModel);
-            de.Show();
-            */
+            if (checkStart == -1)
+            {
+                MessageBox.Show("Chưa tới thời gian thi");
+            }
+            else
+            if (checkEnd == 1)
+            {
+                MessageBox.Show("Quá thời gian thi");
+            }
+            else
+            {
+                var btn = e as Button;
+                levelModel = model.Levels.FirstOrDefault(l => l.LevelName == btn.Text);
+
+                BocDe de = new BocDe(userModel, subjectModel, levelModel, compositionModel);
+                de.Show();
+            }
+            
         }
     }
 }
