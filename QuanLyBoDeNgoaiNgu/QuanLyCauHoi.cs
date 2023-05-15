@@ -52,14 +52,18 @@ namespace QuanLyBoDeNgoaiNgu
             //
             foreach (var level in listLevel)
             {
-                cmbBac.Items.Add(level.LevelName);
+                if (level.LevelName != null)
+
+                    cmbBac.Items.Add(level.LevelName);
             }
 
             // Load comboBox Chủ đề
             var listGroupQuestion = model.GroupQuestions.ToList();
             foreach (var grQuestion in listGroupQuestion)
             {
-                cmbChuDe.Items.Add(grQuestion.Name);
+                if (grQuestion.Name != null)
+
+                    cmbChuDe.Items.Add(grQuestion.Name);
             }
         }
         void LoadData(List<Question> questions)
@@ -130,10 +134,18 @@ namespace QuanLyBoDeNgoaiNgu
 
             List<Question> questionList = new List<Question>();
 
-            questionList = model.Questions.Where(qs => qs.Text == textBox1.Text).ToList();
+           
 
-            Data.LoadData(dgvCauHoi, questionList);
+            questionList = model.Questions.Where(q => q.Subject.SubjectID == subjectModel.SubjectID).ToList();
+            var query = questionList.Where(c => c.Text.Contains(textBox1.Text)).ToList();
+            if (textBox1.Text == null)
+            {
+                LoadDataGridView();
+            }
+            
+            Data.LoadData(dgvCauHoi, query);
 
+           
         }
     }
 }
