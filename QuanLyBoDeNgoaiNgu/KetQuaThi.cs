@@ -51,6 +51,11 @@ namespace QuanLyBoDeNgoaiNgu
             lbDiem.Text = totalScore.ToString();
         }
 
+        void ThongKe()
+        {
+            var chungChi = model.Certificates.FirstOrDefault(c => c.CertificateID == )
+        }
+
         void Luu()
         {
             
