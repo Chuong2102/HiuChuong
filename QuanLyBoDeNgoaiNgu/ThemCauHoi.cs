@@ -17,12 +17,24 @@ namespace QuanLyBoDeNgoaiNgu
         Answer answer;
         List<GroupQuestion> groupQuestions;
         List<Level> levels;
+
         QuanLyBoDeNgoaiNguModel1 model;
+
+        Subject subjectModel;
         public ThemCauHoi()
         {
             model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
             
+        }
+
+        public ThemCauHoi(Subject subject)
+        {
+            model = new QuanLyBoDeNgoaiNguModel1();
+            InitializeComponent();
+
+            this.subjectModel = subject;
+
         }
 
         private void ThemCauHoi_Load(object sender, EventArgs e)
@@ -54,8 +66,10 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            // Thêm mới câu hỏi
             Question question = new Question();
             question.Answers = new List<Answer>();
+
 
             Answer a;
             Answer b;
@@ -97,6 +111,8 @@ namespace QuanLyBoDeNgoaiNgu
 
             
 
+
+            // Kiểm tra đáp án đúng --> gán vào CorrectID của câu hỏi
             if (rdbA.Checked )
             {
                 question.CorrectAnswerID = a.AnswerID;
@@ -117,10 +133,15 @@ namespace QuanLyBoDeNgoaiNgu
                 question.CorrectAnswerID = d.AnswerID;
             }
 
-            // Loi thang level ra
+            // Level
+            //
+            var le = model.Levels.FirstOrDefault(
+                l => l.LevelName == cmbLevel.SelectedItem.ToString() 
+                && l.Subject.SubjectID == subjectModel.SubjectID);
 
-            var le = model.Levels.FirstOrDefault(l => l.LevelName == cmbLevel.SelectedItem.ToString()) ;
+            model.Levels.Attach( le );
             //Them level
+
             question.Level = new Level
             {
                 LevelID = le.LevelID
