@@ -36,7 +36,7 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ThemCauHoi themCauHoi = new ThemCauHoi();
+            ThemCauHoi themCauHoi = new ThemCauHoi(subjectModel);
             themCauHoi.Show();
         }
 
@@ -52,7 +52,8 @@ namespace QuanLyBoDeNgoaiNgu
             //
             foreach( var level in listLevel )
             {
-                cmbBac.Items.Add(level.LevelName);
+                if(level.LevelName != null)
+                    cmbBac.Items.Add(level.LevelName);
             }
 
             // Load comboBox Chủ đề
@@ -123,6 +124,16 @@ namespace QuanLyBoDeNgoaiNgu
             QuanLyBoCauHoi frmQlBoChuDeCauHoi = new QuanLyBoCauHoi(subjectModel, this);
 
             frmQlBoChuDeCauHoi.Show();
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -105,6 +105,7 @@
             this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "UPDATE";
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // dgvCauHoi
             // 
@@ -165,6 +166,7 @@
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "DELETE";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // tbCauHoi
             // 
