@@ -69,26 +69,48 @@ namespace QuanLyBoDeNgoaiNgu
             // Thêm mới câu hỏi
             Question question = new Question();
             question.Answers = new List<Answer>();
-            // Thêm mới 4 đáp án
-            Answer a = new Answer();
-            Answer b = new Answer();
-            Answer c = new Answer();
-            Answer d = new Answer();
-            // Lấy text t/ứng 4 đáp án A,B,C,D
-            a.Text = tbA.Text;
-            b.Text = tbB.Text;
-            c.Text = tbC.Text;
-            d.Text = tbD.Text;
-            // Lấy text của câu hỏi
-            question.Text = tbCauHoi.Text;
-            // Thêm 4 đáp án
-            question.Answers.Add(a);
-            question.Answers.Add(b);
-            question.Answers.Add(c);
-            question.Answers.Add(d);
 
-            model.Answers.AddRange(question.Answers);
-            model.SaveChanges();
+
+            Answer a;
+            Answer b;
+            Answer c;
+            Answer d;
+
+            a = model.Answers.FirstOrDefault(aa => aa.Text == tbA.Text);
+            if(a == null)
+            {
+                a = new Answer();
+                a.Text = tbA.Text;
+            }
+                
+
+            b = model.Answers.FirstOrDefault(bb => bb.Text == tbB.Text);
+            if(b == null)
+            {
+                b = new Answer();
+                b.Text = tbB.Text;
+            }
+            
+            c = model.Answers.FirstOrDefault(cc => cc.Text == tbC.Text);
+            if (c == null)
+            {
+                c = new Answer();
+                c.Text = tbC.Text;
+            }
+            
+            d = model.Answers.FirstOrDefault(dd => dd.Text == tbD.Text);
+            if (d == null)
+            {
+                d = new Answer();
+                d.Text = tbD.Text;
+            }
+
+            question.Text = tbCauHoi.Text;
+
+            
+
+            
+
 
             // Kiểm tra đáp án đúng --> gán vào CorrectID của câu hỏi
             if (rdbA.Checked )
@@ -119,19 +141,25 @@ namespace QuanLyBoDeNgoaiNgu
 
             model.Levels.Attach( le );
             //Them level
-            question.Level = le;
 
-            // Chủ đề
-            var grQ = model.GroupQuestions.FirstOrDefault(
-                g => g.Name == cmbChuDe.SelectedItem.ToString() && g.Subject.SubjectID == subjectModel.SubjectID);
+            question.Level = new Level
+            {
+                LevelID = le.LevelID
+            };
 
-            model.GroupQuestions.Attach(grQ);
-            // Thêm chủ đề
-            question.GroupQuestion = grQ;
-            // Môn
-            model.Subjects.Attach(subjectModel);
-            question.Subject = subjectModel;
-            // Luu
+            var gr = model.GroupQuestions.FirstOrDefault(g => g.Name == cmbChuDe.SelectedItem.ToString());
+            question.GroupQuestion = new GroupQuestion
+            {
+                GroupQuestionID = gr.GroupQuestionID
+            };
+
+            question.Answers.Add(a);
+            question.Answers.Add(b);
+            question.Answers.Add(c);
+            question.Answers.Add(d);
+
+            model.Answers.AddRange(question.Answers);
+
             model.Questions.Add(question);
 
             model.SaveChanges();

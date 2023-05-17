@@ -55,5 +55,11 @@ namespace QuanLyBoDeNgoaiNgu
 
             lbName.Text = userModel.FullName;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmThongKe frmThongKe = new frmThongKe();
+            frmThongKe.Show();
+        }
     }
 }

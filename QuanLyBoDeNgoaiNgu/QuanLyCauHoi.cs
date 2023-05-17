@@ -10,14 +10,14 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace QuanLyBoDeNgoaiNgu
 {
-    
+
     public partial class QuanLyCauHoi : Form
     {
         QuanLyBoDeNgoaiNguModel1 model = new QuanLyBoDeNgoaiNguModel1();
-        
         User userModel;
         Subject subjectModel;
 
@@ -50,17 +50,22 @@ namespace QuanLyBoDeNgoaiNgu
             // Load combobox Bậc
             var listLevel = model.Levels.ToList();
             //
-            foreach( var level in listLevel )
+            foreach (var level in listLevel)
             {
-                if(level.LevelName != null)
+
+                if (level.LevelName != null)
+
+
                     cmbBac.Items.Add(level.LevelName);
             }
 
             // Load comboBox Chủ đề
             var listGroupQuestion = model.GroupQuestions.ToList();
-            foreach( var grQuestion in listGroupQuestion )
+            foreach (var grQuestion in listGroupQuestion)
             {
-                cmbChuDe.Items.Add(grQuestion.Name);
+                if (grQuestion.Name != null)
+
+                    cmbChuDe.Items.Add(grQuestion.Name);
             }
         }
         void LoadData(List<Question> questions)
@@ -88,7 +93,7 @@ namespace QuanLyBoDeNgoaiNgu
             var question = model.Questions.Where(q => q.QuestionID == questionID).FirstOrDefault();
 
             // Load đáp án
-            var listAnswers = model.Questions.Where( q => q.QuestionID == questionID).SelectMany(a =>  a.Answers).ToList();
+            var listAnswers = model.Questions.Where(q => q.QuestionID == questionID).SelectMany(a => a.Answers).ToList();
             //
             // A
             tbA.Text = listAnswers[0].Text;
@@ -100,17 +105,17 @@ namespace QuanLyBoDeNgoaiNgu
             tbD.Text = listAnswers[3].Text;
             // 
             // Check radio button
-            for(int i = 0; i < listAnswers.Count; i++)
+            for (int i = 0; i < listAnswers.Count; i++)
             {
                 if (listAnswers[i].AnswerID == question.CorrectAnswerID)
                     if (i == 0)
                         rdbA.Checked = true;
-                    if(i == 1)
-                        rdbB.Checked = true;
-                    if(i == 2) 
-                        rdbC.Checked = true;
-                    if(i == 3) 
-                        rdbD.Checked = true;
+                if (i == 1)
+                    rdbB.Checked = true;
+                if (i == 2)
+                    rdbC.Checked = true;
+                if (i == 3)
+                    rdbD.Checked = true;
             }
         }
 
@@ -126,13 +131,27 @@ namespace QuanLyBoDeNgoaiNgu
             frmQlBoChuDeCauHoi.Show();
         }
 
-        private void btnCapNhat_Click(object sender, EventArgs e)
+
+       
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-        }
+            List<Question> questionList = new List<Question>();
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
+           
+
+            questionList = model.Questions.Where(q => q.Subject.SubjectID == subjectModel.SubjectID).ToList();
+            var query = questionList.Where(c => c.Text.Contains(textBox1.Text)).ToList();
+            if (textBox1.Text == null)
+            {
+                LoadDataGridView();
+            }
+            
+            Data.LoadData(dgvCauHoi, query);
+
+           
 
         }
     }
