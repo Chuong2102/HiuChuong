@@ -36,7 +36,7 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ThemCauHoi themCauHoi = new ThemCauHoi();
+            ThemCauHoi themCauHoi = new ThemCauHoi(subjectModel);
             themCauHoi.Show();
         }
 
@@ -52,7 +52,9 @@ namespace QuanLyBoDeNgoaiNgu
             //
             foreach (var level in listLevel)
             {
+
                 if (level.LevelName != null)
+
 
                     cmbBac.Items.Add(level.LevelName);
             }
@@ -129,6 +131,10 @@ namespace QuanLyBoDeNgoaiNgu
             frmQlBoChuDeCauHoi.Show();
         }
 
+
+       
+
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -146,6 +152,7 @@ namespace QuanLyBoDeNgoaiNgu
             Data.LoadData(dgvCauHoi, query);
 
            
+
         }
     }
 }
