@@ -66,7 +66,7 @@ namespace QuanLyBoDeNgoaiNgu
 
             //
             model.Exams.Add(baiThi);
-            model.SaveChanges();
+            //model.SaveChanges();
             //
             // Thi nao`
             frmThiSinhVien formThi = new frmThiSinhVien(baiThi);

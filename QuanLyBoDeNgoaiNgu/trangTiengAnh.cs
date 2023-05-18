@@ -34,6 +34,9 @@ namespace QuanLyBoDeNgoaiNgu
             // Tạo form
             InitializeComponent();
 
+            //
+            lblMSV.Text = userModel.StudentID;
+            lbHoTen.Text = userModel.FullName;
             // 
             var listCompQuery = model.Compositions.Where(c => c.CompositionDate == DateTime.Today);
             var listComp = listCompQuery.ToList();
@@ -41,7 +44,9 @@ namespace QuanLyBoDeNgoaiNgu
             listComp.Sort((a, b) => a.StartTime.CompareTo(b.EndTime));
 
             // Lấy suất thi có ngày thi là hom ni
-            var comp = listComp.Last();
+            Composition comp = null;
+            if(listComp.Count > 0 ) 
+                comp = listComp.Last();
 
             if(subjectModel.Name == "English")
             // Nếu suất thi có tồn tại
@@ -50,7 +55,7 @@ namespace QuanLyBoDeNgoaiNgu
                     // Không cho sinh viên thi 2 lần trong cùng suất thi
                     var exam = model.Exams.FirstOrDefault(e => e.Composition.CompositionID == comp.CompositionID);
                     //
-                    if(exam == null)
+                    if(true) //exam == null
                     {
                         compositionModel = comp;
                         // Thì

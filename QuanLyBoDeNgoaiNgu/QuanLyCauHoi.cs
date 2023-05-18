@@ -89,6 +89,7 @@ namespace QuanLyBoDeNgoaiNgu
             this.dgvCauHoi.Columns["QuestionID"].Visible = false;
 
             dgvCauHoi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCauHoi.Columns["TT"].Width = 100;
         }
 
         public void LoadDataGridView(List<Question> questions)
@@ -105,6 +106,7 @@ namespace QuanLyBoDeNgoaiNgu
             this.dgvCauHoi.Columns["QuestionID"].Visible = false;
 
             dgvCauHoi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCauHoi.Columns["TT"].Width = 100;
         }
 
         private void dgvCauHoi_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -199,22 +201,41 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void cmbBac_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Khi select cmb sẽ lấy được level từ database
-            var level = model.Levels.FirstOrDefault(l => l.LevelName == cmbBac.SelectedItem.ToString());
-            // 
-            var listQ = model.Questions.Where(
-                q => q.Subject.SubjectID == subjectModel.SubjectID 
-                && q.Level.LevelID == level.LevelID).ToList();
-            //
-            LoadDataGridView(listQ);
+            try
+            {
+                // Khi select cmb sẽ lấy được level từ database
+                var level = model.Levels.FirstOrDefault(l => l.LevelName == cmbBac.SelectedItem.ToString());
+                // 
+                var listQ = model.Questions.Where(
+                    q => q.Subject.SubjectID == subjectModel.SubjectID
+                    && q.Level.LevelID == level.LevelID).ToList();
+                //
+                LoadDataGridView(listQ);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi, không có câu hỏi thuộc bậc này");
+            }
             
-            var group = model.GroupQuestions.FirstOrDefault(g => g.Name == cmbChuDe.SelectedItem.ToString());
-            //
-            var listG = model.Questions.Where(
-                q => q.Subject.SubjectID == subjectModel.SubjectID
-                && q.GroupQuestion.GroupQuestionID == group.GroupQuestionID).ToList();
+            
+        }
 
-            LoadDataGridView(listG);
+        private void cmbChuDe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var group = model.GroupQuestions.FirstOrDefault(g => g.Name == cmbChuDe.SelectedItem.ToString());
+                //
+                var listG = model.Questions.Where(
+                    q => q.Subject.SubjectID == subjectModel.SubjectID
+                    && q.GroupQuestion.GroupQuestionID == group.GroupQuestionID).ToList();
+
+                LoadDataGridView(listG);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi, không có câu hỏi thuộc chủ đè này");
+            }
         }
     }
 }

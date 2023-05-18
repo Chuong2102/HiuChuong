@@ -106,6 +106,7 @@
             this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "UPDATE";
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // dgvCauHoi
             // 
@@ -263,6 +264,7 @@
             this.cmbChuDe.Size = new System.Drawing.Size(162, 24);
             this.cmbChuDe.TabIndex = 47;
             this.cmbChuDe.Text = "Chủ đề";
+            this.cmbChuDe.SelectedIndexChanged += new System.EventHandler(this.cmbChuDe_SelectedIndexChanged);
             // 
             // btnChuDe
             // 

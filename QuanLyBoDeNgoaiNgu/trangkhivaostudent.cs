@@ -15,6 +15,7 @@ namespace QuanLyBoDeNgoaiNgu
     public partial class trangkhivaostudent : Form
     {
         QuanLyBoDeNgoaiNguModel1 model = new QuanLyBoDeNgoaiNguModel1();
+
         User userModel;
         Subject subjectModel;
 
