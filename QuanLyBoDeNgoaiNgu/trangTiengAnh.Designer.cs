@@ -35,14 +35,9 @@
             this.btnB2 = new System.Windows.Forms.Button();
             this.btnC1 = new System.Windows.Forms.Button();
             this.btnC2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbHoTen = new System.Windows.Forms.Label();
             this.lblMSV = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,51 +113,6 @@
             this.btnC2.Text = "C2";
             this.btnC2.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(686, 402);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 20);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Cài đặt";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(754, 395);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "A1",
-            "A2",
-            "B1",
-            "B2",
-            "C1",
-            "C2"});
-            this.comboBox1.Location = new System.Drawing.Point(624, 214);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 24);
-            this.comboBox1.TabIndex = 12;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(624, 163);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 34);
-            this.textBox1.TabIndex = 11;
-            // 
             // lbHoTen
             // 
             this.lbHoTen.AutoSize = true;
@@ -197,10 +147,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbHoTen);
             this.Controls.Add(this.lblMSV);
             this.Controls.Add(this.pictureBox1);
@@ -213,7 +159,6 @@
             this.Name = "trangTiengAnh";
             this.Text = "trangTiengAnh";
             this.Load += new System.EventHandler(this.trangTiengAnh_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,10 +173,6 @@
         private System.Windows.Forms.Button btnB2;
         private System.Windows.Forms.Button btnC1;
         private System.Windows.Forms.Button btnC2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.Label lblMSV;
         private System.Windows.Forms.PictureBox pictureBox1;
