@@ -29,11 +29,11 @@ namespace QuanLyBoDeNgoaiNgu
 
         public Editcomposition(Composition comp, QuanLySuatThi quanLySuatThi)
         {
-
             List<Level> levels;
             model = new QuanLyBoDeNgoaiNguModel1();
+
             InitializeComponent();
-            //
+            
             levels = model.Levels.ToList();
 
             // lưu vào biến toàn cục
@@ -47,6 +47,7 @@ namespace QuanLyBoDeNgoaiNgu
 
         }
 
+        // Save
         private void button1_Click(object sender, EventArgs e)
         {
             // Lấy dữ liệu từ database
@@ -74,13 +75,14 @@ namespace QuanLyBoDeNgoaiNgu
         }
 
 
+        // Load
         private void Editcomposition_Load(object sender, EventArgs e)
         {
             ddtNgayThi.Value = comp.CompositionDate;
             ddtStartime.Value = comp.StartTime;
             ddtEndtime.Value = comp.EndTime;
-
-            cmbBacST.SelectedItem = comp.Level.LevelID;
+            
+            var levelID = model.Compositions.Where(c => c.CompositionID == comp.CompositionID).Select(c => c.Level).FirstOrDefault().LevelID;
 
             // Xóa hết
             cmbBacST.Items.Clear();
@@ -95,7 +97,7 @@ namespace QuanLyBoDeNgoaiNgu
                 if (level.LevelName != null)
                 {
                     cmbBacST.Items.Add(level.LevelName);
-                    if(comp.Level.LevelID == level.LevelID)
+                    if(levelID == level.LevelID)
                         cmbBacST.SelectedIndex = i;
                 }
                 i++;

@@ -36,6 +36,9 @@ namespace QuanLyBoDeNgoaiNgu
 
             userModel = user;
             subjectModel = subject;
+
+            //
+            lbName.Text = userModel.FullName;
         }
 
         private void mnsQlCauHoi_Click(object sender, EventArgs e)
@@ -46,7 +49,8 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void tsmQuanLySuatThi_Click(object sender, EventArgs e)
         {
-
+            QuanLySuatThi frmQuanLySuatThi = new QuanLySuatThi(userModel, subjectModel);
+            frmQuanLySuatThi.Show();
         }
     }
 }

@@ -36,7 +36,10 @@ namespace QuanLyBoDeNgoaiNgu
             this.correctAnswer = listCorrectAns;
             this.examModel = exam;
 
+            model = new QuanLyBoDeNgoaiNguModel1();
+
             KiemTraDapAn();
+            ThongKe();
         }
 
         void KiemTraDapAn()
@@ -48,12 +51,38 @@ namespace QuanLyBoDeNgoaiNgu
                     totalScore += SCORE;
                 }
             }
-            lbDiem.Text = totalScore.ToString();
+            lbDiem.Text = totalScore.ToString() + "/" + examModel.Level.LevelMaxScore;
         }
 
         void ThongKe()
         {
-            var chungChi = model.Certificates.FirstOrDefault(c => c.CertificateID == )
+            // Chứng chỉ
+            var chungChi = model.Certificates.FirstOrDefault(
+                c => c.User.UserID == examModel.user.UserID && c.Subject.SubjectID == examModel.Subject.SubjectID);
+            //
+            if (chungChi == null)
+            {
+                // Thêm mới chứng chỉ
+
+            }
+            else
+            {
+                // Bac A1
+                chungChi.Score = examModel.Score;
+
+                // Check xem co pass hay ko
+                if (chungChi.Score >= examModel.Level.LevelMaxScore)
+                {
+                    chungChi.Pass = true;
+                    // Set text
+                    lbKetQua.Text = "Đậu";
+                }
+                else
+                    lbKetQua.Text = "Rớt";
+
+                // Luu
+                model.SaveChanges();
+            }
         }
 
         void Luu()

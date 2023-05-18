@@ -14,6 +14,8 @@ namespace QuanLyBoDeNgoaiNgu.Entities
         public Level Level { get; set; }
         public Subject Subject { get; set; }
         public User User { get; set; }
+        public bool Pass { get;set; }
+        public int Score { get; set; }
 
     }
 }
