@@ -206,7 +206,15 @@ namespace QuanLyBoDeNgoaiNgu
                 q => q.Subject.SubjectID == subjectModel.SubjectID 
                 && q.Level.LevelID == level.LevelID).ToList();
             //
-            LoadData(listQ);
+            LoadDataGridView(listQ);
+            
+            var group = model.GroupQuestions.FirstOrDefault(g => g.Name == cmbChuDe.SelectedItem.ToString());
+            //
+            var listG = model.Questions.Where(
+                q => q.Subject.SubjectID == subjectModel.SubjectID
+                && q.GroupQuestion.GroupQuestionID == group.GroupQuestionID).ToList();
+
+            LoadDataGridView(listG);
         }
     }
 }

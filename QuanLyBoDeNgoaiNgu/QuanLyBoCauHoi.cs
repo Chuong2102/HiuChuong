@@ -16,6 +16,7 @@ namespace QuanLyBoDeNgoaiNgu
     {
         QuanLyBoDeNgoaiNguModel1 model;
         Subject subjectModel;
+        
 
         QuanLyCauHoi frmQlch;
 
@@ -32,8 +33,9 @@ namespace QuanLyBoDeNgoaiNgu
 
             InitializeComponent();
             this.frmQlch = frmQlch;
-
+            LoadDataGridView();
             this.FormClosed += QuanLyBoCauHoi_FormClosed;
+
         }
 
         private void QuanLyBoCauHoi_FormClosed(object sender, FormClosedEventArgs e)
@@ -62,8 +64,11 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ThemBo bo = new ThemBo();
+
+            ThemBo bo = new ThemBo(subjectModel);
             bo.Show();
+
+
         }
 
         private void ThemBoDapAn_Load(object sender, EventArgs e)
@@ -85,19 +90,27 @@ namespace QuanLyBoDeNgoaiNgu
             tbxTenBo.Text = row.Cells[1].Value.ToString();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            var cc = dgvBoDapAn.SelectedRows;
+            var id = (int)dgvBoDapAn.Rows[dgvBoDapAn.SelectedCells[0].RowIndex].Cells[0].Value;
 
-            var groupID = dgvBoDapAn.CurrentRow.Cells[0].Value;
+            var grQ = model.GroupQuestions.FirstOrDefault(g => g.GroupQuestionID == id);
 
-            var group = model.GroupQuestions.FirstOrDefault(g => g.GroupQuestionID == (int)groupID);
-
-            group.Name = tbxTenBo.Text;
+            grQ.Name = tbxTenBo.Text;
 
             model.SaveChanges();
 
-            Data.LoadData(dgvBoDapAn, model.GroupQuestions.ToList());
+            LoadDataGridView();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbxTenBo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

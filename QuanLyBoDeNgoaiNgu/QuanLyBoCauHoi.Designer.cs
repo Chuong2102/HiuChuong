@@ -40,8 +40,7 @@
             this.dgvBoDapAn = new System.Windows.Forms.DataGridView();
             this.tbxTenBo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCauHoi = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoDapAn)).BeginInit();
@@ -131,7 +130,7 @@
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnTiengAnh_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dgvBoDapAn
             // 
@@ -150,6 +149,7 @@
             this.tbxTenBo.Name = "tbxTenBo";
             this.tbxTenBo.Size = new System.Drawing.Size(239, 22);
             this.tbxTenBo.TabIndex = 20;
+            this.tbxTenBo.TextChanged += new System.EventHandler(this.tbxTenBo_TextChanged);
             // 
             // label4
             // 
@@ -161,29 +161,17 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Tên chủ đề";
             // 
-            // btnSave
+            // btnUpdate
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(827, 223);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(97, 38);
-            this.btnSave.TabIndex = 22;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCauHoi
-            // 
-            this.btnCauHoi.BackColor = System.Drawing.Color.Silver;
-            this.btnCauHoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCauHoi.Location = new System.Drawing.Point(608, 304);
-            this.btnCauHoi.Name = "btnCauHoi";
-            this.btnCauHoi.Size = new System.Drawing.Size(325, 42);
-            this.btnCauHoi.TabIndex = 23;
-            this.btnCauHoi.Text = "Câu hỏi";
-            this.btnCauHoi.UseVisualStyleBackColor = false;
-            this.btnCauHoi.Click += new System.EventHandler(this.btnCauHoi_Click);
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(827, 223);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(97, 38);
+            this.btnUpdate.TabIndex = 22;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // QuanLyBoCauHoi
             // 
@@ -191,8 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(956, 486);
-            this.Controls.Add(this.btnCauHoi);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbxTenBo);
             this.Controls.Add(this.dgvBoDapAn);
@@ -228,7 +215,6 @@
         private System.Windows.Forms.DataGridView dgvBoDapAn;
         private System.Windows.Forms.TextBox tbxTenBo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCauHoi;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
