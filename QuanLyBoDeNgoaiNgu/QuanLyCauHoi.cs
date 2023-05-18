@@ -21,6 +21,8 @@ namespace QuanLyBoDeNgoaiNgu
         User userModel;
         Subject subjectModel;
 
+        Question questionModel;
+
         public QuanLyCauHoi()
         {
             InitializeComponent();
@@ -30,6 +32,8 @@ namespace QuanLyBoDeNgoaiNgu
         {
             InitializeComponent();
 
+            Data.LoadData(dgvCauHoi, model.Questions.ToList());
+        
             userModel = user;
             subjectModel = sub;
         }
@@ -67,6 +71,7 @@ namespace QuanLyBoDeNgoaiNgu
 
                     cmbChuDe.Items.Add(grQuestion.Name);
             }
+            this.dgvCauHoi.Columns["GroupQuestion"].Visible = false;
         }
         void LoadData(List<Question> questions)
         {
@@ -91,6 +96,7 @@ namespace QuanLyBoDeNgoaiNgu
             var questionID = (int)row.Cells[0].Value;
             // 
             var question = model.Questions.Where(q => q.QuestionID == questionID).FirstOrDefault();
+            questionModel = question;
 
             // Load đáp án
             var listAnswers = model.Questions.Where(q => q.QuestionID == questionID).SelectMany(a => a.Answers).ToList();
@@ -124,6 +130,11 @@ namespace QuanLyBoDeNgoaiNgu
             this.Close();
         }
 
+        public void Refesh()
+        {
+            Data.LoadData(dgvCauHoi, model.Questions.ToList());
+        }
+
         private void btnChuDe_Click(object sender, EventArgs e)
         {
             QuanLyBoCauHoi frmQlBoChuDeCauHoi = new QuanLyBoCauHoi(subjectModel, this);
@@ -154,5 +165,13 @@ namespace QuanLyBoDeNgoaiNgu
            
 
         }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            UpdateCauhoi updateCauhoi = new UpdateCauhoi(questionModel, this);
+            updateCauhoi.Show();
+        }
+
+
     }
 }
