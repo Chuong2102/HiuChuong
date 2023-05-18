@@ -15,27 +15,46 @@ namespace QuanLyBoDeNgoaiNgu
     public partial class ThemBo : Form
     {
         QuanLyBoDeNgoaiNguModel1 model;
+        Subject subjectModel;
         public ThemBo()
         {
             model = new QuanLyBoDeNgoaiNguModel1();
             InitializeComponent();
         }
+        public ThemBo(Subject subject)
+        {
+            model = new QuanLyBoDeNgoaiNguModel1();
+            subjectModel = subject;
+
+            InitializeComponent();
+
+            Data.LoadData(dgvChuDe, model.GroupQuestions.Where(q => q.Subject.SubjectID == subjectModel.SubjectID).ToList());
+        }
 
         private void ThemBo_Load(object sender, EventArgs e)
         {
-            Data.LoadData(dgvChuDe, model.GroupQuestions.ToList());
+                       
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            model.GroupQuestions.Add(new GroupQuestion
-            {
-                Name = tbChuDe.Text
-            });
+            GroupQuestion groupQuestion = new GroupQuestion();
+            groupQuestion.Name = tbChuDe.Text;
+
+            model.Subjects.Attach(subjectModel);
+
+            groupQuestion.Subject = subjectModel;
+
+
+            model.GroupQuestions.Add(groupQuestion);
 
             model.SaveChanges();
 
-            Data.LoadData(dgvChuDe, model.GroupQuestions.ToList());
+            var listData = model.GroupQuestions.Where(
+                q => q.Subject.SubjectID == subjectModel.SubjectID).ToList();
+            Data.LoadData(dgvChuDe, listData);
+
+            this.dgvChuDe.Columns["Subject"].Visible = false;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

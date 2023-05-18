@@ -61,5 +61,15 @@ namespace QuanLyBoDeNgoaiNgu
         {
             this.Close();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnTiengAnh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

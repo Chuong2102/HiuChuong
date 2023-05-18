@@ -137,6 +137,7 @@
             this.cmbBac.Size = new System.Drawing.Size(162, 24);
             this.cmbBac.TabIndex = 3;
             this.cmbBac.Text = "Bậc";
+            this.cmbBac.SelectedIndexChanged += new System.EventHandler(this.cmbBac_SelectedIndexChanged);
             // 
             // pictureBox1
             // 

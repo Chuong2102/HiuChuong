@@ -197,6 +197,24 @@ namespace QuanLyBoDeNgoaiNgu
             updateCauhoi.Show();
         }
 
+        private void cmbBac_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Khi select cmb sẽ lấy được level từ database
+            var level = model.Levels.FirstOrDefault(l => l.LevelName == cmbBac.SelectedItem.ToString());
+            // 
+            var listQ = model.Questions.Where(
+                q => q.Subject.SubjectID == subjectModel.SubjectID 
+                && q.Level.LevelID == level.LevelID).ToList();
+            //
+            LoadDataGridView(listQ);
+            
+            var group = model.GroupQuestions.FirstOrDefault(g => g.Name == cmbChuDe.SelectedItem.ToString());
+            //
+            var listG = model.Questions.Where(
+                q => q.Subject.SubjectID == subjectModel.SubjectID
+                && q.GroupQuestion.GroupQuestionID == group.GroupQuestionID).ToList();
 
+            LoadDataGridView(listG);
+        }
     }
 }
