@@ -117,7 +117,7 @@
             // 
             this.lbHoTen.AutoSize = true;
             this.lbHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoTen.Location = new System.Drawing.Point(629, 111);
+            this.lbHoTen.Location = new System.Drawing.Point(643, 119);
             this.lbHoTen.Name = "lbHoTen";
             this.lbHoTen.Size = new System.Drawing.Size(0, 24);
             this.lbHoTen.TabIndex = 10;

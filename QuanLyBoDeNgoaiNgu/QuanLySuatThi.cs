@@ -63,23 +63,15 @@ namespace QuanLyBoDeNgoaiNgu
             int index = dgvQLSuatThi.Columns["Bac"].Index;
             int i = 0;
 
-            
-            /*
-            foreach(DataGridViewRow row in dgvQLSuatThi.Rows)
-            {
-                row.Cells[index].Value = model.Compositions.Where(
-                    c => c.CompositionID == listData[i].CompositionID).Select(c => c.Level).FirstOrDefault().LevelName;
-                i++;
-            }
-            */
-
             foreach(var comp in listData)
             {
+                var row = dgvQLSuatThi.Rows[i];
+
                 var lev = model.Compositions.Where(c => c.CompositionID == comp.CompositionID).Select(c => c.Level).FirstOrDefault();
+                row.Cells[index].Value = lev.LevelName;
 
+                i++;
             }
-
-            
 
             //
             // Ẩn các cột không cần thiết
@@ -88,6 +80,43 @@ namespace QuanLyBoDeNgoaiNgu
             dgvQLSuatThi.Columns["CompositionID"].Visible = false;
 
             dgvQLSuatThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvQLSuatThi.Columns["TT"].Width = 50;
+        }
+
+        void LoadDataGridView(List<Composition> listData)
+        {
+            Data.LoadData(dgvQLSuatThi, listData);
+            Data.AddThuTu(dgvQLSuatThi);
+
+            // Thêm bậc
+            if (dgvQLSuatThi.Columns["Bac"] != null)
+            {
+                dgvQLSuatThi.Columns.Remove(dgvQLSuatThi.Columns["Bac"]);
+            }
+
+            dgvQLSuatThi.Columns.Add("Bac", "Bậc");
+
+            int index = dgvQLSuatThi.Columns["Bac"].Index;
+            int i = 0;
+
+            foreach (var comp in listData)
+            {
+                var row = dgvQLSuatThi.Rows[i];
+
+                var lev = model.Compositions.Where(c => c.CompositionID == comp.CompositionID).Select(c => c.Level).FirstOrDefault();
+                row.Cells[index].Value = lev.LevelName;
+
+                i++;
+            }
+
+            //
+            // Ẩn các cột không cần thiết
+            dgvQLSuatThi.Columns["Subject"].Visible = false;
+            dgvQLSuatThi.Columns["Level"].Visible = false;
+            dgvQLSuatThi.Columns["CompositionID"].Visible = false;
+
+            dgvQLSuatThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvQLSuatThi.Columns["TT"].Width = 50;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -141,7 +170,21 @@ namespace QuanLyBoDeNgoaiNgu
         // thay đổi Bậc
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                // Khi select cmb sẽ lấy được level từ database
+                var level = model.Levels.FirstOrDefault(l => l.LevelName == cmbBac.SelectedItem.ToString());
+                // 
+                var listQ = model.Compositions.Where(
+                    q => q.Subject.SubjectID == subjectModel.SubjectID
+                    && q.Level.LevelID == level.LevelID).ToList();
+                //
+                LoadDataGridView(listQ);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Không có suất thi ở bậc này");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
