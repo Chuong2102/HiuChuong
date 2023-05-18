@@ -106,7 +106,7 @@
             this.ddtNgayThi.Name = "ddtNgayThi";
             this.ddtNgayThi.Size = new System.Drawing.Size(496, 30);
             this.ddtNgayThi.TabIndex = 11;
-            this.ddtNgayThi.Value = new System.DateTime(2023, 5, 5, 9, 33, 59, 0);
+            this.ddtNgayThi.Value = new System.DateTime(2023, 5, 18, 0, 0, 0, 0);
             // 
             // ddtStartime
             // 

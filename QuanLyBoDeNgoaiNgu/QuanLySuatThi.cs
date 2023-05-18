@@ -36,11 +36,58 @@ namespace QuanLyBoDeNgoaiNgu
             this.userModel = user;
 
             InitializeComponent();
+
+            
         }
 
         private void QuanLySuatThi_Load(object sender, EventArgs e)
         {
-            Data.LoadData(dgvQLSuatThi, model.Compositions.ToList());
+            LoadDataGridView();
+        }
+
+        void LoadDataGridView()
+        {
+            var listData = model.Compositions.Where(c => c.Subject.SubjectID == subjectModel.SubjectID).ToList();
+
+            Data.LoadData(dgvQLSuatThi, listData);
+            Data.AddThuTu(dgvQLSuatThi);
+
+            // Thêm bậc
+            if (dgvQLSuatThi.Columns["Bac"] != null)
+            {
+                dgvQLSuatThi.Columns.Remove(dgvQLSuatThi.Columns["Bac"]);
+            }
+
+            dgvQLSuatThi.Columns.Add("Bac", "Bậc");
+
+            int index = dgvQLSuatThi.Columns["Bac"].Index;
+            int i = 0;
+
+            
+            /*
+            foreach(DataGridViewRow row in dgvQLSuatThi.Rows)
+            {
+                row.Cells[index].Value = model.Compositions.Where(
+                    c => c.CompositionID == listData[i].CompositionID).Select(c => c.Level).FirstOrDefault().LevelName;
+                i++;
+            }
+            */
+
+            foreach(var comp in listData)
+            {
+                var lev = model.Compositions.Where(c => c.CompositionID == comp.CompositionID).Select(c => c.Level).FirstOrDefault();
+
+            }
+
+            
+
+            //
+            // Ẩn các cột không cần thiết
+            dgvQLSuatThi.Columns["Subject"].Visible = false;
+            dgvQLSuatThi.Columns["Level"].Visible = false;
+            dgvQLSuatThi.Columns["CompositionID"].Visible = false;
+
+            dgvQLSuatThi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -54,19 +101,16 @@ namespace QuanLyBoDeNgoaiNgu
             // Click vào Datagriview dòng cần xóa
             // Lấy được ID mình chọn
             // Lấy các row(s)
-            var Rows = dgvQLSuatThi.SelectedRows;
+            var Row = dgvQLSuatThi.Rows[dgvQLSuatThi.SelectedCells[0].RowIndex];
 
-            foreach (DataGridViewRow Row in Rows)
-            {
-                // Lấy ID ra
-                var ID = (int)Row.Cells[0].Value;
-                // Xóa
-                model.Compositions.Remove(
-                    model.Compositions.FirstOrDefault(i => i.CompositionID == ID));
-            }
+            // Lấy ID ra
+            var ID = (int)Row.Cells[0].Value;
+            // Xóa
+            model.Compositions.Remove(
+                model.Compositions.FirstOrDefault(i => i.CompositionID == ID));
             model.SaveChanges();
 
-            Data.LoadData(dgvQLSuatThi, model.Compositions.ToList());
+            LoadDataGridView();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,7 +121,7 @@ namespace QuanLyBoDeNgoaiNgu
 
         public void Refesh()
         {
-            Data.LoadData(dgvQLSuatThi, model.Compositions.ToList());
+            LoadDataGridView();
         }
 
         // Edit suat thi
