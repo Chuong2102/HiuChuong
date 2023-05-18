@@ -106,6 +106,7 @@
             this.btnTiengAnh.TabIndex = 8;
             this.btnTiengAnh.Text = "Tiếng Anh";
             this.btnTiengAnh.UseVisualStyleBackColor = false;
+            this.btnTiengAnh.Click += new System.EventHandler(this.btnTiengAnh_Click);
             // 
             // pictureBox1
             // 
@@ -136,6 +137,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // frmAdmin
             // 
