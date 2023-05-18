@@ -167,7 +167,6 @@
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "DELETE";
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // tbCauHoi
             // 

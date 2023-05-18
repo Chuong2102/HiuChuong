@@ -289,6 +289,12 @@
     <Compile Include="ThemSuatThi.Designer.cs">
       <DependentUpon>ThemSuatThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="thongtincanhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thongtincanhan.Designer.cs">
+      <DependentUpon>thongtincanhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="trangkhivaostudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,12 @@
     </Compile>
     <Compile Include="trangTiengTrung.Designer.cs">
       <DependentUpon>trangTiengTrung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCauhoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateCauhoi.Designer.cs">
+      <DependentUpon>UpdateCauhoi.cs</DependentUpon>
     </Compile>
     <Compile Include="Warning.cs">
       <SubType>Form</SubType>
@@ -453,6 +465,9 @@
     <EmbeddedResource Include="ThemSuatThi.resx">
       <DependentUpon>ThemSuatThi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="thongtincanhan.resx">
+      <DependentUpon>thongtincanhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="trangkhivaostudent.resx">
       <DependentUpon>trangkhivaostudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -467,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="trangTiengTrung.resx">
       <DependentUpon>trangTiengTrung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCauhoi.resx">
+      <DependentUpon>UpdateCauhoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warning.resx">
       <DependentUpon>Warning.cs</DependentUpon>

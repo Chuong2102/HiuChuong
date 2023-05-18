@@ -17,7 +17,7 @@ namespace QuanLyBoDeNgoaiNgu.Infrastructure
         /// <param name="listData">Danh sách cần load</param>
         public static void LoadData<T>(DataGridView dgv, List<T> listData)
         {
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv.DataSource = listData;
         }
 
