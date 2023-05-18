@@ -49,7 +49,7 @@ namespace QuanLyBoDeNgoaiNgu
         private void QuanLyCauHoi_Load(object sender, EventArgs e)
         {
             // Load DatagridView
-            LoadData(model.Questions.Where(q => q.Subject.SubjectID == subjectModel.SubjectID).ToList());
+            LoadDataGridView();
 
             // Load combobox Bậc
             var listLevel = model.Levels.ToList();
@@ -71,57 +71,85 @@ namespace QuanLyBoDeNgoaiNgu
 
                     cmbChuDe.Items.Add(grQuestion.Name);
             }
-            this.dgvCauHoi.Columns["GroupQuestion"].Visible = false;
+            
+            
         }
-        void LoadData(List<Question> questions)
-        {
-            dgvCauHoi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgvCauHoi.DataSource = questions;
-
-        }
-
+        
         public void LoadDataGridView()
         {
             Data.LoadData(dgvCauHoi, model.Questions.Where(q => q.Subject.SubjectID == subjectModel.SubjectID).ToList());
+            Data.AddThuTu(dgvCauHoi);
+            // Ẩn các cột không cần thiết 
+            this.dgvCauHoi.Columns["GroupQuestion"].Visible = false;
+            this.dgvCauHoi.Columns["Level"].Visible = false;
+            this.dgvCauHoi.Columns["CorrectAnswerID"].Visible = false;
+            this.dgvCauHoi.Columns["Answers"].Visible = false;
+            this.dgvCauHoi.Columns["Exams"].Visible = false;
+            this.dgvCauHoi.Columns["Subject"].Visible = false;
+            this.dgvCauHoi.Columns["QuestionID"].Visible = false;
+
+            dgvCauHoi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        public void LoadDataGridView(List<Question> questions)
+        {
+            Data.LoadData(dgvCauHoi, questions);
+            Data.AddThuTu(dgvCauHoi);
+            // Ẩn các cột không cần thiết 
+            this.dgvCauHoi.Columns["GroupQuestion"].Visible = false;
+            this.dgvCauHoi.Columns["Level"].Visible = false;
+            this.dgvCauHoi.Columns["CorrectAnswerID"].Visible = false;
+            this.dgvCauHoi.Columns["Answers"].Visible = false;
+            this.dgvCauHoi.Columns["Exams"].Visible = false;
+            this.dgvCauHoi.Columns["Subject"].Visible = false;
+            this.dgvCauHoi.Columns["QuestionID"].Visible = false;
+
+            dgvCauHoi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void dgvCauHoi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var row = dgvCauHoi.Rows[e.RowIndex];
-
-            tbCauHoi.Text = row.Cells[1].Value.ToString();
-
-            // Lấy ID của câu hỏi hiện tại
-            var questionID = (int)row.Cells[0].Value;
-            // 
-            var question = model.Questions.Where(q => q.QuestionID == questionID).FirstOrDefault();
-            questionModel = question;
-
-            // Load đáp án
-            var listAnswers = model.Questions.Where(q => q.QuestionID == questionID).SelectMany(a => a.Answers).ToList();
-            //
-            // A
-            tbA.Text = listAnswers[0].Text;
-            // B
-            tbB.Text = listAnswers[1].Text;
-            // C
-            tbC.Text = listAnswers[2].Text;
-            // D
-            tbD.Text = listAnswers[3].Text;
-            // 
-            // Check radio button
-            for (int i = 0; i < listAnswers.Count; i++)
+            try
             {
-                if (listAnswers[i].AnswerID == question.CorrectAnswerID)
-                    if (i == 0)
-                        rdbA.Checked = true;
-                if (i == 1)
-                    rdbB.Checked = true;
-                if (i == 2)
-                    rdbC.Checked = true;
-                if (i == 3)
-                    rdbD.Checked = true;
+                var row = dgvCauHoi.Rows[e.RowIndex];
+
+                tbCauHoi.Text = row.Cells[1].Value.ToString();
+
+                // Lấy ID của câu hỏi hiện tại
+                var questionID = (int)row.Cells[0].Value;
+                // 
+                var question = model.Questions.Where(q => q.QuestionID == questionID).FirstOrDefault();
+                questionModel = question;
+
+                // Load đáp án
+                var listAnswers = model.Questions.Where(q => q.QuestionID == questionID).SelectMany(a => a.Answers).ToList();
+                //
+                // A
+                tbA.Text = listAnswers[0].Text;
+                // B
+                tbB.Text = listAnswers[1].Text;
+                // C
+                tbC.Text = listAnswers[2].Text;
+                // D
+                tbD.Text = listAnswers[3].Text;
+                // 
+                // Check radio button
+                for (int i = 0; i < listAnswers.Count; i++)
+                {
+                    if (listAnswers[i].AnswerID == question.CorrectAnswerID)
+                        if (i == 0)
+                            rdbA.Checked = true;
+                    if (i == 1)
+                        rdbB.Checked = true;
+                    if (i == 2)
+                        rdbC.Checked = true;
+                    if (i == 3)
+                        rdbD.Checked = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
@@ -132,7 +160,7 @@ namespace QuanLyBoDeNgoaiNgu
 
         public void Refesh()
         {
-            Data.LoadData(dgvCauHoi, model.Questions.ToList());
+            LoadDataGridView();
         }
 
         private void btnChuDe_Click(object sender, EventArgs e)
@@ -159,11 +187,8 @@ namespace QuanLyBoDeNgoaiNgu
             {
                 LoadDataGridView();
             }
-            
-            Data.LoadData(dgvCauHoi, query);
 
-           
-
+            LoadDataGridView(query);
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
