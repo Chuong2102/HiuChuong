@@ -68,6 +68,7 @@ namespace QuanLyBoDeNgoaiNgu
 
             // Setup cho suat thi
             composition.CompositionDate = ddtNgayThi.Value.Date;
+            //
             // Check endtime vs starttime
             
             if(TimeSpan.Compare(ddtStartime.Value.TimeOfDay, ddtEndtime.Value.TimeOfDay) >= 0 )
@@ -86,8 +87,16 @@ namespace QuanLyBoDeNgoaiNgu
             }
             else // Hợp lệ
             {
-                composition.StartTime = ddtStartime.Value;
-                composition.EndTime = ddtEndtime.Value;
+                // Config lại ngày cho giờ thi và giờ kết thúc
+                //
+                var startTime = new DateTime(ddtNgayThi.Value.Year, ddtNgayThi.Value.Month, ddtNgayThi.Value.Day,
+                    ddtStartime.Value.Hour, ddtStartime.Value.Minute, ddtStartime.Value.Second, ddtStartime.Value.Millisecond);
+
+                var endTime = new DateTime(ddtNgayThi.Value.Year, ddtNgayThi.Value.Month, ddtNgayThi.Value.Day,
+                    ddtEndtime.Value.Hour, ddtEndtime.Value.Minute, ddtEndtime.Value.Second, ddtEndtime.Value.Millisecond);
+                // Gán
+                composition.StartTime = startTime;
+                composition.EndTime = endTime;
 
 
                 // Lay level
@@ -106,19 +115,24 @@ namespace QuanLyBoDeNgoaiNgu
                 var compList = model.Compositions.Where(
                     c => c.CompositionDate == ddtNgayThi.Value).ToList();
 
-                var comp = compList.FirstOrDefault(c => c.Subject == subjectModel && c.Level == level);
+                compList.Sort((a, b) => a.StartTime.CompareTo(b.StartTime));
+
+                var comp = compList.Last(c => c.Subject == subjectModel && c.Level == level);
                 // Luu
                 if (comp == null)
+                {
                     model.Compositions.Add(composition);
+                    MessageBox.Show("Thêm suất thi thành công :>");
+                }
                 else
                 {
-                    if (TimeSpan.Compare(comp.StartTime.TimeOfDay, composition.EndTime.TimeOfDay) < 1)
+                    if (TimeSpan.Compare(composition.StartTime.TimeOfDay, comp.EndTime.TimeOfDay) < 0)
                     {
                         MessageBox.Show("Bị trùng suất thi :<");
                     }
                     else
                     {
-
+                        model.Compositions.Add(composition);
                         MessageBox.Show("Thêm suất thi thành công :>");
                     }
                 }
@@ -129,7 +143,7 @@ namespace QuanLyBoDeNgoaiNgu
                 // Load lại trang quản lý
                 quanLySuatThi.Refesh();
 
-                MessageBox.Show("Thêm thành công !");
+                
                 this.Close();
             }
             

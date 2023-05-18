@@ -112,6 +112,7 @@
             this.dgvCauHoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCauHoi.Location = new System.Drawing.Point(2, 2);
             this.dgvCauHoi.Name = "dgvCauHoi";
+            this.dgvCauHoi.ReadOnly = true;
             this.dgvCauHoi.RowHeadersWidth = 51;
             this.dgvCauHoi.RowTemplate.Height = 24;
             this.dgvCauHoi.Size = new System.Drawing.Size(882, 399);
@@ -172,6 +173,7 @@
             this.tbCauHoi.Location = new System.Drawing.Point(2, 464);
             this.tbCauHoi.Multiline = true;
             this.tbCauHoi.Name = "tbCauHoi";
+            this.tbCauHoi.ReadOnly = true;
             this.tbCauHoi.Size = new System.Drawing.Size(594, 198);
             this.tbCauHoi.TabIndex = 38;
             // 
@@ -224,6 +226,7 @@
             // 
             this.tbA.Location = new System.Drawing.Point(680, 501);
             this.tbA.Name = "tbA";
+            this.tbA.ReadOnly = true;
             this.tbA.Size = new System.Drawing.Size(204, 22);
             this.tbA.TabIndex = 43;
             // 
@@ -231,6 +234,7 @@
             // 
             this.tbB.Location = new System.Drawing.Point(680, 529);
             this.tbB.Name = "tbB";
+            this.tbB.ReadOnly = true;
             this.tbB.Size = new System.Drawing.Size(204, 22);
             this.tbB.TabIndex = 44;
             // 
@@ -238,6 +242,7 @@
             // 
             this.tbC.Location = new System.Drawing.Point(680, 557);
             this.tbC.Name = "tbC";
+            this.tbC.ReadOnly = true;
             this.tbC.Size = new System.Drawing.Size(204, 22);
             this.tbC.TabIndex = 45;
             // 
@@ -245,6 +250,7 @@
             // 
             this.tbD.Location = new System.Drawing.Point(680, 585);
             this.tbD.Name = "tbD";
+            this.tbD.ReadOnly = true;
             this.tbD.Size = new System.Drawing.Size(204, 22);
             this.tbD.TabIndex = 46;
             // 
