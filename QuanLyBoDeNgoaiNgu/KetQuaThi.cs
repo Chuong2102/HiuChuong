@@ -20,7 +20,7 @@ namespace QuanLyBoDeNgoaiNgu
         List<int> correctAnswer;
         Exam examModel;
 
-        const int SCORE = 100;
+        const int SCORE = 10;
         int totalScore = 0;
 
         public KetQuaThi()
