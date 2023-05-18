@@ -47,6 +47,7 @@
             this.ddtEndtime.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ddtEndtime.Location = new System.Drawing.Point(185, 296);
             this.ddtEndtime.Name = "ddtEndtime";
+            this.ddtEndtime.ShowUpDown = true;
             this.ddtEndtime.Size = new System.Drawing.Size(213, 30);
             this.ddtEndtime.TabIndex = 28;
             this.ddtEndtime.ValueChanged += new System.EventHandler(this.ddtEndtime_ValueChanged);
@@ -57,6 +58,7 @@
             this.ddtStartime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.ddtStartime.Location = new System.Drawing.Point(185, 216);
             this.ddtStartime.Name = "ddtStartime";
+            this.ddtStartime.ShowUpDown = true;
             this.ddtStartime.Size = new System.Drawing.Size(213, 30);
             this.ddtStartime.TabIndex = 27;
             // 
@@ -121,7 +123,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.Location = new System.Drawing.Point(522, 286);
+            this.button2.Location = new System.Drawing.Point(638, 398);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 40);
             this.button2.TabIndex = 40;

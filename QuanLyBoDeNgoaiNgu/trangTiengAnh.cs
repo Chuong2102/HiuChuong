@@ -49,24 +49,28 @@ namespace QuanLyBoDeNgoaiNgu
                     // Thì
 
                     // Đối chiếu ở chứng chỉ xem thằng Sinh viên này đang ở level mô
-                    var certificates = model.Certificates.FirstOrDefault(c => c.User.UserID == c.User.UserID);
+                    var certificates = model.Certificates.FirstOrDefault(c => c.User.UserID == userModel.UserID);
+                    var level = model.Certificates.Where(c => c.CertificateID == certificates.CertificateID).Select(q => q.Level).FirstOrDefault();
 
                     //
-                    if (certificates != null)
+                    if (certificates != null && certificates.Pass == false)
                     {
-                        if(certificates.Level.LevelName == "A2")
+                        if (level.LevelName == "A1")
+                            // Hiện
+                            btnA1.Enabled = true;
+                        if (level.LevelName == "A2")
                             // Hiện
                             btnA2.Enabled = true;
-                        if (certificates.Level.LevelName == "B1")
+                        if (level.LevelName == "B1")
                             // Hiện
                             btnB1.Enabled = true;
-                        if (certificates.Level.LevelName == "B2")
+                        if (level.LevelName == "B2")
                             // Hiện
                             btnB2.Enabled = true;
-                        if (certificates.Level.LevelName == "C1")
+                        if (level.LevelName == "C1")
                             // Hiện
                             btnC1.Enabled = true;
-                        if (certificates.Level.LevelName == "C2")
+                        if (level.LevelName == "C2")
                             // Hiện
                             btnC2.Enabled = true;
                     }

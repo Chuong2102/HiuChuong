@@ -15,6 +15,7 @@ namespace QuanLyBoDeNgoaiNgu
     public partial class frmAdmin : Form
     {
         QuanLyBoDeNgoaiNguModel1 model;
+
         User userModel;
         Subject subjectModel;
 
@@ -51,15 +52,14 @@ namespace QuanLyBoDeNgoaiNgu
             btnTiengNhat.Click += Btn_ClickNhat;
 
             // Lấy user dựa trên account 
-            var userModel = model.Users.FirstOrDefault(u => u.UserID == account.AccountID);
+            userModel = model.Users.FirstOrDefault(u => u.UserID == account.AccountID);
 
             lbName.Text = userModel.FullName;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmThongKe frmThongKe = new frmThongKe();
-            frmThongKe.Show();
+            this.Close();
         }
     }
 }

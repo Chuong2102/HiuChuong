@@ -9,6 +9,7 @@ using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyBoDeNgoaiNgu.Entities;
 using QuanLyBoDeNgoaiNgu.Infrastructure;
 
 namespace QuanLyBoDeNgoaiNgu
@@ -16,9 +17,23 @@ namespace QuanLyBoDeNgoaiNgu
     public partial class QuanLySuatThi : Form
     {
         QuanLyBoDeNgoaiNguModel1 model;
+
+        User userModel;
+        Subject subjectModel;
+
         public QuanLySuatThi()
         {
             model = new QuanLyBoDeNgoaiNguModel1();
+
+            InitializeComponent();
+        }
+
+        public QuanLySuatThi(User user, Subject subject)
+        {
+            model = new QuanLyBoDeNgoaiNguModel1();
+
+            this.subjectModel = subject;
+            this.userModel = user;
 
             InitializeComponent();
         }
@@ -56,7 +71,7 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ThemSuatThi themSuatThi = new ThemSuatThi(this);
+            ThemSuatThi themSuatThi = new ThemSuatThi(this, subjectModel);
             themSuatThi.Show();
         }
 
@@ -65,9 +80,10 @@ namespace QuanLyBoDeNgoaiNgu
             Data.LoadData(dgvQLSuatThi, model.Compositions.ToList());
         }
 
+        // Edit suat thi
         private void button3_Click(object sender, EventArgs e)
         {
-            var Row = dgvQLSuatThi.SelectedRows[0];
+            var Row = dgvQLSuatThi.Rows[dgvQLSuatThi.SelectedCells[0].RowIndex];
 
             // Lấy ID ra
             var ID = (int)Row.Cells[0].Value;
@@ -76,6 +92,17 @@ namespace QuanLyBoDeNgoaiNgu
 
             Editcomposition editcomposition = new Editcomposition(comp, this);
             editcomposition.Show();
+        }
+
+        // thay đổi Bậc
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
