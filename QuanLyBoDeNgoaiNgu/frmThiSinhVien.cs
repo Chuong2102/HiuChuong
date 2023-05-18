@@ -106,6 +106,8 @@ namespace QuanLyBoDeNgoaiNgu
 
         void LoadCauHoi()
         {
+            //
+            ResetDapAn();
             // Lay cau hoi hien tai
             var question = questions[index];
             // Lay dap an
@@ -119,8 +121,29 @@ namespace QuanLyBoDeNgoaiNgu
                 rdbD.Text = answers[3].Text;
             }
 
+            // Hien dap an dang check
+            if (answers[0].AnswerID == userChoose[index])
+                rdbA.Checked = true;
+            else rdbA.Checked = false;
+            if (answers[1].AnswerID == userChoose[index])
+                rdbB.Checked = true;
+            else rdbB.Checked = false;
+            if (answers[2].AnswerID == userChoose[index])
+                rdbC.Checked = true;
+            else
+                rdbC.Checked = false;
+            if (answers[3].AnswerID == userChoose[index])
+                rdbD.Checked = true;
+            else
+                rdbD.Checked = false;
+
             // Đẩy câu hỏi vào text
             tbCauHoi.Text = question.Text;
+        }
+
+        void ResetDapAn()
+        {
+            rdbA.Checked = rdbB.Checked = rdbC.Checked = rdbD.Checked = false;
         }
 
         private void pBack_Click(object sender, EventArgs e)

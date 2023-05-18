@@ -35,50 +35,59 @@ namespace QuanLyBoDeNgoaiNgu
             InitializeComponent();
 
             // 
+            var listCompQuery = model.Compositions.Where(c => c.CompositionDate == DateTime.Today);
+            var listComp = listCompQuery.ToList();
 
-            
+            listComp.Sort((a, b) => a.StartTime.CompareTo(b.EndTime));
+
             // Lấy suất thi có ngày thi là hom ni
-            var comp = model.Compositions.FirstOrDefault(
-                c => c.CompositionDate == DateTime.Today);
+            var comp = listComp.Last();
 
             if(subjectModel.Name == "English")
             // Nếu suất thi có tồn tại
                 if (comp != null)
                 {
-                    compositionModel = comp;
-                    // Thì
-
-                    // Đối chiếu ở chứng chỉ xem thằng Sinh viên này đang ở level mô
-                    var certificates = model.Certificates.FirstOrDefault(c => c.User.UserID == userModel.UserID);
-                    var level = model.Certificates.Where(c => c.CertificateID == certificates.CertificateID).Select(q => q.Level).FirstOrDefault();
-
+                    // Không cho sinh viên thi 2 lần trong cùng suất thi
+                    var exam = model.Exams.FirstOrDefault(e => e.Composition.CompositionID == comp.CompositionID);
                     //
-                    if (certificates != null && certificates.Pass == false)
+                    if(exam == null)
                     {
-                        if (level.LevelName == "A1")
-                            // Hiện
+                        compositionModel = comp;
+                        // Thì
+
+                        // Đối chiếu ở chứng chỉ xem thằng Sinh viên này đang ở level mô
+                        var certificates = model.Certificates.FirstOrDefault(c => c.User.UserID == userModel.UserID);
+                        var level = model.Certificates.Where(c => c.CertificateID == certificates.CertificateID).Select(q => q.Level).FirstOrDefault();
+
+                        //
+                        if (certificates != null && certificates.Pass == false)
+                        {
+                            if (level.LevelName == "A1")
+                                // Hiện
+                                btnA1.Enabled = true;
+                            if (level.LevelName == "A2")
+                                // Hiện
+                                btnA2.Enabled = true;
+                            if (level.LevelName == "B1")
+                                // Hiện
+                                btnB1.Enabled = true;
+                            if (level.LevelName == "B2")
+                                // Hiện
+                                btnB2.Enabled = true;
+                            if (level.LevelName == "C1")
+                                // Hiện
+                                btnC1.Enabled = true;
+                            if (level.LevelName == "C2")
+                                // Hiện
+                                btnC2.Enabled = true;
+                        }
+                        // Ẩn
+                        else
+                        {
                             btnA1.Enabled = true;
-                        if (level.LevelName == "A2")
-                            // Hiện
-                            btnA2.Enabled = true;
-                        if (level.LevelName == "B1")
-                            // Hiện
-                            btnB1.Enabled = true;
-                        if (level.LevelName == "B2")
-                            // Hiện
-                            btnB2.Enabled = true;
-                        if (level.LevelName == "C1")
-                            // Hiện
-                            btnC1.Enabled = true;
-                        if (level.LevelName == "C2")
-                            // Hiện
-                            btnC2.Enabled = true;
+                        }
                     }
-                    // Ẩn
-                    else
-                    {
-                        btnA1.Enabled = true;
-                    }
+                    
 
                 }
                 else { btnA1.Enabled = false; }
@@ -118,7 +127,10 @@ namespace QuanLyBoDeNgoaiNgu
                 var btn = e as Button;
                 levelModel = model.Levels.FirstOrDefault(l => l.LevelName == btn.Text);
 
+                this.Hide();
                 BocDe de = new BocDe(userModel, subjectModel, levelModel, compositionModel);
+                de.Closed += (s, args) => this.Close();
+
                 de.Show();
             }
             

@@ -75,8 +75,12 @@ namespace QuanLyBoDeNgoaiNgu
 
             foreach(var comp in listData)
             {
-                var lev = model.Compositions.Where(c => c.CompositionID == comp.CompositionID).Select(c => c.Level).FirstOrDefault();
+                var row = dgvQLSuatThi.Rows[i];
 
+                var lev = model.Compositions.Where(c => c.CompositionID == comp.CompositionID).Select(c => c.Level).FirstOrDefault();
+                row.Cells[index].Value = lev.LevelName;
+
+                i++;
             }
 
             
