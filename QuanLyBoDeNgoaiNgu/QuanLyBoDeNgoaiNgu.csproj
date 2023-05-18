@@ -226,6 +226,10 @@
     <Compile Include="Migrations\202305141305486_Q14.designer.cs">
       <DependentUpon>202305141305486_Q14.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305170911172_Q141.cs" />
+    <Compile Include="Migrations\202305170911172_Q141.designer.cs">
+      <DependentUpon>202305170911172_Q141.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -427,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305141305486_Q14.resx">
       <DependentUpon>202305141305486_Q14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305170911172_Q141.resx">
+      <DependentUpon>202305170911172_Q141.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvQLSuatThi = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbMon = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLSuatThi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,14 +75,6 @@
             this.label3.TabIndex = 47;
             this.label3.Text = "Cài đặt";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(669, 106);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 33);
-            this.textBox1.TabIndex = 41;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -103,6 +95,7 @@
             this.button2.TabIndex = 39;
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -125,11 +118,12 @@
             "B2",
             "C1",
             "C2"});
-            this.comboBox1.Location = new System.Drawing.Point(664, 203);
+            this.comboBox1.Location = new System.Drawing.Point(664, 118);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(132, 24);
             this.comboBox1.TabIndex = 51;
             this.comboBox1.Text = "Bậc";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -162,19 +156,28 @@
             this.pictureBox2.TabIndex = 46;
             this.pictureBox2.TabStop = false;
             // 
+            // lbMon
+            // 
+            this.lbMon.AutoSize = true;
+            this.lbMon.Location = new System.Drawing.Point(695, 183);
+            this.lbMon.Name = "lbMon";
+            this.lbMon.Size = new System.Drawing.Size(44, 16);
+            this.lbMon.TabIndex = 52;
+            this.lbMon.Text = "label2";
+            // 
             // QuanLySuatThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbMon);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvQLSuatThi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -197,11 +200,11 @@
         private System.Windows.Forms.DataGridView dgvQLSuatThi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lbMon;
     }
 }

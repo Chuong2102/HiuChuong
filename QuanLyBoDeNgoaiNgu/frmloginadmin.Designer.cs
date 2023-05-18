@@ -80,6 +80,7 @@
             this.textBox2.Location = new System.Drawing.Point(34, 141);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(347, 41);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "123";
@@ -121,6 +122,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "frmloginadmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login ADMIN";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
