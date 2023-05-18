@@ -40,6 +40,9 @@
             this.lbTN = new System.Windows.Forms.Label();
             this.lbTT = new System.Windows.Forms.Label();
             this.lbTH = new System.Windows.Forms.Label();
+            this.lbBacTN = new System.Windows.Forms.Label();
+            this.lbBacTT = new System.Windows.Forms.Label();
+            this.lbBacTH = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbHoTen
@@ -58,9 +61,8 @@
             this.lbTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTen.Location = new System.Drawing.Point(116, 79);
             this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(167, 25);
+            this.lbTen.Size = new System.Drawing.Size(0, 25);
             this.lbTen.TabIndex = 0;
-            this.lbTen.Text = "Doan Thi Chuong";
             // 
             // lbMSV
             // 
@@ -68,9 +70,9 @@
             this.lbMSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMSV.Location = new System.Drawing.Point(99, 124);
             this.lbMSV.Name = "lbMSV";
-            this.lbMSV.Size = new System.Drawing.Size(130, 25);
+            this.lbMSV.Size = new System.Drawing.Size(136, 25);
             this.lbMSV.TabIndex = 0;
-            this.lbMSV.Text = "Mã Sinh Viên";
+            this.lbMSV.Text = "Mã Sinh Viên:";
             // 
             // lbMa
             // 
@@ -78,9 +80,8 @@
             this.lbMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMa.Location = new System.Drawing.Point(116, 149);
             this.lbMa.Name = "lbMa";
-            this.lbMa.Size = new System.Drawing.Size(124, 25);
+            this.lbMa.Size = new System.Drawing.Size(0, 25);
             this.lbMa.TabIndex = 0;
-            this.lbMa.Text = "20T1080007";
             // 
             // lbEmail
             // 
@@ -108,9 +109,8 @@
             this.lbthisemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbthisemail.Location = new System.Drawing.Point(169, 198);
             this.lbthisemail.Name = "lbthisemail";
-            this.lbthisemail.Size = new System.Drawing.Size(249, 25);
+            this.lbthisemail.Size = new System.Drawing.Size(0, 25);
             this.lbthisemail.TabIndex = 0;
-            this.lbthisemail.Text = "doanthichuong@gmail.com";
             // 
             // lbTA
             // 
@@ -128,9 +128,8 @@
             this.lbBacTA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBacTA.Location = new System.Drawing.Point(254, 309);
             this.lbBacTA.Name = "lbBacTA";
-            this.lbBacTA.Size = new System.Drawing.Size(29, 20);
+            this.lbBacTA.Size = new System.Drawing.Size(0, 20);
             this.lbBacTA.TabIndex = 0;
-            this.lbBacTA.Text = "A1";
             // 
             // lbTN
             // 
@@ -162,11 +161,41 @@
             this.lbTH.TabIndex = 0;
             this.lbTH.Text = "Tiếng Hàn:";
             // 
+            // lbBacTN
+            // 
+            this.lbBacTN.AutoSize = true;
+            this.lbBacTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBacTN.Location = new System.Drawing.Point(254, 341);
+            this.lbBacTN.Name = "lbBacTN";
+            this.lbBacTN.Size = new System.Drawing.Size(0, 20);
+            this.lbBacTN.TabIndex = 0;
+            // 
+            // lbBacTT
+            // 
+            this.lbBacTT.AutoSize = true;
+            this.lbBacTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBacTT.Location = new System.Drawing.Point(254, 373);
+            this.lbBacTT.Name = "lbBacTT";
+            this.lbBacTT.Size = new System.Drawing.Size(0, 20);
+            this.lbBacTT.TabIndex = 0;
+            // 
+            // lbBacTH
+            // 
+            this.lbBacTH.AutoSize = true;
+            this.lbBacTH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBacTH.Location = new System.Drawing.Point(254, 407);
+            this.lbBacTH.Name = "lbBacTH";
+            this.lbBacTH.Size = new System.Drawing.Size(0, 20);
+            this.lbBacTH.TabIndex = 0;
+            // 
             // thongtincanhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbBacTH);
+            this.Controls.Add(this.lbBacTT);
+            this.Controls.Add(this.lbBacTN);
             this.Controls.Add(this.lbBacTA);
             this.Controls.Add(this.lbTH);
             this.Controls.Add(this.lbTT);
@@ -200,5 +229,8 @@
         private System.Windows.Forms.Label lbTN;
         private System.Windows.Forms.Label lbTT;
         private System.Windows.Forms.Label lbTH;
+        private System.Windows.Forms.Label lbBacTN;
+        private System.Windows.Forms.Label lbBacTT;
+        private System.Windows.Forms.Label lbBacTH;
     }
 }
