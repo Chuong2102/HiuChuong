@@ -65,5 +65,11 @@ namespace QuanLyBoDeNgoaiNgu
             trangTiengHan trangTiengHan = new trangTiengHan();
             trangTiengHan.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            thongtincanhan thongtincanhan = new thongtincanhan(userModel);
+            thongtincanhan.Show();
+        }
     }
 }
