@@ -56,6 +56,14 @@ namespace QuanLyBoDeNgoaiNgu
 
         void ThongKe()
         {
+            // Tên vs Mã sv
+            lbMsv.Text = examModel.user.StudentID;
+            lbHoTen.Text = examModel.user.FullName;
+            // NGày thi
+            lbNgayThi.Text = examModel.Composition.CompositionDate.ToString();
+            lbGioThi.Text = examModel.Composition.StartTime.TimeOfDay.ToString();
+            lbGioNopBai.Text = DateTime.Now.TimeOfDay.ToString();
+
             // Chứng chỉ
             var chungChi = model.Certificates.FirstOrDefault(
                 c => c.User.UserID == examModel.user.UserID && c.Subject.SubjectID == examModel.Subject.SubjectID);
