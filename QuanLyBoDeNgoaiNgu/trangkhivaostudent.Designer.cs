@@ -35,8 +35,6 @@
             this.btnTiengHan = new System.Windows.Forms.Button();
             this.lbMaSV = new System.Windows.Forms.Label();
             this.lbHoTen = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -96,42 +94,20 @@
             // 
             this.lbMaSV.AutoSize = true;
             this.lbMaSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaSV.Location = new System.Drawing.Point(663, 90);
+            this.lbMaSV.Location = new System.Drawing.Point(657, 93);
             this.lbMaSV.Name = "lbMaSV";
-            this.lbMaSV.Size = new System.Drawing.Size(0, 20);
+            this.lbMaSV.Size = new System.Drawing.Size(114, 20);
             this.lbMaSV.TabIndex = 2;
+            this.lbMaSV.Text = "ManN*uXiDan";
             // 
             // lbHoTen
             // 
             this.lbHoTen.AutoSize = true;
             this.lbHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoTen.Location = new System.Drawing.Point(628, 110);
+            this.lbHoTen.Location = new System.Drawing.Point(683, 124);
             this.lbHoTen.Name = "lbHoTen";
             this.lbHoTen.Size = new System.Drawing.Size(0, 24);
             this.lbHoTen.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(623, 162);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 34);
-            this.textBox1.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Tiếng Anh",
-            "Tiếng Nhật",
-            "Tiếng Hàn",
-            "Tiếng Trung"});
-            this.comboBox1.Location = new System.Drawing.Point(623, 213);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 24);
-            this.comboBox1.TabIndex = 5;
             // 
             // label3
             // 
@@ -173,8 +149,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbHoTen);
             this.Controls.Add(this.lbMaSV);
             this.Controls.Add(this.pictureBox1);
@@ -183,6 +157,7 @@
             this.Controls.Add(this.btnTiengNhat);
             this.Controls.Add(this.btnTiengAnh);
             this.Name = "trangkhivaostudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "trangkhivaostudent";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -200,8 +175,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label lbMaSV;
         public System.Windows.Forms.Label lbHoTen;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
     }

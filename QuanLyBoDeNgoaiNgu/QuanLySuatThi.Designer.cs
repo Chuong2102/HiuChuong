@@ -35,7 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbBac = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -108,22 +108,22 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // cmbBac
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbBac.FormattingEnabled = true;
+            this.cmbBac.Items.AddRange(new object[] {
             "A1",
             "A2",
             "B1",
             "B2",
             "C1",
             "C2"});
-            this.comboBox1.Location = new System.Drawing.Point(664, 118);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 24);
-            this.comboBox1.TabIndex = 51;
-            this.comboBox1.Text = "Bậc";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbBac.Location = new System.Drawing.Point(664, 118);
+            this.cmbBac.Name = "cmbBac";
+            this.cmbBac.Size = new System.Drawing.Size(132, 24);
+            this.cmbBac.TabIndex = 51;
+            this.cmbBac.Text = "Bậc";
+            this.cmbBac.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button4
             // 
@@ -172,7 +172,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbMon);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbBac);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvQLSuatThi);
@@ -203,7 +203,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBac;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lbMon;
     }

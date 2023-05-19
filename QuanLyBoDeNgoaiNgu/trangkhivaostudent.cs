@@ -15,6 +15,7 @@ namespace QuanLyBoDeNgoaiNgu
     public partial class trangkhivaostudent : Form
     {
         QuanLyBoDeNgoaiNguModel1 model = new QuanLyBoDeNgoaiNguModel1();
+
         User userModel;
         Subject subjectModel;
 
@@ -44,8 +45,9 @@ namespace QuanLyBoDeNgoaiNgu
             // Lay mon la tieng anh
             subjectModel = model.Subjects.FirstOrDefault(s => s.Name == "English");
 
-            trangTiengAnh trangTiengAnh = new trangTiengAnh(userModel, subjectModel);
-            trangTiengAnh.Show();
+            trangTiengAnh trangTA = new trangTiengAnh(userModel, subjectModel);
+            
+            trangTA.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace QuanLyBoDeNgoaiNgu
         List<int> correctAnswer;
         Exam examModel;
 
-        const int SCORE = 5;
+        const int SCORE = 10;
         int totalScore = 0;
 
         public KetQuaThi()
@@ -67,8 +67,7 @@ namespace QuanLyBoDeNgoaiNgu
             }
             else
             {
-                // Bac A1
-                chungChi.Score = examModel.Score;
+                chungChi.Score = totalScore;
 
                 // Check xem co pass hay ko
                 if (chungChi.Score >= examModel.Level.LevelMaxScore)
@@ -76,6 +75,34 @@ namespace QuanLyBoDeNgoaiNgu
                     chungChi.Pass = true;
                     // Set text
                     lbKetQua.Text = "Đậu";
+
+                    //
+                    var user = examModel.user;
+                    model.Users.Attach(user);
+
+                    // Thêm mới chứng chỉ
+                    // Check từng môn
+                    if(examModel.Subject.Name == "English")
+                    {
+                        if (examModel.Level.LevelName == "A1")
+                            ThemChungChi(user, "A2");
+                        if (examModel.Level.LevelName == "A2")
+                            ThemChungChi(user, "B1");
+                        if (examModel.Level.LevelName == "B1")
+                            ThemChungChi(user, "B2");
+                        if (examModel.Level.LevelName == "B2")
+                            ThemChungChi(user, "C1");
+                        if (examModel.Level.LevelName == "C1")
+                            ThemChungChi(user, "C2");
+                        if (examModel.Level.LevelName == "B2")
+                            MessageBox.Show("Hoàn thành chương trình");
+                    }
+                    else
+                    if(examModel.Subject.Name == "Jappanese")
+                    {
+
+                    }
+
                 }
                 else
                     lbKetQua.Text = "Rớt";
@@ -83,6 +110,24 @@ namespace QuanLyBoDeNgoaiNgu
                 // Luu
                 model.SaveChanges();
             }
+        }
+
+        void ThemChungChi(User user, string TenBacChungChi)
+        {
+            var level = model.Levels.Where(
+                                l => l.Subject.SubjectID == examModel.Subject.SubjectID && l.LevelName == TenBacChungChi).FirstOrDefault();
+            model.Levels.Attach(level);
+
+            model.Subjects.Attach(examModel.Subject);
+
+            model.Certificates.Add(new Certificate
+            {
+                Pass = false,
+                User = user,
+                Level = level,
+                Subject = examModel.Subject,
+                Score = 0
+            });
         }
 
         void Luu()

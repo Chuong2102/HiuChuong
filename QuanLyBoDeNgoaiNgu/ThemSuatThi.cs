@@ -117,7 +117,10 @@ namespace QuanLyBoDeNgoaiNgu
 
                 compList.Sort((a, b) => a.StartTime.CompareTo(b.StartTime));
 
-                var comp = compList.Last(c => c.Subject == subjectModel && c.Level == level);
+                Composition comp = null;
+                if(compList.Count > 0)
+                    comp = compList.Last(c => c.Subject == subjectModel && c.Level == level);
+
                 // Luu
                 if (comp == null)
                 {
