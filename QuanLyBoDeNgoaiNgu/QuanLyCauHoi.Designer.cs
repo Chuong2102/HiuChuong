@@ -106,6 +106,7 @@
             this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "UPDATE";
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click_1);
             // 
             // dgvCauHoi
             // 
@@ -168,6 +169,7 @@
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "DELETE";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // tbCauHoi
             // 
@@ -306,6 +308,7 @@
             this.Name = "QuanLyCauHoi";
             this.Text = "QuanLyCauHoi";
             this.Load += new System.EventHandler(this.QuanLyCauHoi_Load);
+            this.Click += new System.EventHandler(this.btnCapNhat_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCauHoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

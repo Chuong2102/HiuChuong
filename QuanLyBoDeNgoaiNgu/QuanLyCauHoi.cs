@@ -113,7 +113,16 @@ namespace QuanLyBoDeNgoaiNgu
             {
                 var row = dgvCauHoi.Rows[e.RowIndex];
 
-                tbCauHoi.Text = row.Cells[1].Value.ToString();
+                var cellValue = row.Cells[1].Value;
+                if (cellValue != null)
+                {
+                    tbCauHoi.Text = cellValue.ToString();
+                }
+                else
+                {
+                    // Xử lý khi giá trị là null
+                    tbCauHoi.Text = string.Empty; // hoặc gán giá trị khác tùy thuộc vào yêu cầu của bạn
+                }
 
                 // Lấy ID của câu hỏi hiện tại
                 var questionID = (int)row.Cells[0].Value;
@@ -215,6 +224,29 @@ namespace QuanLyBoDeNgoaiNgu
                 && q.GroupQuestion.GroupQuestionID == group.GroupQuestionID).ToList();
 
             LoadDataGridView(listG);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            // Click vào Datagriview dòng cần xóa
+            // Lấy được ID mình chọn
+            // Lấy các row(s)
+            var Row = dgvCauHoi.Rows[dgvCauHoi.SelectedCells[0].RowIndex];
+
+            // Lấy ID ra
+            var ID = (int)Row.Cells[0].Value;
+            // Xóa
+            model.Questions.Remove(
+                model.Questions.FirstOrDefault(i => i.QuestionID == ID));
+            model.SaveChanges();
+
+            LoadDataGridView();
+        }
+
+        private void btnCapNhat_Click_1(object sender, EventArgs e)
+        {
+            UpdateCauhoi updateCauhoi = new UpdateCauhoi(questionModel, this);
+            updateCauhoi.Show();
         }
     }
 }
