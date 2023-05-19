@@ -40,7 +40,7 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ThemCauHoi themCauHoi = new ThemCauHoi(subjectModel);
+            ThemCauHoi themCauHoi = new ThemCauHoi(subjectModel, this);
             themCauHoi.Show();
         }
 
@@ -262,12 +262,14 @@ namespace QuanLyBoDeNgoaiNgu
             model.SaveChanges();
 
             LoadDataGridView();
+
+            tbCauHoi.Text = String.Empty;
+            tbA.Text = String.Empty;
+            tbB.Text = String.Empty;
+            tbC.Text = String.Empty;
+            tbD.Text = String.Empty;
         }
 
-        private void btnCapNhat_Click_1(object sender, EventArgs e)
-        {
-            UpdateCauhoi updateCauhoi = new UpdateCauhoi(questionModel, this);
-            updateCauhoi.Show();
-        }
+
     }
 }
