@@ -47,6 +47,12 @@ namespace QuanLyBoDeNgoaiNgu
         {
             var list = model.GroupQuestions.Where(q => q.Subject.SubjectID == subjectModel.SubjectID).ToList();
             Data.LoadData(dgvBoDapAn, list);
+
+            // Ẩn các cột ko cần thiết
+            dgvBoDapAn.Columns["Subject"].Visible = false;
+            dgvBoDapAn.Columns["Questions"].Visible = false;
+
+            Data.AddThuTu(dgvBoDapAn);
         }
 
         private void btnTiengAnh_Click(object sender, EventArgs e)

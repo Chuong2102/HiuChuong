@@ -38,23 +38,40 @@ namespace QuanLyBoDeNgoaiNgu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            GroupQuestion groupQuestion = new GroupQuestion();
-            groupQuestion.Name = tbChuDe.Text;
+            if(tbChuDe.Text == String.Empty)
+            {
+                MessageBox.Show("Chủ đề bị rỗng, vui lòng nhập tên chủ đề ạ :<");
+            }
+            else
+            {
+                GroupQuestion groupQuestion = new GroupQuestion();
+                groupQuestion.Name = tbChuDe.Text;
 
-            model.Subjects.Attach(subjectModel);
+                var listGr = model.GroupQuestions.Where(g => g.Subject.SubjectID == subjectModel.SubjectID).ToList();
 
-            groupQuestion.Subject = subjectModel;
+                if(listGr.Count > 0)
+                {
+                    MessageBox.Show("Tên chủ đề bị trùng");
+                }
+                else
+                {
+                    model.Subjects.Attach(subjectModel);
+
+                    groupQuestion.Subject = subjectModel;
 
 
-            model.GroupQuestions.Add(groupQuestion);
+                    model.GroupQuestions.Add(groupQuestion);
 
-            model.SaveChanges();
+                    model.SaveChanges();
 
-            var listData = model.GroupQuestions.Where(
-                q => q.Subject.SubjectID == subjectModel.SubjectID).ToList();
-            Data.LoadData(dgvChuDe, listData);
+                    var listData = model.GroupQuestions.Where(
+                        q => q.Subject.SubjectID == subjectModel.SubjectID).ToList();
+                    Data.LoadData(dgvChuDe, listData);
 
-            this.dgvChuDe.Columns["Subject"].Visible = false;
+                    this.dgvChuDe.Columns["Subject"].Visible = false;
+                }
+                
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

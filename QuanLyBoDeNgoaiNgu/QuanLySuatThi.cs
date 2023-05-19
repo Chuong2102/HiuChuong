@@ -127,17 +127,24 @@ namespace QuanLyBoDeNgoaiNgu
 
         public void Delete()
         {
-            // Click vào Datagriview dòng cần xóa
-            // Lấy được ID mình chọn
-            // Lấy các row(s)
-            var Row = dgvQLSuatThi.Rows[dgvQLSuatThi.SelectedCells[0].RowIndex];
+            try
+            {
+                // Click vào Datagriview dòng cần xóa
+                // Lấy được ID mình chọn
+                // Lấy các row(s)
+                var Row = dgvQLSuatThi.Rows[dgvQLSuatThi.SelectedCells[0].RowIndex];
 
-            // Lấy ID ra
-            var ID = (int)Row.Cells[0].Value;
-            // Xóa
-            model.Compositions.Remove(
-                model.Compositions.FirstOrDefault(i => i.CompositionID == ID));
-            model.SaveChanges();
+                // Lấy ID ra
+                var ID = (int)Row.Cells[0].Value;
+                // Xóa
+                model.Compositions.Remove(
+                    model.Compositions.FirstOrDefault(i => i.CompositionID == ID));
+                model.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Không thể xóa được suất thi này");
+            }
 
             LoadDataGridView();
         }

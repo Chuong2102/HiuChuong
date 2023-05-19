@@ -36,11 +36,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lbMsv = new System.Windows.Forms.Label();
+            this.lbHoTen = new System.Windows.Forms.Label();
+            this.lbNgayThi = new System.Windows.Forms.Label();
+            this.lbGioThi = new System.Windows.Forms.Label();
+            this.lbGioNopBai = new System.Windows.Forms.Label();
             this.lbDiem = new System.Windows.Forms.Label();
             this.lbKetQua = new System.Windows.Forms.Label();
             this.btnDone = new System.Windows.Forms.Button();
@@ -125,55 +125,55 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Giờ Thi:";
             // 
-            // label10
+            // lbMsv
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(309, 54);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 25);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "adfadfad";
+            this.lbMsv.AutoSize = true;
+            this.lbMsv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMsv.Location = new System.Drawing.Point(309, 54);
+            this.lbMsv.Name = "lbMsv";
+            this.lbMsv.Size = new System.Drawing.Size(88, 25);
+            this.lbMsv.TabIndex = 0;
+            this.lbMsv.Text = "adfadfad";
             // 
-            // label11
+            // lbHoTen
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(309, 100);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 25);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Mã Sinh Viên :";
+            this.lbHoTen.AutoSize = true;
+            this.lbHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoTen.Location = new System.Drawing.Point(309, 100);
+            this.lbHoTen.Name = "lbHoTen";
+            this.lbHoTen.Size = new System.Drawing.Size(141, 25);
+            this.lbHoTen.TabIndex = 0;
+            this.lbHoTen.Text = "Mã Sinh Viên :";
             // 
-            // label12
+            // lbNgayThi
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(309, 144);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(141, 25);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Mã Sinh Viên :";
+            this.lbNgayThi.AutoSize = true;
+            this.lbNgayThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgayThi.Location = new System.Drawing.Point(309, 144);
+            this.lbNgayThi.Name = "lbNgayThi";
+            this.lbNgayThi.Size = new System.Drawing.Size(141, 25);
+            this.lbNgayThi.TabIndex = 0;
+            this.lbNgayThi.Text = "Mã Sinh Viên :";
             // 
-            // label13
+            // lbGioThi
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(309, 189);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(141, 25);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Mã Sinh Viên :";
+            this.lbGioThi.AutoSize = true;
+            this.lbGioThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGioThi.Location = new System.Drawing.Point(309, 189);
+            this.lbGioThi.Name = "lbGioThi";
+            this.lbGioThi.Size = new System.Drawing.Size(141, 25);
+            this.lbGioThi.TabIndex = 0;
+            this.lbGioThi.Text = "Mã Sinh Viên :";
             // 
-            // label15
+            // lbGioNopBai
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(309, 254);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(141, 25);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Mã Sinh Viên :";
+            this.lbGioNopBai.AutoSize = true;
+            this.lbGioNopBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGioNopBai.Location = new System.Drawing.Point(309, 254);
+            this.lbGioNopBai.Name = "lbGioNopBai";
+            this.lbGioNopBai.Size = new System.Drawing.Size(141, 25);
+            this.lbGioNopBai.TabIndex = 0;
+            this.lbGioNopBai.Text = "Mã Sinh Viên :";
             // 
             // lbDiem
             // 
@@ -220,11 +220,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbKetQua);
             this.Controls.Add(this.lbDiem);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lbGioNopBai);
+            this.Controls.Add(this.lbGioThi);
+            this.Controls.Add(this.lbNgayThi);
+            this.Controls.Add(this.lbHoTen);
+            this.Controls.Add(this.lbMsv);
             this.Controls.Add(this.label1);
             this.Name = "KetQuaThi";
             this.Text = "KetQuaThi";
@@ -243,11 +243,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbMsv;
+        private System.Windows.Forms.Label lbHoTen;
+        private System.Windows.Forms.Label lbNgayThi;
+        private System.Windows.Forms.Label lbGioThi;
+        private System.Windows.Forms.Label lbGioNopBai;
         private System.Windows.Forms.Label lbDiem;
         private System.Windows.Forms.Label lbKetQua;
         private System.Windows.Forms.Button btnDone;

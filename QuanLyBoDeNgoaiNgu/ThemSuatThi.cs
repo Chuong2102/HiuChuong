@@ -105,49 +105,60 @@ namespace QuanLyBoDeNgoaiNgu
 
                 // Xem level co trong database san hay k
                 model.Levels.Attach(level);
-                composition.Level = level;
-                // Xem subject co trong database san hay k
-                model.Subjects.Attach(subjectModel);
-                composition.Subject = subjectModel;
 
-                // Trường hợp có suất thi khác trùng ngày
-                //
-                var compList = model.Compositions.Where(
-                    c => c.CompositionDate == ddtNgayThi.Value).ToList();
+                var listQues = model.Questions.Where(c => c.Level.LevelID == level.LevelID).ToList();
 
-                compList.Sort((a, b) => a.StartTime.CompareTo(b.StartTime));
-
-                Composition comp = null;
-                if(compList.Count > 0)
-                    comp = compList.Last(c => c.Subject == subjectModel && c.Level == level);
-
-                // Luu
-                if (comp == null)
+                if(listQues.Count <= 10)
                 {
-                    model.Compositions.Add(composition);
-                    MessageBox.Show("Thêm suất thi thành công :>");
+                    MessageBox.Show("Không đủ 10 câu hỏi cho bậc này");
                 }
                 else
                 {
-                    if (TimeSpan.Compare(composition.StartTime.TimeOfDay, comp.EndTime.TimeOfDay) < 0)
-                    {
-                        MessageBox.Show("Bị trùng suất thi :<");
-                    }
-                    else
+                    composition.Level = level;
+                    // Xem subject co trong database san hay k
+                    model.Subjects.Attach(subjectModel);
+                    composition.Subject = subjectModel;
+
+                    // Trường hợp có suất thi khác trùng ngày
+                    //
+                    var compList = model.Compositions.Where(
+                        c => c.CompositionDate == ddtNgayThi.Value).ToList();
+
+                    compList.Sort((a, b) => a.StartTime.CompareTo(b.StartTime));
+
+                    Composition comp = null;
+                    if (compList.Count > 0)
+                        comp = compList.Last(c => c.Subject == subjectModel && c.Level == level);
+
+                    // Luu
+                    if (comp == null)
                     {
                         model.Compositions.Add(composition);
                         MessageBox.Show("Thêm suất thi thành công :>");
                     }
+                    else
+                    {
+                        if (TimeSpan.Compare(composition.StartTime.TimeOfDay, comp.EndTime.TimeOfDay) < 0)
+                        {
+                            MessageBox.Show("Bị trùng suất thi :<");
+                        }
+                        else
+                        {
+                            model.Compositions.Add(composition);
+                            MessageBox.Show("Thêm suất thi thành công :>");
+                        }
+                    }
+
+                    // Lưu
+                    model.SaveChanges();
+
+                    // Load lại trang quản lý
+                    quanLySuatThi.Refesh();
+
+                    
                 }
-
-                // Lưu
-                model.SaveChanges();
-
-                // Load lại trang quản lý
-                quanLySuatThi.Refesh();
-
-                
                 this.Close();
+
             }
             
         }
