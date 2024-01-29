@@ -21,7 +21,7 @@ namespace QuanLyBoDeNgoaiNgu
         List<Answer> answers;
         List<int> listCorrectAns;
 
-        int[] userChoose = new int[2];
+        int[] userChoose = new int[5];
 
         int index = 0;
 

@@ -83,8 +83,8 @@ namespace QuanLyBoDeNgoaiNgu
 
             // Random
             var random = new Random();
-            // Bốc 2 câu
-            while(questions.Count > 2)
+            // Bốc 5 câu
+            while(questions.Count > 5)
             {
                 int index = random.Next(questions.Count);
                 questions.RemoveAt(index);

@@ -108,9 +108,9 @@ namespace QuanLyBoDeNgoaiNgu
 
                 var listQues = model.Questions.Where(c => c.Level.LevelID == level.LevelID).ToList();
 
-                if(listQues.Count <= 10)
+                if(listQues.Count <= 5)
                 {
-                    MessageBox.Show("Không đủ 10 câu hỏi cho bậc này");
+                    MessageBox.Show("Không đủ 5 câu hỏi cho bậc này");
                 }
                 else
                 {

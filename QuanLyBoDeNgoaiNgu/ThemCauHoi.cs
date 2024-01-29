@@ -117,7 +117,12 @@ namespace QuanLyBoDeNgoaiNgu
                 question.Text = tbCauHoi.Text;
 
 
+                question.Answers.Add(a);
+                question.Answers.Add(b);
+                question.Answers.Add(c);
+                question.Answers.Add(d);
 
+                model.Answers.AddRange(question.Answers);
 
 
 
@@ -162,12 +167,6 @@ namespace QuanLyBoDeNgoaiNgu
                     GroupQuestionID = gr.GroupQuestionID
                 };
 
-                question.Answers.Add(a);
-                question.Answers.Add(b);
-                question.Answers.Add(c);
-                question.Answers.Add(d);
-
-                model.Answers.AddRange(question.Answers);
 
                 model.Questions.Add(question);
 
